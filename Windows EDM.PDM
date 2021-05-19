@@ -1,0 +1,1044 @@
+[Root]
+Most Recent Package=BlackJack Setup
+
+
+[Package|Standard Setup Package 1|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\vb4\EDM Windows\Package
+
+[Package|Standard Setup Package 1|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Standard Setup Package 1|Files Found]
+
+[Package|Standard Setup Package 1|Files Released]
+
+[Package|Standard Setup Package 1|Missing Dependency Information]
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=
+C:\WINNT\SYSTEM32\dbgrid32.ocx=
+
+[Package|Standard Setup Package 1|Out-of-Date Dependency Information]
+
+[Package|Standard Setup Package 1|Files Added]
+
+[Package|Standard Setup Package 1|Files Removed]
+
+[Package|Standard Setup Package 1|Files In Project]
+C:\vb4\EDM Windows\Windows EDM.exe=Yes
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINNT\SYSTEM32\msjet40.dll=Yes
+C:\WINNT\SYSTEM32\msjter40.dll=Yes
+C:\WINNT\SYSTEM32\msjint40.dll=Yes
+C:\WINNT\SYSTEM32\vbajet32.dll=Yes
+C:\WINNT\SYSTEM32\expsrv.dll=Yes
+C:\WINNT\SYSTEM32\mswstr10.dll=Yes
+C:\WINNT\SYSTEM32\mswdat10.dll=Yes
+C:\WINNT\SYSTEM32\msrd2x40.dll=Yes
+C:\WINNT\SYSTEM32\msrd3x40.dll=Yes
+C:\WINNT\SYSTEM32\msrepl40.dll=Yes
+C:\WINNT\SYSTEM32\msjtes40.dll=Yes
+C:\WINNT\SYSTEM32\VB5DB.DLL=Yes
+C:\WINNT\SYSTEM32\dbgrid32.ocx=Yes
+C:\WINNT\SYSTEM32\GRID32.OCX=Yes
+C:\WINNT\SYSTEM32\COMDLG32.OCX=Yes
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=Yes
+C:\WINNT\SYSTEM32\TABCTL32.OCX=Yes
+C:\WINNT\SYSTEM32\MSDATGRD.OCX=Yes
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=Yes
+C:\WINNT\SYSTEM32\MSADODC.OCX=Yes
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=Yes
+C:\WINNT\SYSTEM32\MSBIND.DLL=Yes
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+
+[Package|Standard Setup Package 1|Configure Registry Files]
+Applicable=No
+
+[Package|Standard Setup Package 1|Configure Remote Servers]
+Applicable=No
+
+[Package|Standard Setup Package 1|Install Locations]
+C:\vb4\EDM Windows\Windows EDM.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINNT\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\dbgrid32.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\GRID32.OCX=$(AppPath)
+C:\WINNT\SYSTEM32\COMDLG32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+
+[Package|Standard Setup Package 1|Configure Shared Files]
+Applicable=Yes
+C:\vb4\EDM Windows\Windows EDM.exe=No
+C:\WINNT\SYSTEM32\GRID32.OCX=No
+
+[Package|Standard Setup Package 1|Distribution]
+Type=single
+Size=
+Title=edm windows
+
+[Package|Standard Setup Package 1|IconGroups]
+Group0=edm windows
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Standard Setup Package 1|edm windows]
+Icon1="Windows EDM.exe"
+Title1=edm windows
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Standard Setup Package 1|Package]
+PackageFolder=C:\vb4\EDM Windows\Package
+ProjectFolder=C:\vb4\EDM Windows
+ServerSideCab=
+File1=C:\vb4\EDM Windows\Package\setup.exe
+File2=C:\vb4\EDM Windows\Package\Setup.Lst
+File3=C:\vb4\EDM Windows\Package\Windows EDM.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|EDM Windows Setup|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=f:\Documents\vb4\EDM ADO Windows\OSA Stuff\New Compile
+
+[Package|EDM Windows Setup|Configure DAO ISAMs]
+Applicable=No
+
+[Package|EDM Windows Setup|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|EDM Windows Setup|Files Found]
+
+[Package|EDM Windows Setup|Files Released]
+important read me.txt=
+Install ActiveSync.exe=
+ceutil.dll=
+rapi.dll=
+
+[Package|EDM Windows Setup|Missing Dependency Information]
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=
+C:\WINNT\SYSTEM32\dbgrid32.ocx=
+C:\WINDOWS\SYSTEM32\RemoteCE.tlb=
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=
+C:\WINDOWS\SYSTEM32\rapi.dll=
+C:\WINDOWS\SYSTEM32\ceutil.dll=
+C:\WINDOWS\SYSTEM32\SAPI.DLL=
+C:\vb4\EDM Windows\rapi.dll=
+E:\WINNT\system32\ceutil.dll=
+E:\WINNT\system32\dbgrid32.ocx=
+E:\WINNT\system32\SAPI.DLL=
+E:\WINNT\system32\RemoteCE.tlb=
+E:\Program Files\Common Files\System\ado\msado25.tlb=
+C:\vb4\EDM Windows\adofiltr.dll=
+C:\vb4\EDM Windows\Install ActiveSync.exe=
+C:\vb4\EDM Windows\ceutil.dll=
+C:\vb4\EDM Windows\SAPI.DLL=
+C:\vb4\EDM Windows\RemoteCE.tlb=
+C:\WINNT\SYSTEM32\rapi.dll=
+C:\Program Files\Common Files\Microsoft Shared\Speech\sapi.dll=
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=
+C:\Program Files\Common Files\System\ADO\msado27.tlb=
+C:\Program Files\Common Files\System\ADO\msjro.dll=
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=
+E:\WINNT\TEMPWIN\system32\SAPI.DLL=
+E:\WINNT\TEMPWIN\system32\RemoteCE.tlb=
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=
+C:\Program Files\Common Files\System\ado\msado28.tlb=
+C:\Windows\System32\Speech\Common\sapi.dll=
+
+[Package|EDM Windows Setup|Out-of-Date Dependency Information]
+
+[Package|EDM Windows Setup|Files Added]
+
+[Package|EDM Windows Setup|Files Removed]
+
+[Package|EDM Windows Setup|Files In Project]
+C:\WINDOWS\SYSTEM32\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINDOWS\SYSTEM32\msjet40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjter40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjint40.dll=Yes
+C:\WINDOWS\SYSTEM32\vbajet32.dll=Yes
+C:\WINDOWS\SYSTEM32\expsrv.dll=Yes
+C:\WINDOWS\SYSTEM32\mswstr10.dll=Yes
+C:\WINDOWS\SYSTEM32\mswdat10.dll=Yes
+C:\WINDOWS\SYSTEM32\msrd2x40.dll=Yes
+C:\WINDOWS\SYSTEM32\msrd3x40.dll=Yes
+C:\WINDOWS\SYSTEM32\msrepl40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjtes40.dll=Yes
+C:\WINDOWS\SYSTEM32\VB5DB.DLL=Yes
+C:\WINDOWS\SYSTEM32\MSBIND.DLL=Yes
+C:\WINDOWS\SYSTEM32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM32\DBGRID32.OCX=Yes
+C:\WINDOWS\SYSTEM32\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMM32.OCX=Yes
+C:\WINDOWS\SYSTEM32\TABCTL32.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSADODC.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSDATGRD.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMCT2.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+F:\Paleo\Programs\edmwin.exe=Yes
+C:\Windows\System32\Speech\Common\sapi.dll=Yes
+C:\Program Files\Common Files\System\ado\msado28.tlb=Yes
+F:\Documents\vb4\NewPlot\GRID32.OCX=Yes
+
+[Package|EDM Windows Setup|Configure Registry Files]
+Applicable=No
+
+[Package|EDM Windows Setup|Configure Remote Servers]
+Applicable=No
+
+[Package|EDM Windows Setup|Install Locations]
+C:\vb4\EDM Windows\Windows EDM.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINNT\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\dbgrid32.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\GRID32.OCX=$(AppPath)
+C:\WINNT\SYSTEM32\COMDLG32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Paleo\Programs\Windows EDM.exe=$(AppPath)
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=$(AppPath)
+C:\WINDOWS\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\RemoteCE.tlb=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\dbgrid32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\GRID32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\rapi.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\ceutil.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\vb4\EDM Windows\adofiltr.dll=$(WinSysPath)
+E:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+E:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\VB5DB.DLL=$(WinSysPath)
+E:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+E:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+E:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+E:\WINNT\system32\RemoteCE.tlb=$(WinSysPath)
+E:\WINNT\system32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\system32\dbgrid32.ocx=$(WinSysPath)
+E:\WINNT\system32\GRID32.OCX=$(WinSysPath)
+E:\WINNT\system32\Comdlg32.ocx=$(WinSysPath)
+E:\WINNT\system32\MSCOMM32.OCX=$(WinSysPath)
+E:\WINNT\system32\TABCTL32.OCX=$(WinSysPath)
+E:\WINNT\system32\MSADODC.OCX=$(WinSysPath)
+E:\WINNT\system32\MSFLXGRD.OCX=$(WinSysPath)
+E:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+E:\WINNT\system32\MSDATGRD.OCX=$(WinSysPath)
+E:\WINNT\system32\MSCOMCT2.OCX=$(WinSysPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+E:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\vb4\EDM Windows\rapi.dll=$(WinSysPath)
+E:\WINNT\system32\ceutil.dll=$(WinSysPath)
+C:\vb4\EDM Windows\Install ActiveSync.exe=$(AppPath)
+C:\vb4\EDM Windows\IMPORTANT Read Me.txt=$(AppPath)
+C:\vb4\EDM Windows\RemoteCE.tlb=$(WinSysPath)
+C:\vb4\EDM Windows\SAPI.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\vb4\EDM Windows\ceutil.dll=$(AppPath)
+C:\WINNT\SYSTEM32\rapi.dll=$(AppPath)
+C:\Program Files\Common Files\Microsoft Shared\Speech\sapi.dll=$(WinSysPath)
+C:\vb4\EDM Windows\edmwin.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+C:\Program Files\Common Files\System\ADO\msjro.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ADO\msado27.tlb=$(WinSysPath)
+C:\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+C:\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\IMPORTANT Read Me.txt=$(AppPath)
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+E:\WINNT\TEMPWIN\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+E:\WINNT\TEMPWIN\system32\msjet40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjter40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjint40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\vbajet32.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\expsrv.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\mswstr10.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\mswdat10.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrd2x40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrd3x40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrepl40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjtes40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\VB5DB.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSBIND.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSSTDFMT.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\RemoteCE.tlb=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\dbgrid32.ocx=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\GRID32.OCX=$(AppPath)
+E:\WINNT\TEMPWIN\system32\Comdlg32.ocx=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMM32.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\TABCTL32.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSADODC.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSFLXGRD.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMCTL.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSDATGRD.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMCT2.OCX=$(WinSysPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+E:\WINNT\TEMPWIN\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+F:\Paleo\Programs\edmwin.exe=$(AppPath)
+C:\Windows\System32\Speech\Common\sapi.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado28.tlb=$(WinSysPath)
+F:\Documents\vb4\NewPlot\GRID32.OCX=$(AppPath)
+
+[Package|EDM Windows Setup|Configure Shared Files]
+Applicable=Yes
+C:\vb4\EDM Windows\Windows EDM.exe=No
+C:\WINNT\SYSTEM32\GRID32.OCX=No
+C:\Paleo\Programs\Windows EDM.exe=No
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=No
+C:\WINDOWS\SYSTEM32\GRID32.OCX=No
+C:\WINDOWS\SYSTEM32\rapi.dll=No
+C:\WINDOWS\SYSTEM32\ceutil.dll=No
+C:\vb4\EDM Windows\Install ActiveSync.exe=No
+C:\vb4\EDM Windows\IMPORTANT Read Me.txt=No
+C:\vb4\EDM Windows\ceutil.dll=No
+C:\WINNT\SYSTEM32\rapi.dll=No
+C:\vb4\EDM Windows\edmwin.exe=No
+C:\vb4\EDM ADO Windows\edmwin.exe=No
+C:\vb4\EDM ADO Windows\adofiltr.dll=No
+C:\vb4\EDM ADO Windows\rapi.dll=No
+C:\vb4\EDM ADO Windows\ceutil.dll=No
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+C:\vb4\EDM ADO Windows\IMPORTANT Read Me.txt=No
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=No
+C:\Documents\vb4\EDM ADO Windows\edmwin.exe=No
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=No
+E:\WINNT\TEMPWIN\system32\GRID32.OCX=No
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=No
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=No
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+D:\Documents\vb4\EDM ADO Windows\edmwin.exe=No
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=No
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=No
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+F:\Paleo\Programs\edmwin.exe=No
+F:\Documents\vb4\NewPlot\GRID32.OCX=No
+
+[Package|EDM Windows Setup|Distribution]
+Type=single
+Size=
+Title=EDM Windows
+
+[Package|EDM Windows Setup|IconGroups]
+Group0=edm windows
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|EDM Windows Setup|edm windows]
+Icon1="Windows EDM.exe"
+Title1=edm windows
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|EDM Windows Setup|Package]
+PackageFolder=f:\Documents\vb4\EDM ADO Windows\OSA Stuff\New Compile
+ProjectFolder=F:\Documents\vb4\EDM ADO Windows
+ServerSideCab=
+File1=f:\Documents\vb4\EDM ADO Windows\OSA Stuff\New Compile\setup.exe
+File2=f:\Documents\vb4\EDM ADO Windows\OSA Stuff\New Compile\Setup.Lst
+File3=f:\Documents\vb4\EDM ADO Windows\OSA Stuff\New Compile\edmwin.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+
+[Package|BlackJack Setup|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=f:\Documents\vb4\BlackJack & Poker
+
+[Package|BlackJack Setup|Configure DAO ISAMs]
+Applicable=No
+
+[Package|BlackJack Setup|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|BlackJack Setup|Files Found]
+
+[Package|BlackJack Setup|Files Released]
+important read me.txt=
+Install ActiveSync.exe=
+ceutil.dll=
+rapi.dll=
+
+[Package|BlackJack Setup|Missing Dependency Information]
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=
+C:\WINNT\SYSTEM32\dbgrid32.ocx=
+C:\WINDOWS\SYSTEM32\RemoteCE.tlb=
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=
+C:\WINDOWS\SYSTEM32\rapi.dll=
+C:\WINDOWS\SYSTEM32\ceutil.dll=
+C:\WINDOWS\SYSTEM32\SAPI.DLL=
+C:\vb4\EDM Windows\rapi.dll=
+E:\WINNT\system32\ceutil.dll=
+E:\WINNT\system32\dbgrid32.ocx=
+E:\WINNT\system32\SAPI.DLL=
+E:\WINNT\system32\RemoteCE.tlb=
+E:\Program Files\Common Files\System\ado\msado25.tlb=
+C:\vb4\EDM Windows\adofiltr.dll=
+C:\vb4\EDM Windows\Install ActiveSync.exe=
+C:\vb4\EDM Windows\ceutil.dll=
+C:\vb4\EDM Windows\SAPI.DLL=
+C:\vb4\EDM Windows\RemoteCE.tlb=
+C:\WINNT\SYSTEM32\rapi.dll=
+C:\Program Files\Common Files\Microsoft Shared\Speech\sapi.dll=
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=
+C:\Program Files\Common Files\System\ADO\msado27.tlb=
+C:\Program Files\Common Files\System\ADO\msjro.dll=
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=
+E:\WINNT\TEMPWIN\system32\SAPI.DLL=
+E:\WINNT\TEMPWIN\system32\RemoteCE.tlb=
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=
+C:\Program Files\Common Files\System\ado\msado28.tlb=
+C:\Windows\System32\Speech\Common\sapi.dll=
+
+[Package|BlackJack Setup|Out-of-Date Dependency Information]
+
+[Package|BlackJack Setup|Files Added]
+F:\Documents\vb4\BlackJack & Poker\Cards\2C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\2D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\2H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\2S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\3C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\3D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\3H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\3S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\4C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\4D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\4H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\4S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\5C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\5D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\5H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\5S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\6C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\6D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\6H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\6S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\7C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\7D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\7H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\7S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\8C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\8D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\8H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\8S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\9C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\9D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\9H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\9S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\10C.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\10D.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\10H.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\10S.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\AC.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\AD.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\AH.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\AS.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\Back.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\JC.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\JD.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\JH.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\JS.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\KC.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\KD.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\KH.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\KS.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\QC.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\QD.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\QH.bmp=
+F:\Documents\vb4\BlackJack & Poker\Cards\QS.bmp=
+
+[Package|BlackJack Setup|Files Removed]
+f:\paleo\programs\edmwin.exe=
+
+[Package|BlackJack Setup|Files In Project]
+C:\WINDOWS\SYSTEM32\msvbvm60.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINDOWS\SYSTEM32\msjet40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjter40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjint40.dll=Yes
+C:\WINDOWS\SYSTEM32\vbajet32.dll=Yes
+C:\WINDOWS\SYSTEM32\expsrv.dll=Yes
+C:\WINDOWS\SYSTEM32\mswstr10.dll=Yes
+C:\WINDOWS\SYSTEM32\mswdat10.dll=Yes
+C:\WINDOWS\SYSTEM32\msrd2x40.dll=Yes
+C:\WINDOWS\SYSTEM32\msrd3x40.dll=Yes
+C:\WINDOWS\SYSTEM32\msrepl40.dll=Yes
+C:\WINDOWS\SYSTEM32\msjtes40.dll=Yes
+C:\WINDOWS\SYSTEM32\VB5DB.DLL=Yes
+C:\WINDOWS\SYSTEM32\MSBIND.DLL=Yes
+C:\WINDOWS\SYSTEM32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\SYSTEM32\DBGRID32.OCX=Yes
+C:\WINDOWS\SYSTEM32\COMDLG32.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMM32.OCX=Yes
+C:\WINDOWS\SYSTEM32\TABCTL32.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSADODC.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSDATGRD.OCX=Yes
+C:\WINDOWS\SYSTEM32\MSCOMCT2.OCX=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+F:\Paleo\Programs\edmwin.exe=No
+C:\Windows\System32\Speech\Common\sapi.dll=Yes
+C:\Program Files\Common Files\System\ado\msado28.tlb=Yes
+F:\Documents\vb4\NewPlot\GRID32.OCX=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\2C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\2D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\2H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\2S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\3C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\3D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\3H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\3S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\4C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\4D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\4H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\4S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\5C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\5D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\5H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\5S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\6C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\6D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\6H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\6S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\7C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\7D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\7H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\7S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\8C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\8D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\8H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\8S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\9C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\9D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\9H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\9S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\10C.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\10D.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\10H.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\10S.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\AC.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\AD.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\AH.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\AS.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\Back.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\JC.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\JD.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\JH.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\JS.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\KC.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\KD.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\KH.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\KS.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\QC.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\QD.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\QH.bmp=Yes
+F:\Documents\vb4\BlackJack & Poker\Cards\QS.bmp=Yes
+
+[Package|BlackJack Setup|Configure Registry Files]
+Applicable=No
+
+[Package|BlackJack Setup|Configure Remote Servers]
+Applicable=No
+
+[Package|BlackJack Setup|Install Locations]
+C:\vb4\EDM Windows\Windows EDM.exe=$(AppPath)
+C:\WINNT\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINNT\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINNT\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\dbgrid32.ocx=$(WinSysPath)
+C:\WINNT\SYSTEM32\GRID32.OCX=$(AppPath)
+C:\WINNT\SYSTEM32\COMDLG32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\Program Files\Common Files\SYSTEM\ADO\msado25.tlb=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINNT\SYSTEM32\MSCOMCTL.OCX=$(WinSysPath)
+C:\Paleo\Programs\Windows EDM.exe=$(AppPath)
+C:\WINDOWS\SYSTEM32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=$(AppPath)
+C:\WINDOWS\SYSTEM32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSBIND.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\RemoteCE.tlb=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\dbgrid32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\GRID32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\TABCTL32.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSADODC.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSDATGRD.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM32\rapi.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\ceutil.dll=$(WinSysPath)
+C:\WINDOWS\SYSTEM32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\vb4\EDM Windows\adofiltr.dll=$(WinSysPath)
+E:\Program Files\Common Files\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+E:\WINNT\system32\msjet40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjter40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjint40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\mswstr10.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\mswdat10.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrd2x40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrd3x40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msrepl40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\msjtes40.dll=$(WinSysPathSysFile)
+E:\WINNT\system32\VB5DB.DLL=$(WinSysPath)
+E:\Program Files\Common Files\System\ado\msado25.tlb=$(WinSysPath)
+E:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+E:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+E:\WINNT\system32\RemoteCE.tlb=$(WinSysPath)
+E:\WINNT\system32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\system32\dbgrid32.ocx=$(WinSysPath)
+E:\WINNT\system32\GRID32.OCX=$(WinSysPath)
+E:\WINNT\system32\Comdlg32.ocx=$(WinSysPath)
+E:\WINNT\system32\MSCOMM32.OCX=$(WinSysPath)
+E:\WINNT\system32\TABCTL32.OCX=$(WinSysPath)
+E:\WINNT\system32\MSADODC.OCX=$(WinSysPath)
+E:\WINNT\system32\MSFLXGRD.OCX=$(WinSysPath)
+E:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+E:\WINNT\system32\MSDATGRD.OCX=$(WinSysPath)
+E:\WINNT\system32\MSCOMCT2.OCX=$(WinSysPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+E:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\vb4\EDM Windows\rapi.dll=$(WinSysPath)
+E:\WINNT\system32\ceutil.dll=$(WinSysPath)
+C:\vb4\EDM Windows\Install ActiveSync.exe=$(AppPath)
+C:\vb4\EDM Windows\IMPORTANT Read Me.txt=$(AppPath)
+C:\vb4\EDM Windows\RemoteCE.tlb=$(WinSysPath)
+C:\vb4\EDM Windows\SAPI.DLL=$(WinSysPath)
+C:\WINNT\SYSTEM32\MSCOMCT2.OCX=$(WinSysPath)
+C:\vb4\EDM Windows\ceutil.dll=$(AppPath)
+C:\WINNT\SYSTEM32\rapi.dll=$(AppPath)
+C:\Program Files\Common Files\Microsoft Shared\Speech\sapi.dll=$(WinSysPath)
+C:\vb4\EDM Windows\edmwin.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+C:\Program Files\Common Files\System\ADO\msjro.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ADO\msado27.tlb=$(WinSysPath)
+C:\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+C:\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+C:\vb4\EDM ADO Windows\IMPORTANT Read Me.txt=$(AppPath)
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+E:\WINNT\TEMPWIN\system32\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+E:\WINNT\TEMPWIN\system32\msjet40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjter40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjint40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\vbajet32.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\expsrv.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\mswstr10.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\mswdat10.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrd2x40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrd3x40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msrepl40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\msjtes40.dll=$(WinSysPathSysFile)
+E:\WINNT\TEMPWIN\system32\VB5DB.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSBIND.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSSTDFMT.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\RemoteCE.tlb=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\SAPI.DLL=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\dbgrid32.ocx=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\GRID32.OCX=$(AppPath)
+E:\WINNT\TEMPWIN\system32\Comdlg32.ocx=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMM32.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\TABCTL32.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSADODC.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSFLXGRD.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMCTL.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSDATGRD.OCX=$(WinSysPath)
+E:\WINNT\TEMPWIN\system32\MSCOMCT2.OCX=$(WinSysPath)
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+E:\WINNT\TEMPWIN\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\edmwin.exe=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=$(AppPath)
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=$(AppPath)
+F:\Paleo\Programs\edmwin.exe=$(AppPath)
+C:\Windows\System32\Speech\Common\sapi.dll=$(WinSysPath)
+C:\Program Files\Common Files\System\ado\msado28.tlb=$(WinSysPath)
+F:\Documents\vb4\NewPlot\GRID32.OCX=$(AppPath)
+F:\Documents\vb4\BlackJack & Poker\Cards\2C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\2D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\2H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\2S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\3C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\3D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\3H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\3S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\4C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\4D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\4H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\4S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\5C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\5D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\5H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\5S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\6C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\6D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\6H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\6S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\7C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\7D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\7H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\7S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\8C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\8D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\8H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\8S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\9C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\9D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\9H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\9S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\10C.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\10D.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\10H.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\10S.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\AC.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\AD.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\AH.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\AS.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\Back.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\JC.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\JD.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\JH.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\JS.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\KC.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\KD.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\KH.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\KS.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\QC.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\QD.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\QH.bmp=$(AppPath)\cards
+F:\Documents\vb4\BlackJack & Poker\Cards\QS.bmp=$(AppPath)\cards
+
+[Package|BlackJack Setup|Configure Shared Files]
+Applicable=Yes
+C:\vb4\EDM Windows\Windows EDM.exe=No
+C:\WINNT\SYSTEM32\GRID32.OCX=No
+C:\Paleo\Programs\Windows EDM.exe=No
+C:\Program Files\Microsoft ActiveSync\adofiltr.dll=No
+C:\WINDOWS\SYSTEM32\GRID32.OCX=No
+C:\WINDOWS\SYSTEM32\rapi.dll=No
+C:\WINDOWS\SYSTEM32\ceutil.dll=No
+C:\vb4\EDM Windows\Install ActiveSync.exe=No
+C:\vb4\EDM Windows\IMPORTANT Read Me.txt=No
+C:\vb4\EDM Windows\ceutil.dll=No
+C:\WINNT\SYSTEM32\rapi.dll=No
+C:\vb4\EDM Windows\edmwin.exe=No
+C:\vb4\EDM ADO Windows\edmwin.exe=No
+C:\vb4\EDM ADO Windows\adofiltr.dll=No
+C:\vb4\EDM ADO Windows\rapi.dll=No
+C:\vb4\EDM ADO Windows\ceutil.dll=No
+C:\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+C:\vb4\EDM ADO Windows\IMPORTANT Read Me.txt=No
+C:\WINDOWS\SYSTEM32\Install ActiveSync.exe=No
+C:\Documents\vb4\EDM ADO Windows\edmwin.exe=No
+C:\Documents\vb4\EDM ADO Windows\adofiltr.dll=No
+E:\WINNT\TEMPWIN\system32\GRID32.OCX=No
+E:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+C:\Documents\vb4\EDM ADO Windows\rapi.dll=No
+C:\Documents\vb4\EDM ADO Windows\ceutil.dll=No
+C:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+D:\Documents\vb4\EDM ADO Windows\edmwin.exe=No
+D:\Documents\vb4\EDM ADO Windows\adofiltr.dll=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Documents\vb4\EDM ADO Windows\rapi.dll=No
+D:\Documents\vb4\EDM ADO Windows\ceutil.dll=No
+D:\Documents\vb4\EDM ADO Windows\Install ActiveSync.exe=No
+F:\Paleo\Programs\edmwin.exe=No
+F:\Documents\vb4\NewPlot\GRID32.OCX=No
+F:\Documents\vb4\BlackJack & Poker\Cards\2C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\2D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\2H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\2S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\3C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\3D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\3H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\3S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\4C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\4D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\4H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\4S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\5C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\5D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\5H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\5S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\6C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\6D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\6H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\6S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\7C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\7D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\7H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\7S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\8C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\8D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\8H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\8S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\9C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\9D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\9H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\9S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\10C.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\10D.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\10H.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\10S.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\AC.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\AD.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\AH.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\AS.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\Back.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\JC.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\JD.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\JH.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\JS.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\KC.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\KD.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\KH.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\KS.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\QC.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\QD.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\QH.bmp=No
+F:\Documents\vb4\BlackJack & Poker\Cards\QS.bmp=No
+
+[Package|BlackJack Setup|Distribution]
+Type=single
+Size=
+Title=EDM Windows
+
+[Package|BlackJack Setup|IconGroups]
+Group0=edm windows
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|BlackJack Setup|edm windows]
+Icon1="Windows EDM.exe"
+Title1=edm windows
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|BlackJack Setup|Package]
+PackageFolder=f:\Documents\vb4\BlackJack & Poker
+ProjectFolder=F:\Documents\vb4\EDM ADO Windows
+ServerSideCab=
+File1=f:\Documents\vb4\BlackJack & Poker\setup.exe
+File2=f:\Documents\vb4\BlackJack & Poker\Setup.Lst
+File3=f:\Documents\vb4\BlackJack & Poker\edmwin.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

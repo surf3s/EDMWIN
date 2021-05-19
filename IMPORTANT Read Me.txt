@@ -1,0 +1,9 @@
+To install EDM Windows, you must do two installations, since the program requires that Microsoft Activesync (Version 3.7.1, which is included in this setup).
+
+1.  First click on the file Setup.exe, which will install the program EDM Windows itself.
+
+2.  After the program installation is complete, go to the folder where you installed it (e.g. c:\program files\edm windows) and click on the file "Install Activesync.exe".  This will install Microsoft ActiveSync v 3.7, which is a necessary component for both NewPlot and EDM Windows (enabling it to work with the PocketPC).  If you already have Activesync installed on your machine, this step might not be necessary.  If, however, the program gives you an error message saying that the "RAPI.dll cannot be found, then you will have to install this version.  Note:  Even if you do not use a pocket pc, activesync must nonetheless be installed for the other programs to work.
+
+
+Notice to Non-US people:
+For some bizarre reason, SQL is unable to recognize non-US keyboards, which means that decimals may be represented as commas.  If you have problems with the program, try setting your keyboard to be US, which will overcome this problem.

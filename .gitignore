@@ -332,3 +332,31 @@ ASALocalRun/
 
 # Local History for Visual Studio
 .localhistory/
+
+*.dll
+*.mdb
+*.xlsx
+*.xls
+*.exe
+*.zip
+*.cab
+*.ocx
+*.ddf
+*.bat
+*.ldb
+*.pdf
+*.oca
+desktop.ini
+
+EDM Windows Setup/
+debug program/
+LabView/
+OSA Stuff/
+Package/
+Visa/
+USB Serial Drivers/
+Windows 10/
+TriLat/
+USB2SerialDrivers/
+Reference Docs/
+

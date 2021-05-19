@@ -1,0 +1,10 @@
+This is how to load grid32.exe for grid control (frmButtons.frm)
+
+
+run cmd from "run programs" on start menu
+use cd\ to change to root directory
+use cd dropbox, cd vb, cd edm ado windows to go to folder for edm windows
+regsvr32.exe grid32.ocx
+reboot
+
+
