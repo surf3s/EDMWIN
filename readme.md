@@ -1,0 +1,10 @@
+**EDMWIN**
+
+This repository contains the source code and some example configuration files for the program *edmwin.exe*.  This program was written many years ago by Harold Dibble with contributions from Shannon P. McPherron.  We wrote it to allow us to connect Windows laptops to total stations to record location data on our excavations.  The setup program and executable can be found at www.oldstoneage.com/software.
+
+The code is written in Visual Basic 6.0.  I don't believe it requires any special libraries.  Many models of Wild, Leica, Sokkia and Topcon total stations are supported.  Recently code was added my McPherron to support newer Leica models (using the GeoCOM protocol).
+
+There is no manual for EDMWIN.  Instead I refer you to the configuration files, and please feel free to write me if you have specific questions or encounter bugs.
+
+Finally, I would like to note that this source code was not previously published.  After Harold Dibble died, I took over the maintenance of this code, and I alone have decided to publish it here.  I do not know if Harold would approve.  On the one hand, he always gave away his programs for free, and together we published all of our source once code back in 1995.  On the other hand, I know that he, like me, wanted the code to be presentable before it was shared.  The problem with this program, however, is that a lot of people depend on it and it (mostly) works.  As a result, we have been extremely conservative and cautious about making changes over the years.  There are lots of things that are done rather poorly here and that we would do very differently today.  Still, this program is an important part of Harold's programming legacy.  It made it possible for us (and others) to excavate more quickly and collect more precise data at any number of sites over a period of more than twenty years.  I have lightly edited the code here, and I will continue to maintain it in small ways as long as it remains useful to researchers.  Otherwise, I am putting my efforts into a new cross-platform version of the program.
+
