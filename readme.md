@@ -1,6 +1,6 @@
 **EDMWIN**
 
-This repository contains the source code and some example configuration files for the program *edmwin.exe*.  This program was written many years ago by Harold Dibble with contributions from Shannon P. McPherron.  We wrote it to allow us to connect Windows laptops to total stations to record location data on our excavations.  The setup program and executable can be found at www.oldstoneage.com/software.
+This repository contains the source code and some example configuration files for the program *edmwin.exe*.  This program was written many years ago by Harold Dibble with contributions from Shannon P. McPherron.  We wrote it to allow us to connect Windows laptops to total stations to record location data on our excavations.  The setup program and executable can be found at the [OldStoneAge web site](https://www.oldstoneage.com/osa/tech/index/).
 
 The code is written in Visual Basic 6.0.  I don't believe it requires any special libraries.  Many models of Wild, Leica, Sokkia and Topcon total stations are supported.  Recently code was added my McPherron to support newer Leica models (using the GeoCOM protocol).
 
