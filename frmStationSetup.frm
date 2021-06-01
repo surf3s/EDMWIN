@@ -3,116 +3,116 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStationSetup 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Station Setup"
-   ClientHeight    =   6795
+   ClientHeight    =   7725
    ClientLeft      =   120
    ClientTop       =   360
-   ClientWidth     =   8970
+   ClientWidth     =   9075
    ControlBox      =   0   'False
    Icon            =   "frmStationSetup.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   6795
-   ScaleWidth      =   8970
+   ScaleHeight     =   7725
+   ScaleWidth      =   9075
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.Frame Frame2 
       Caption         =   "Current Station"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   9.75
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   3135
+      Height          =   3495
       Left            =   120
       TabIndex        =   30
-      Top             =   2955
+      Top             =   3720
       Width           =   2595
       Begin VB.ComboBox Station 
          Height          =   315
          Index           =   0
-         Left            =   930
+         Left            =   210
          TabIndex        =   38
          Top             =   270
-         Width           =   1488
+         Width           =   2205
       End
       Begin VB.TextBox txtX 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
          Height          =   288
          Index           =   0
-         Left            =   1605
+         Left            =   1365
          Locked          =   -1  'True
          TabIndex        =   37
          TabStop         =   0   'False
-         Top             =   630
-         Width           =   816
+         Top             =   720
+         Width           =   1050
       End
       Begin VB.TextBox txtY 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
          Height          =   288
          Index           =   0
-         Left            =   1605
+         Left            =   1365
          Locked          =   -1  'True
          TabIndex        =   36
          TabStop         =   0   'False
-         Top             =   930
-         Width           =   816
+         Top             =   1080
+         Width           =   1050
       End
       Begin VB.TextBox txtZ 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
          Height          =   288
          Index           =   0
-         Left            =   1605
+         Left            =   1365
          Locked          =   -1  'True
          TabIndex        =   35
          TabStop         =   0   'False
-         Top             =   1230
-         Width           =   816
+         Top             =   1440
+         Width           =   1050
       End
       Begin VB.TextBox txtStationHeight 
          Alignment       =   1  'Right Justify
          Height          =   288
-         Left            =   1605
+         Left            =   1485
          TabIndex        =   34
          TabStop         =   0   'False
          Text            =   "0"
-         Top             =   1590
-         Width           =   816
+         Top             =   1830
+         Width           =   930
       End
       Begin VB.TextBox txtReferenceAngle 
          Alignment       =   1  'Right Justify
          Height          =   288
-         Left            =   1605
+         Left            =   1485
          TabIndex        =   33
          TabStop         =   0   'False
-         Top             =   1890
-         Width           =   816
+         Top             =   2160
+         Width           =   930
       End
       Begin VB.CommandButton cmdHangle 
          Caption         =   "Set Horizontal Angle"
          Height          =   330
-         Left            =   600
+         Left            =   120
          TabIndex        =   32
-         Top             =   2280
+         Top             =   2640
          Visible         =   0   'False
-         Width           =   1905
+         Width           =   2385
       End
       Begin VB.CommandButton calccomp 
          Caption         =   "Flip 180 Degrees"
          Height          =   330
-         Left            =   600
+         Left            =   120
          TabIndex        =   31
-         Top             =   2640
+         Top             =   3000
          Visible         =   0   'False
-         Width           =   1905
+         Width           =   2385
       End
       Begin VB.Label lblX 
          Alignment       =   1  'Right Justify
@@ -121,9 +121,9 @@ Begin VB.Form frmStationSetup
          Caption         =   "X :"
          Height          =   195
          Index           =   0
-         Left            =   1320
+         Left            =   1080
          TabIndex        =   43
-         Top             =   630
+         Top             =   720
          Width           =   195
       End
       Begin VB.Label label1 
@@ -133,9 +133,9 @@ Begin VB.Form frmStationSetup
          Caption         =   "Y :"
          Height          =   195
          Index           =   0
-         Left            =   1320
+         Left            =   1080
          TabIndex        =   42
-         Top             =   960
+         Top             =   1080
          Width           =   195
       End
       Begin VB.Label Label2 
@@ -145,9 +145,9 @@ Begin VB.Form frmStationSetup
          Caption         =   "Z :"
          Height          =   195
          Index           =   0
-         Left            =   1320
+         Left            =   1080
          TabIndex        =   41
-         Top             =   1260
+         Top             =   1440
          Width           =   195
       End
       Begin VB.Label Label3 
@@ -158,7 +158,7 @@ Begin VB.Form frmStationSetup
          Height          =   195
          Left            =   120
          TabIndex        =   40
-         Top             =   1590
+         Top             =   1830
          Width           =   1335
       End
       Begin VB.Label Label4 
@@ -167,9 +167,9 @@ Begin VB.Form frmStationSetup
          BackStyle       =   0  'Transparent
          Caption         =   "Horizontal Angle :"
          Height          =   195
-         Left            =   240
+         Left            =   120
          TabIndex        =   39
-         Top             =   1935
+         Top             =   2160
          Width           =   1245
       End
    End
@@ -177,19 +177,19 @@ Begin VB.Form frmStationSetup
       Caption         =   "Accept"
       Enabled         =   0   'False
       Height          =   500
-      Left            =   3000
+      Left            =   2880
       TabIndex        =   28
-      Top             =   6180
+      Top             =   7080
       Width           =   1695
    End
    Begin VB.CommandButton Command1 
       Cancel          =   -1  'True
       Caption         =   "Cancel"
       Height          =   500
-      Left            =   4920
+      Left            =   4800
       TabIndex        =   27
       TabStop         =   0   'False
-      Top             =   6180
+      Top             =   7080
       Width           =   1695
    End
    Begin VB.ComboBox txtPrism 
@@ -198,8 +198,8 @@ Begin VB.Form frmStationSetup
       Sorted          =   -1  'True
       TabIndex        =   26
       Text            =   "Select Prism"
-      Top             =   2505
-      Width           =   1320
+      Top             =   3345
+      Width           =   2385
    End
    Begin VB.Frame frmCoordinates 
       Caption         =   "Station Check"
@@ -213,9 +213,9 @@ Begin VB.Form frmStationSetup
          Strikethrough   =   0   'False
       EndProperty
       Height          =   1335
-      Left            =   2790
+      Left            =   2880
       TabIndex        =   24
-      Top             =   4755
+      Top             =   5640
       Visible         =   0   'False
       Width           =   5655
       Begin MSFlexGridLib.MSFlexGrid Grid 
@@ -269,9 +269,9 @@ Begin VB.Form frmStationSetup
       Caption         =   "Record Datum"
       Height          =   855
       Index           =   0
-      Left            =   4470
+      Left            =   4680
       TabIndex        =   22
-      Top             =   3675
+      Top             =   4560
       Visible         =   0   'False
       Width           =   975
    End
@@ -286,19 +286,19 @@ Begin VB.Form frmStationSetup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   2715
+      Height          =   3555
       Index           =   2
       Left            =   120
       TabIndex        =   18
       Top             =   120
-      Width           =   5700
+      Width           =   5780
       Begin VB.OptionButton SetUpTypes 
          Caption         =   $"frmStationSetup.frx":000C
          Height          =   675
          Index           =   3
          Left            =   120
          TabIndex        =   20
-         Top             =   1965
+         Top             =   2640
          Width           =   5355
       End
       Begin VB.OptionButton SetUpTypes 
@@ -307,7 +307,7 @@ Begin VB.Form frmStationSetup
          Index           =   1
          Left            =   120
          TabIndex        =   17
-         Top             =   720
+         Top             =   960
          Width           =   5295
       End
       Begin VB.OptionButton SetUpTypes 
@@ -316,7 +316,7 @@ Begin VB.Form frmStationSetup
          Index           =   2
          Left            =   120
          TabIndex        =   19
-         Top             =   1335
+         Top             =   1800
          Width           =   5340
       End
       Begin VB.OptionButton SetUpTypes 
@@ -340,94 +340,94 @@ Begin VB.Form frmStationSetup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1680
+      Height          =   1905
       Index           =   1
-      Left            =   5670
+      Left            =   6000
       TabIndex        =   8
-      Top             =   2955
+      Top             =   3720
       Visible         =   0   'False
-      Width           =   2745
+      Width           =   2985
       Begin VB.CommandButton cmdRecord 
          Caption         =   "Record Datum 2"
          Default         =   -1  'True
          Height          =   855
          Index           =   1
-         Left            =   1680
+         Left            =   1800
          TabIndex        =   44
-         Top             =   720
+         Top             =   840
          Visible         =   0   'False
          Width           =   975
       End
       Begin VB.TextBox txtZ 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   228
+         Height          =   288
          Index           =   2
-         Left            =   645
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   12
          TabStop         =   0   'False
-         Top             =   1272
-         Width           =   816
+         Top             =   1440
+         Width           =   1050
       End
       Begin VB.TextBox txtY 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   228
+         Height          =   288
          Index           =   2
-         Left            =   645
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   11
          TabStop         =   0   'False
-         Top             =   984
-         Width           =   816
+         Top             =   1080
+         Width           =   1050
       End
       Begin VB.TextBox txtX 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   240
+         Height          =   288
          Index           =   2
-         Left            =   645
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   10
          TabStop         =   0   'False
-         Top             =   684
-         Width           =   804
+         Top             =   720
+         Width           =   1050
       End
       Begin VB.ComboBox Station 
          Height          =   315
          Index           =   2
          Left            =   120
          TabIndex        =   9
-         Top             =   324
-         Width           =   1345
+         Top             =   336
+         Width           =   2205
       End
       Begin VB.Label Label2 
          Alignment       =   1  'Right Justify
-         Caption         =   "Z"
+         Caption         =   "Z :"
          Height          =   255
          Index           =   2
-         Left            =   375
+         Left            =   135
          TabIndex        =   15
-         Top             =   1320
+         Top             =   1440
          Width           =   225
       End
       Begin VB.Label label1 
          Alignment       =   1  'Right Justify
-         Caption         =   "Y"
+         Caption         =   "Y :"
          Height          =   255
          Index           =   2
-         Left            =   375
+         Left            =   135
          TabIndex        =   14
-         Top             =   1020
+         Top             =   1080
          Width           =   225
       End
       Begin VB.Label lblX 
          Alignment       =   1  'Right Justify
-         Caption         =   "X"
+         Caption         =   "X :"
          Height          =   255
          Index           =   2
-         Left            =   375
+         Left            =   135
          TabIndex        =   13
          Top             =   750
          Width           =   225
@@ -444,89 +444,89 @@ Begin VB.Form frmStationSetup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1680
+      Height          =   1905
       Index           =   0
-      Left            =   2790
+      Left            =   2880
       TabIndex        =   0
-      Top             =   2955
+      Top             =   3720
       Visible         =   0   'False
-      Width           =   2775
+      Width           =   3015
       Begin VB.ComboBox Station 
          Height          =   315
          Index           =   1
          Left            =   168
          TabIndex        =   7
          Top             =   336
-         Width           =   1344
+         Width           =   2205
       End
       Begin VB.TextBox txtX 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   240
+         Height          =   288
          Index           =   1
-         Left            =   696
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   6
          TabStop         =   0   'False
-         Top             =   696
-         Width           =   800
+         Top             =   720
+         Width           =   1050
       End
       Begin VB.TextBox txtY 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   228
+         Height          =   288
          Index           =   1
-         Left            =   696
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   5
          TabStop         =   0   'False
-         Top             =   984
-         Width           =   816
+         Top             =   1080
+         Width           =   1050
       End
       Begin VB.TextBox txtZ 
          Alignment       =   1  'Right Justify
          BackColor       =   &H00E0E0E0&
-         Height          =   228
+         Height          =   288
          Index           =   1
-         Left            =   696
+         Left            =   480
          Locked          =   -1  'True
          TabIndex        =   4
          TabStop         =   0   'False
-         Top             =   1272
-         Width           =   816
+         Top             =   1440
+         Width           =   1050
       End
       Begin VB.Label lblX 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
-         Caption         =   "X"
-         Height          =   192
+         Caption         =   "X :"
+         Height          =   195
          Index           =   1
-         Left            =   528
+         Left            =   180
          TabIndex        =   3
          Top             =   720
-         Width           =   96
+         Width           =   195
       End
       Begin VB.Label label1 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
-         Caption         =   "Y"
-         Height          =   192
+         Caption         =   "Y :"
+         Height          =   195
          Index           =   1
-         Left            =   516
+         Left            =   180
          TabIndex        =   2
-         Top             =   1020
-         Width           =   108
+         Top             =   1080
+         Width           =   195
       End
       Begin VB.Label Label2 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
-         Caption         =   "Z"
-         Height          =   192
+         Caption         =   "Z :"
+         Height          =   195
          Index           =   1
-         Left            =   528
+         Left            =   180
          TabIndex        =   1
-         Top             =   1320
-         Width           =   96
+         Top             =   1440
+         Width           =   195
       End
    End
    Begin VB.Label Label7 
@@ -543,11 +543,11 @@ Begin VB.Form frmStationSetup
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   1035
-      Left            =   3180
+      Left            =   3000
       TabIndex        =   47
-      Top             =   4950
+      Top             =   5760
       Visible         =   0   'False
-      Width           =   4665
+      Width           =   5505
    End
    Begin VB.Label lblPrism 
       Alignment       =   1  'Right Justify
@@ -557,7 +557,7 @@ Begin VB.Form frmStationSetup
       Height          =   195
       Left            =   5985
       TabIndex        =   23
-      Top             =   2595
+      Top             =   3435
       Width           =   510
    End
    Begin VB.Label setuphelp 
@@ -621,7 +621,7 @@ End Sub
 
 Private Sub cmdAcceptStation_Click()
 
-If txtStationHeight = "" And SetUpTypes(0) Then
+If txtstationheight = "" And SetUpTypes(0) Then
     MsgBox ("Warning: You have not included a station height.")
 '     Exit Sub
 End If
@@ -642,7 +642,7 @@ If SetUpTypes(2) Then
     ''txtX(0) = Format(CDbl(txtX(1)) - edmshot.X, "######0.000")
     ''txtY(0) = Format(CDbl(txtY(1)) - edmshot.y, "######0.000")
     txtZ(0) = Format(CDbl(txtZ(1)) - (edmshot.z - edmshot.poleh), "######0.000")
-    stationheight = CSng(txtStationHeight.Text)
+    stationheight = CSng(txtstationheight.Text)
 Else
     stationheight = 0
 End If
@@ -650,9 +650,9 @@ CurrentStation.X = txtX(0)
 CurrentStation.y = txtY(0)
 
 If SetUpTypes(0) Then
-    If txtStationHeight.Text <> "" Then
-        CurrentStation.z = CSng(txtZ(0)) + CSng(txtStationHeight.Text)
-        stationheight = CSng(txtStationHeight.Text)
+    If txtstationheight.Text <> "" Then
+        CurrentStation.z = CSng(txtZ(0)) + CSng(txtstationheight.Text)
+        stationheight = CSng(txtstationheight.Text)
     Else
         CurrentStation.z = CSng(txtZ(0))
         stationheight = 0
@@ -765,7 +765,7 @@ Dim DefinedAngle As Double
 
 cmdRecord(Index).Enabled = False
 
-If Not SetUpTypes(0) And frmMain.txtPrism.ListCount = 0 Then
+If Not SetUpTypes(0) And frmMain.txtprism.ListCount = 0 Then
     MsgBox ("No prisms defined - cannot initialize station")
     cmdRecord(Index).Enabled = True
     Exit Sub
@@ -1012,7 +1012,7 @@ Grid.TextMatrix(2, 1) = Format(temp_stationy, "########0.000")
 Grid.TextMatrix(2, 2) = txtY(0)
 Grid.TextMatrix(1, 3) = Format(txtX(0) - temp_stationx, "#######0.000")
 Grid.TextMatrix(2, 3) = Format(txtY(0) - temp_stationy, "#######0.000")
-txtStationHeight = Format(txtZ(0) - temp_stationz, "#####0.000")
+txtstationheight = Format(txtZ(0) - temp_stationz, "#####0.000")
 frmCoordinates.Visible = True
 cmdAcceptStation.Visible = True
 cmdAcceptStation.Default = True
@@ -1149,12 +1149,12 @@ Select Case Index
         If Station(0) <> "Select Datum" Then
             cmdAcceptStation.Enabled = True
         End If
-        txtStationHeight.Locked = False
+        txtstationheight.Locked = False
         txtReferenceAngle.Enabled = True
-        txtStationHeight.BackColor = &H80000005
+        txtstationheight.BackColor = &H80000005
         txtReferenceAngle.BackColor = &H80000005
         lblPrism.Visible = False
-        txtPrism.Visible = False
+        txtprism.Visible = False
     Case 1
         Station(0) = "Unknown"
         Station(0).Locked = True
@@ -1164,22 +1164,22 @@ Select Case Index
         txtX(0) = ""
         txtY(0) = ""
         txtZ(0) = ""
-        txtStationHeight = "0"
+        txtstationheight = "0"
         txtReferenceAngle = ""
-        txtStationHeight.Locked = True
+        txtstationheight.Locked = True
         txtReferenceAngle.Enabled = True
-        txtStationHeight.BackColor = &HE0E0E0
+        txtstationheight.BackColor = &HE0E0E0
         txtReferenceAngle.BackColor = &H80000005
     Case 2
         Frame1(0).Visible = True
         cmdHangle.Visible = False
         Frame1(1).Visible = False
         If Station(0) = "Unknown" Then Station(0) = "Select Datum"
-        txtStationHeight.Locked = True
+        txtstationheight.Locked = True
         txtReferenceAngle.Enabled = False
-        txtStationHeight.BackColor = &HE0E0E0
+        txtstationheight.BackColor = &HE0E0E0
         txtReferenceAngle.BackColor = &HE0E0E0
-        txtStationHeight = "0"
+        txtstationheight = "0"
         txtReferenceAngle = ""
         Station(0).Locked = False
         Station(0).BackColor = &H80000005
@@ -1204,11 +1204,11 @@ Select Case Index
         txtX(0) = ""
         txtY(0) = ""
         txtZ(0) = ""
-        txtStationHeight.Locked = True
+        txtstationheight.Locked = True
         txtReferenceAngle.Enabled = False
-        txtStationHeight.BackColor = &HE0E0E0
+        txtstationheight.BackColor = &HE0E0E0
         txtReferenceAngle.BackColor = &HE0E0E0
-        txtStationHeight = "0"
+        txtstationheight = "0"
         txtReferenceAngle = ""
         If Station(1) <> "" And Station(1) <> "Select Datum" Then
             Station_Click 1
@@ -1228,7 +1228,7 @@ If Station(Index) = "" Then
     txtY(Index) = ""
     txtZ(Index) = ""
     If Index = 0 Then
-        txtStationHeight = "0"
+        txtstationheight = "0"
         txtReferenceAngle = ""
     End If
 End If
@@ -1255,7 +1255,7 @@ Select Case Index
             txtX(0) = ""
             txtY(0) = ""
             txtZ(0) = ""
-            txtStationHeight = "0"
+            txtstationheight = "0"
         ElseIf SetUpTypes(2) Then
             If Station(1) <> "Select Datum" And Station(1) <> "" Then
                 computeangle txtX(1), txtY(1), txtX(0), txtY(0), angle, minutes, seconds
@@ -1272,7 +1272,7 @@ Select Case Index
             txtX(0) = ""
             txtY(0) = ""
             txtZ(0) = ""
-            txtStationHeight = "0"
+            txtstationheight = "0"
             txtReferenceAngle = ""
         End If
         
@@ -1310,20 +1310,20 @@ End Sub
 Private Sub txtprism_Click()
 
 If SetUpTypes(1) Then
-    txtStationHeight = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
+    txtstationheight = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
 Else
-    txtZ(0) = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
-    txtStationHeight = 0
+    txtZ(0) = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+    txtstationheight = 0
 End If
 
 End Sub
 
 Private Sub txtPrism_DropDown()
 
-txtPrism.Clear
-For I = 0 To frmMain.txtPrism.ListCount - 1
-        txtPrism.AddItem frmMain.txtPrism.List(I)
-        txtPrism.ItemData(txtPrism.NewIndex) = frmMain.txtPrism.ItemData(I)
+txtprism.Clear
+For I = 0 To frmMain.txtprism.ListCount - 1
+        txtprism.AddItem frmMain.txtprism.List(I)
+        txtprism.ItemData(txtprism.NewIndex) = frmMain.txtprism.ItemData(I)
 Next I
 
 End Sub
@@ -1382,7 +1382,7 @@ End Sub
 
 Private Sub txtStationHeight_LostFocus()
 
-If Not IsNumeric(txtStationHeight) Then
+If Not IsNumeric(txtstationheight) Then
     MsgBox ("Enter Station Height as numeric value")
 End If
 
@@ -1424,3 +1424,4 @@ minutes = Int(seconds / 60)
 seconds = seconds Mod 60
 
 End Sub
+

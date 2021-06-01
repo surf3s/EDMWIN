@@ -516,6 +516,42 @@ o$ = Right$("000" + o$, 3)
 
 End Sub
 
+Function radtodeg(radians_angle) As Double
+
+Dim pi As Double
+
+pi = 3.14159265359
+
+radtodeg = radians_angle / (2 * pi) * 360
+
+End Function
+
+Sub convert_edmshot_to_dms()
+
+' This is for GeoCOM stations.  These return the V and H angles in decimal radians
+' To keep compatibility with the rest of the program, these are then converted to
+' DMS. The way this is done it not the best, but it works.
+
+edmshot.vangle = radtodeg(edmshot.vangle)
+edmshot.vangle = decimaldegrees_to_dms(edmshot.vangle)
+
+edmshot.hangle = radtodeg(edmshot.hangle)
+edmshot.hangle = decimaldegrees_to_dms(edmshot.hangle)
+
+End Sub
+
+
+Function decimaldegrees_to_dms(angle) As Double
+
+degrees = Int(angle)
+seconds = (angle - degrees) * 3600
+minutes = Int(seconds / 60)
+seconds = Int(seconds - (60 * minutes))
+decimaldegrees_to_dms = Val(Str(degrees) + "." + Format(minutes, "00") + Format(seconds, "00"))
+
+End Function
+
+
 Sub parsenez(nezdata$, edmshot As shotdata, edmpoffset As Single, mesunits$, angleunit$, errorcode)
 
 Dim angle As Integer, minutes As Integer, seconds As Integer
@@ -619,6 +655,7 @@ Case "wild2"
             errorcode = 1003
             Exit Sub
         End If
+        Call convert_edmshot_to_dms
     Else
         errorcode = 1002
         Exit Sub
@@ -982,6 +1019,10 @@ Else
         angle$ = Right("000" + angle$, 8)
         A = InStr(angle$, ".")
         angle$ = Left$(angle$, A - 1) + Mid$(angle$, A + 1)
+    ElseIf UCase(EDMName) = "WILD2" Then
+        angle$ = Right("000" + angle$, 8)
+        A = InStr(angle$, ".")
+        angle$ = Left$(angle$, A - 1) + Mid$(angle$, A + 1)
     Else
         angle$ = Left$(angle$, A - 1) + Mid$(angle$, A + 1)
     End If
@@ -1006,7 +1047,7 @@ Case "WILD", "LEICA", "BUILDER"
     Call edminput(A$)
 Case "WILD2"
     angledecdeg = Val(Left(angle$, 3)) + Val(Mid$(angle$, 4, 2)) / 60 + Val(Mid$(angle$, 6, 2)) / 3600
-    anglerad = angledecdeg / 2 * 3.14159265359
+    anglerad = angledecdeg / 360 * (2 * 3.14159265359)
     ' %R1Q,2113:HzOrientation[double]
     d$ = "%R1Q,2113:" + Format(anglerad, "#0.0000000")
     Call edmoutput(d$, errorcode)
@@ -1864,7 +1905,7 @@ addtofilelist CFGName
 
 If Not StationInitialized Then
     If TempName <> "" And TempX <> "" And TempY <> "" And TempZ <> "" Then
-        TempString = "Continue with station " + TempName + Chr(13) + Chr(13)
+        TempString = "Continue with station " + TempName + "?" + Chr(13) + Chr(13)
         TempString = TempString + "           X: " + Format(Val(TempX), "#####0.000") + Chr(13)
         TempString = TempString + "           Y: " + Format(Val(TempY), "#####0.000") + Chr(13)
         TempString = TempString + "           Z: " + Format(Val(TempZ), "#####0.000") + Chr(13)

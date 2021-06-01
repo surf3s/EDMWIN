@@ -3,16 +3,16 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStationVerify 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Station Verify"
-   ClientHeight    =   4770
+   ClientHeight    =   4755
    ClientLeft      =   30
-   ClientTop       =   315
+   ClientTop       =   375
    ClientWidth     =   6540
    ControlBox      =   0   'False
    Icon            =   "frmStationVerify.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4770
+   ScaleHeight     =   4755
    ScaleWidth      =   6540
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
@@ -372,10 +372,10 @@ Grid.Col = 1
 Grid = txtY(1)
 Grid.Row = 2
 Grid.Col = 2
-Grid = edmshot.Y
+Grid = edmshot.y
 Grid.Row = 2
 Grid.Col = 3
-Grid = Format(Abs(txtY(1) - edmshot.Y), "####0.000")
+Grid = Format(Abs(txtY(1) - edmshot.y), "####0.000")
 Grid.Row = 3
 Grid.Col = 1
 Grid = txtZ(1)
@@ -412,9 +412,9 @@ If DatumTB.RecordCount < 2 Then
     MsgBox ("Verification requires that at least two datums be defined.")
     Exit Sub
 End If
-txtstationname = CurrentStation.Name
+txtStationName = CurrentStation.Name
 txtX(0) = CurrentStation.X
-txtY(0) = CurrentStation.Y
+txtY(0) = CurrentStation.y
 txtZ(0) = CurrentStation.z
 CenterForm Me
 

@@ -2,14 +2,14 @@ VERSION 5.00
 Begin VB.Form frmDebug 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Debug Total Station"
-   ClientHeight    =   7950
+   ClientHeight    =   7935
    ClientLeft      =   45
-   ClientTop       =   375
+   ClientTop       =   435
    ClientWidth     =   9855
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7950
+   ScaleHeight     =   7935
    ScaleWidth      =   9855
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
@@ -204,6 +204,7 @@ End Sub
 
 Private Sub btnSetAngle_Click()
 
+angle$ = ""
 Call sethortangle(angle$, 0, 0, 0)
 
 End Sub

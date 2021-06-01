@@ -4,9 +4,9 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm mdiMain 
    BackColor       =   &H8000000C&
    Caption         =   "EDM Windows"
-   ClientHeight    =   5175
+   ClientHeight    =   5115
    ClientLeft      =   60
-   ClientTop       =   675
+   ClientTop       =   780
    ClientWidth     =   13230
    LinkTopic       =   "MDIForm1"
    StartUpPosition =   2  'CenterScreen
@@ -16,7 +16,7 @@ Begin VB.MDIForm mdiMain
       Height          =   375
       Left            =   0
       TabIndex        =   6
-      Top             =   4800
+      Top             =   4740
       Width           =   13230
       _ExtentX        =   23336
       _ExtentY        =   661

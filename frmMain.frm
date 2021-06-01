@@ -434,7 +434,7 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   288
+      Height          =   315
       Left            =   3720
       TabIndex        =   2
       Text            =   "txtID"
@@ -453,7 +453,7 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   288
+      Height          =   315
       ItemData        =   "frmMain.frx":10D8
       Left            =   1872
       List            =   "frmMain.frx":10DA
@@ -1190,7 +1190,7 @@ txtVangle.Visible = False
 lblHangle.Visible = False
 txtHangle.Visible = False
 lblSlopeD.Visible = False
-txtSlopeD.Visible = False
+txtSloped.Visible = False
 
 LabelLeft = VarLabel(0).Left
 OriginalLeft = LabelLeft
@@ -1252,7 +1252,7 @@ For I = 1 To Vars
         Case "SLOPED"
             lblSlopeD.Visible = True
             lblSlopeD = VPrompt(I)
-            txtSlopeD.Visible = True
+            txtSloped.Visible = True
         Case Else
             Load VarLabel(I)
             VarLabel(I).Top = LabelTop
@@ -1896,7 +1896,7 @@ Screen.MousePointer = 1
 If EDMName$ <> "" And comport <> "" And comsettings <> "" Then
     Select Case UCase(EDMName$)
     Case "TOPCON"
-        answer = MsgBox("Cable the total station to the computer and communications will be initialized.", vbOKCancel)
+        answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " on comport " + comport + ":" + comsettings + ".", vbOKCancel)
         If answer = 1 Then
             Screen.MousePointer = 11
             Call initcomport(comport, errorcode)
@@ -1907,7 +1907,11 @@ If EDMName$ <> "" And comport <> "" And comsettings <> "" Then
             Screen.MousePointer = 1
         End If
     Case "WILD", "LEICA", "BUILDER", "WILD2"
-        answer = MsgBox("Cable the total station to the computer and communications will be initialized.", vbOKCancel)
+        If UCase(EDMName$) = "WILD2" Then
+            answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " (Leica type station with GeoCOM format) on comport " + comport + ":" + comsettings + ".", vbOKCancel)
+        Else
+            answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " on comport " + comport + ":" + comsettings + ".", vbOKCancel)
+        End If
         If answer = 1 Then
             Screen.MousePointer = 11
             Call initcomport(comport, errorcode)
@@ -1918,7 +1922,7 @@ If EDMName$ <> "" And comport <> "" And comsettings <> "" Then
             Screen.MousePointer = 1
         End If
     Case "SOKKIA"
-        answer = MsgBox("Cable the total station to the computer and communications will be initialized.", vbOKCancel)
+        answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " on comport " + comport + ":" + comsettings + ".", vbOKCancel)
         If answer = 1 Then
             Screen.MousePointer = 11
             Call initcomport(comport, errorcode)
@@ -2811,7 +2815,7 @@ If CountRecords > 0 Then
     txtXYZ(2).Enabled = True
     txtVangle.Enabled = True
     txtHangle.Enabled = True
-    txtSlopeD.Enabled = True
+    txtSloped.Enabled = True
     txtPrism.Enabled = True
     On Error Resume Next
     For I = 1 To Vars
@@ -2852,7 +2856,7 @@ If CountRecords > 0 Then
     If txtXYZ(2).Visible Then txtXYZ(2) = Format(PointsADO.Recordset("z"), "#########0.000")
     If txtVangle.Visible Then txtVangle = Format(PointsADO.Recordset("vangle"), "#########0.0000")
     If txtHangle.Visible Then txtHangle = Format(PointsADO.Recordset("hangle"), "#########0.0000")
-    If txtSlopeD.Visible Then txtSlopeD = Format(PointsADO.Recordset("sloped"), "#########0.0000")
+    If txtSloped.Visible Then txtSloped = Format(PointsADO.Recordset("sloped"), "#########0.0000")
     txtXYZ(0).Refresh
     
     If txtPoleHT.Visible Then
@@ -2912,7 +2916,7 @@ Else
     txtXYZ(2).Enabled = False
     txtVangle.Enabled = False
     txtHangle.Enabled = False
-    txtSlopeD.Enabled = False
+    txtSloped.Enabled = False
     txtPrism.Enabled = False
     On Error Resume Next
     For I = 1 To Vars
@@ -2932,7 +2936,7 @@ Else
     If txtXYZ(2).Visible Then txtXYZ(2) = ""
     If txtVangle.Visible Then txtVangle = ""
     If txtHangle.Visible Then txtHangle = ""
-    If txtSlopeD.Visible Then txtSlopeD = ""
+    If txtSloped.Visible Then txtSloped = ""
     On Error Resume Next
     For I = 1 To Vars
         Select Case VType(I)
@@ -3238,7 +3242,7 @@ txtXYZ(2) = Format(edmshot.z, "######0.000")
 
 txtVangle = edmshot.vangle
 txtHangle = edmshot.hangle
-txtSlopeD = edmshot.sloped
+txtSloped = edmshot.sloped
 
 If mdiMain.mnuPrismPrompt.Checked Then
     MsgBox ("Verify Prism.  Currently set to " + txtPrism.List(txtPrism.ListIndex))
@@ -3268,7 +3272,7 @@ If txtXYZ(1).Visible Then PointsADO.Recordset.Update "y", txtXYZ(1)
 If txtXYZ(2).Visible Then PointsADO.Recordset.Update "z", txtXYZ(2)
 If txtVangle.Visible Then PointsADO.Recordset.Update "vangle", txtVangle
 If txtHangle.Visible Then PointsADO.Recordset.Update "hangle", txtHangle
-If txtSlopeD.Visible Then PointsADO.Recordset.Update "sloped", txtSlopeD
+If txtSloped.Visible Then PointsADO.Recordset.Update "sloped", txtSloped
 If DatumInfo Then
     PointsADO.Recordset.Update "DatumName", CurrentStation.Name
 End If

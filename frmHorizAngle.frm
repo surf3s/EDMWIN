@@ -1,14 +1,14 @@
 VERSION 5.00
 Begin VB.Form frmHorizAngle 
    Caption         =   "Set Horizontal Angle"
-   ClientHeight    =   1830
+   ClientHeight    =   1815
    ClientLeft      =   60
-   ClientTop       =   345
+   ClientTop       =   405
    ClientWidth     =   4680
    ControlBox      =   0   'False
    Icon            =   "frmHorizAngle.frx":0000
    LinkTopic       =   "Form1"
-   ScaleHeight     =   1830
+   ScaleHeight     =   1815
    ScaleWidth      =   4680
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command2 
@@ -66,22 +66,26 @@ deg = 0
 min = 0
 sec = 0
 
-If Text1 = "" Then
-    MsgBox ("Enter horizontal angle")
+If Text1.Text = "" Then
+    MsgBox ("Enter a horizontal angle.")
     Exit Sub
 End If
-If Text1 = "0" Then Text1 = "0.0000"
-If Not IsNumeric(Text1) Then
-    MsgBox ("Enter angle as numbers: Deg.minsec")
+
+If Text1.Text = "0" Then Text1.Text = "0.0000"
+
+If Not IsNumeric(Text1.Text) Then
+    MsgBox ("Enter the angle as numbers: Deg.minsec")
     Exit Sub
 End If
     
 If LCase(EDMName) <> "simulate" Then
     Screen.MousePointer = 11
-    Call sethortangle(Text1, deg, min, sec)
+    Call sethortangle(Text1.Text, deg, min, sec)
     Screen.MousePointer = 1
 End If
-MsgBox ("Angle Set")
+
+MsgBox ("Angle set.  Verify against total station display.  Note that angle will be rounded depending on the precision of the instrument.")
+
 Unload Me
 
 End Sub
