@@ -4,10 +4,10 @@ Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmMain 
    BorderStyle     =   4  'Fixed ToolWindow
-   ClientHeight    =   4920
+   ClientHeight    =   5730
    ClientLeft      =   135
    ClientTop       =   -165
-   ClientWidth     =   8505
+   ClientWidth     =   10080
    ControlBox      =   0   'False
    Icon            =   "frmMain.frx":0000
    KeyPreview      =   -1  'True
@@ -16,14 +16,14 @@ Begin VB.Form frmMain
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    NegotiateMenus  =   0   'False
-   ScaleHeight     =   4920
-   ScaleWidth      =   8505
+   ScaleHeight     =   5730
+   ScaleWidth      =   10080
    ShowInTaskbar   =   0   'False
    Begin VB.CommandButton cmdScroll 
       BackColor       =   &H00FFFFFF&
       Height          =   380
       Index           =   0
-      Left            =   6720
+      Left            =   8040
       Picture         =   "frmMain.frx":000C
       Style           =   1  'Graphical
       TabIndex        =   62
@@ -35,7 +35,7 @@ Begin VB.Form frmMain
       BackColor       =   &H00FFFFFF&
       Height          =   360
       Index           =   1
-      Left            =   6720
+      Left            =   8040
       Picture         =   "frmMain.frx":04AE
       Style           =   1  'Graphical
       TabIndex        =   61
@@ -47,7 +47,7 @@ Begin VB.Form frmMain
       BackColor       =   &H00FFFFFF&
       Height          =   360
       Index           =   2
-      Left            =   6720
+      Left            =   8040
       Picture         =   "frmMain.frx":0870
       Style           =   1  'Graphical
       TabIndex        =   60
@@ -59,7 +59,7 @@ Begin VB.Form frmMain
       BackColor       =   &H00FFFFFF&
       Height          =   380
       Index           =   3
-      Left            =   6720
+      Left            =   8040
       Picture         =   "frmMain.frx":0C32
       Style           =   1  'Graphical
       TabIndex        =   59
@@ -70,38 +70,38 @@ Begin VB.Form frmMain
    Begin VB.CommandButton Command1 
       Caption         =   "&X-Shot"
       Height          =   375
-      Left            =   7200
+      Left            =   8520
       TabIndex        =   58
       TabStop         =   0   'False
       Top             =   1200
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton cmdPlusShot 
       Caption         =   "&Continue"
       Height          =   375
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   57
       TabStop         =   0   'False
       Top             =   768
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton cmdShoot 
       Caption         =   "&New Object"
       Height          =   375
-      Left            =   7188
+      Left            =   8505
       TabIndex        =   56
       TabStop         =   0   'False
       Top             =   336
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton cmdCancel 
       Caption         =   "Cancel Shot"
       Height          =   1215
-      Left            =   7155
+      Left            =   8520
       TabIndex        =   55
-      Top             =   336
+      Top             =   360
       Visible         =   0   'False
-      Width           =   1215
+      Width           =   1335
    End
    Begin MSAdodcLib.Adodc UnitsADO 
       Height          =   345
@@ -200,11 +200,11 @@ Begin VB.Form frmMain
    Begin VB.CommandButton Command2 
       Caption         =   "Delete Obj"
       Height          =   345
-      Left            =   7200
+      Left            =   8520
       TabIndex        =   52
       TabStop         =   0   'False
       Top             =   4014
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.TextBox txtPoleHT 
       Alignment       =   1  'Right Justify
@@ -217,13 +217,13 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   288
+      Height          =   315
       Left            =   792
       Locked          =   -1  'True
       TabIndex        =   42
       TabStop         =   0   'False
       Top             =   2250
-      Width           =   1155
+      Width           =   1500
    End
    Begin VB.ComboBox txtXYZ 
       BeginProperty Font 
@@ -237,77 +237,77 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   315
       Index           =   2
-      Left            =   2856
+      Left            =   2850
       TabIndex        =   41
       Text            =   "txtXYZ"
       Top             =   2250
-      Width           =   1395
+      Width           =   1635
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button6"
       Height          =   345
       Index           =   6
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   38
       TabStop         =   0   'False
       Top             =   3618
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button5"
       Height          =   345
       Index           =   5
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   37
       TabStop         =   0   'False
       Top             =   3222
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button4"
       Height          =   345
       Index           =   4
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   36
       TabStop         =   0   'False
       Top             =   2826
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button3"
       Height          =   345
       Index           =   3
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   35
       TabStop         =   0   'False
       Top             =   2430
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button2"
       Height          =   345
       Index           =   2
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   34
       TabStop         =   0   'False
       Top             =   2034
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button1"
       Height          =   345
       Index           =   1
-      Left            =   7185
+      Left            =   8505
       TabIndex        =   33
       TabStop         =   0   'False
       Top             =   1638
       Visible         =   0   'False
-      Width           =   1185
+      Width           =   1425
    End
    Begin VB.ComboBox txtXYZ 
       BeginProperty Font 
@@ -321,11 +321,11 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   315
       Index           =   1
-      Left            =   2856
+      Left            =   2850
       TabIndex        =   6
       Text            =   "txtXYZ"
       Top             =   1890
-      Width           =   1395
+      Width           =   1635
    End
    Begin VB.ComboBox txtXYZ 
       BeginProperty Font 
@@ -339,11 +339,11 @@ Begin VB.Form frmMain
       EndProperty
       Height          =   315
       Index           =   0
-      Left            =   2856
+      Left            =   2850
       TabIndex        =   5
       Text            =   "txtXYZ"
       Top             =   1530
-      Width           =   1395
+      Width           =   1635
    End
    Begin VB.ComboBox txtPrism 
       BeginProperty Font 
@@ -362,7 +362,7 @@ Begin VB.Form frmMain
       TabIndex        =   4
       Text            =   "txtPrism"
       Top             =   1890
-      Width           =   1155
+      Width           =   1500
    End
    Begin VB.TextBox txtSlopeD 
       BeginProperty Font 
@@ -374,15 +374,15 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   5685
+      Height          =   315
+      Left            =   6165
       Locked          =   -1  'True
       TabIndex        =   18
       TabStop         =   0   'False
       Text            =   "txtSlopeD"
       Top             =   2220
       Visible         =   0   'False
-      Width           =   840
+      Width           =   1440
    End
    Begin VB.TextBox txtVangle 
       BeginProperty Font 
@@ -394,15 +394,15 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   5685
+      Height          =   315
+      Left            =   6165
       Locked          =   -1  'True
       TabIndex        =   17
       TabStop         =   0   'False
       Text            =   "txtVangle"
       Top             =   1875
       Visible         =   0   'False
-      Width           =   840
+      Width           =   1440
    End
    Begin VB.TextBox txtHangle 
       BeginProperty Font 
@@ -414,15 +414,15 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   5685
+      Height          =   315
+      Left            =   6165
       Locked          =   -1  'True
       TabIndex        =   16
       TabStop         =   0   'False
       Text            =   "txtHangle"
       Top             =   1530
       Visible         =   0   'False
-      Width           =   840
+      Width           =   1440
    End
    Begin VB.ComboBox txtID 
       BeginProperty Font 
@@ -435,12 +435,12 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   315
-      Left            =   3720
+      Left            =   4080
       TabIndex        =   2
       Text            =   "txtID"
-      Top             =   960
+      Top             =   970
       Visible         =   0   'False
-      Width           =   1128
+      Width           =   1365
    End
    Begin VB.ComboBox txtUnit 
       DataSource      =   "PointsADO"
@@ -460,9 +460,9 @@ Begin VB.Form frmMain
       Sorted          =   -1  'True
       TabIndex        =   1
       Text            =   "txtUnit"
-      Top             =   960
+      Top             =   970
       Visible         =   0   'False
-      Width           =   1452
+      Width           =   1575
    End
    Begin VB.TextBox txtSuffix 
       Alignment       =   1  'Right Justify
@@ -475,14 +475,14 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
-      Left            =   5595
+      Height          =   315
+      Left            =   6840
       MaxLength       =   10
       TabIndex        =   3
       Text            =   "txtSuffix"
-      Top             =   963
+      Top             =   970
       Visible         =   0   'False
-      Width           =   960
+      Width           =   855
    End
    Begin VB.ComboBox MenuBox 
       BeginProperty Font 
@@ -516,7 +516,7 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
+      Height          =   315
       Index           =   0
       Left            =   1200
       TabIndex        =   7
@@ -545,7 +545,7 @@ Begin VB.Form frmMain
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   285
+      Height          =   315
       Index           =   0
       Left            =   2832
       TabIndex        =   8
@@ -575,11 +575,11 @@ Begin VB.Form frmMain
       Height          =   525
       Left            =   90
       ScaleHeight     =   495
-      ScaleWidth      =   6525
+      ScaleWidth      =   7725
       TabIndex        =   0
       TabStop         =   0   'False
-      Top             =   348
-      Width           =   6555
+      Top             =   360
+      Width           =   7755
       Begin VB.TextBox txtCurrentRecord 
          Alignment       =   1  'Right Justify
          BeginProperty Font 
@@ -592,13 +592,13 @@ Begin VB.Form frmMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   5940
+         Left            =   5280
          Locked          =   -1  'True
          TabIndex        =   47
          TabStop         =   0   'False
          Text            =   "0"
          Top             =   120
-         Width           =   495
+         Width           =   855
       End
       Begin VB.TextBox txtTotalRecords 
          Alignment       =   1  'Right Justify
@@ -612,13 +612,13 @@ Begin VB.Form frmMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
-         Left            =   4020
+         Left            =   6720
          Locked          =   -1  'True
          TabIndex        =   46
          TabStop         =   0   'False
          Text            =   "0"
          Top             =   120
-         Width           =   495
+         Width           =   855
       End
       Begin VB.ComboBox txtPT 
          BeginProperty Font 
@@ -631,35 +631,35 @@ Begin VB.Form frmMain
             Strikethrough   =   0   'False
          EndProperty
          Height          =   315
-         Left            =   1170
+         Left            =   1080
          TabIndex        =   45
          TabStop         =   0   'False
-         Top             =   105
-         Width           =   1500
+         Top             =   100
+         Width           =   2580
       End
       Begin VB.Label lblCurrentRecord 
          AutoSize        =   -1  'True
-         Caption         =   "Current Record:"
+         Caption         =   "Viewing record"
          Height          =   195
-         Left            =   4800
+         Left            =   3960
          TabIndex        =   50
          Top             =   165
-         Width           =   1110
+         Width           =   1050
       End
       Begin VB.Label Label5 
          AutoSize        =   -1  'True
-         Caption         =   "Total  Records:"
+         Caption         =   "of"
          Height          =   195
-         Left            =   2910
+         Left            =   6360
          TabIndex        =   49
          Top             =   165
-         Width           =   1095
+         Width           =   135
       End
       Begin VB.Label Label7 
          AutoSize        =   -1  'True
          Caption         =   "Points Table:"
-         Height          =   195
-         Left            =   180
+         Height          =   315
+         Left            =   120
          TabIndex        =   48
          Top             =   165
          Width           =   930
@@ -668,19 +668,19 @@ Begin VB.Form frmMain
    Begin VB.Label Label6 
       AutoSize        =   -1  'True
       Caption         =   "Last"
-      Height          =   192
-      Left            =   6756
+      Height          =   195
+      Left            =   8070
       TabIndex        =   64
-      Top             =   2496
+      Top             =   2490
       Width           =   300
    End
    Begin VB.Label Label3 
       AutoSize        =   -1  'True
       Caption         =   "First"
-      Height          =   192
-      Left            =   6757
+      Height          =   195
+      Left            =   8070
       TabIndex        =   63
-      Top             =   288
+      Top             =   285
       Width           =   300
    End
    Begin VB.Label lblDefaults 
@@ -728,7 +728,7 @@ Begin VB.Form frmMain
       Height          =   1215
       Left            =   90
       Top             =   1410
-      Width           =   6555
+      Width           =   7755
    End
    Begin VB.Label Label8 
       Alignment       =   2  'Center
@@ -776,7 +776,7 @@ Begin VB.Form frmMain
       EndProperty
       ForeColor       =   &H000000FF&
       Height          =   195
-      Left            =   1830
+      Left            =   2760
       TabIndex        =   39
       Top             =   2715
       Visible         =   0   'False
@@ -784,12 +784,13 @@ Begin VB.Form frmMain
    End
    Begin VB.Label lblPoleHT 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Height"
       Height          =   195
-      Left            =   180
+      Left            =   255
       TabIndex        =   30
       Top             =   2310
-      Width           =   540
+      Width           =   465
    End
    Begin VB.Label Label4 
       AutoSize        =   -1  'True
@@ -804,79 +805,86 @@ Begin VB.Form frmMain
          Strikethrough   =   0   'False
       EndProperty
       Height          =   240
-      Left            =   180
+      Left            =   160
       TabIndex        =   26
-      Top             =   1560
-      Width           =   1485
+      Top             =   1440
+      Width           =   1215
    End
    Begin VB.Label lblX 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "X:"
       Height          =   195
-      Left            =   2190
+      Left            =   2610
       TabIndex        =   25
       Top             =   1590
       Visible         =   0   'False
-      Width           =   570
+      Width           =   150
    End
    Begin VB.Label lblY 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Y:"
       Height          =   195
-      Left            =   2190
+      Left            =   2610
       TabIndex        =   24
       Top             =   1950
       Visible         =   0   'False
-      Width           =   570
+      Width           =   150
    End
    Begin VB.Label lblZ 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Z:"
       Height          =   195
-      Left            =   2220
+      Left            =   2610
       TabIndex        =   23
       Top             =   2310
       Visible         =   0   'False
-      Width           =   540
+      Width           =   150
    End
    Begin VB.Label lblHangle 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Horizontal Angle:"
       Height          =   195
-      Left            =   4395
+      Left            =   4920
       TabIndex        =   22
-      Top             =   1650
+      Top             =   1560
       Visible         =   0   'False
       Width           =   1200
    End
    Begin VB.Label lblVangle 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Vertical Angle:"
       Height          =   195
-      Left            =   4575
+      Left            =   5040
       TabIndex        =   21
-      Top             =   2010
+      Top             =   1920
       Visible         =   0   'False
       Width           =   1020
    End
    Begin VB.Label lblSlopeD 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Slope Distance:"
       Height          =   195
-      Left            =   4485
+      Left            =   4920
       TabIndex        =   20
-      Top             =   2310
+      Top             =   2280
       Visible         =   0   'False
       Width           =   1125
    End
    Begin VB.Label lblPrism 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Prism: "
       Height          =   195
-      Left            =   105
+      Left            =   270
       TabIndex        =   19
-      Top             =   1950
-      Width           =   630
+      Top             =   1920
+      Width           =   465
    End
    Begin VB.Label Label2 
       AutoSize        =   -1  'True
@@ -893,7 +901,7 @@ Begin VB.Form frmMain
       Height          =   240
       Left            =   150
       TabIndex        =   15
-      Top             =   960
+      Top             =   1000
       Width           =   975
    End
    Begin VB.Label Label1 
@@ -916,38 +924,41 @@ Begin VB.Form frmMain
    End
    Begin VB.Label lblSuffix 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Suffix:"
       Height          =   195
-      Left            =   4980
+      Left            =   6240
       TabIndex        =   13
       Top             =   1020
       Visible         =   0   'False
-      Width           =   510
+      Width           =   435
    End
    Begin VB.Label lblID 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "ID:"
       Height          =   195
-      Left            =   3165
+      Left            =   3720
       TabIndex        =   12
       Top             =   1020
       Visible         =   0   'False
-      Width           =   480
+      Width           =   210
    End
    Begin VB.Label lblUnit 
       Alignment       =   1  'Right Justify
+      AutoSize        =   -1  'True
       Caption         =   "Unit:"
       Height          =   195
-      Left            =   1110
+      Left            =   1455
       TabIndex        =   11
       Top             =   1020
       Visible         =   0   'False
-      Width           =   675
+      Width           =   330
    End
    Begin VB.Label VarLabel 
       Alignment       =   1  'Right Justify
       Caption         =   "llllllllllllllllllllllllllllllllll"
-      Height          =   195
+      Height          =   315
       Index           =   0
       Left            =   -45
       TabIndex        =   10
@@ -1112,8 +1123,8 @@ Begin VB.Form frmMain
    Begin VB.Shape Shape3 
       Height          =   465
       Left            =   90
-      Top             =   900
-      Width           =   6555
+      Top             =   910
+      Width           =   7755
    End
 End
 Attribute VB_Name = "frmMain"
@@ -1225,10 +1236,10 @@ For I = 1 To Vars
         Case "PRISM"
             lblPrism.Visible = True
             lblPrism = VPrompt(I)
-            txtPrism.Visible = True
+            txtprism.Visible = True
             lblPoleHT.Visible = True
             txtPoleHT.Visible = True
-            txtPrism = ""
+            txtprism = ""
         Case "X"
             lblX.Visible = True
             lblX = VPrompt(I)
@@ -1305,7 +1316,7 @@ For I = 1 To Vars
             LabelLeft = LabelLeft + VarLabel(I).Width + MenuBox(0).Width + 100
             BoxLeft = LabelLeft + VarLabel(I).Width + 50
             If Noptionals Mod 2 = 0 Then
-                LabelTop = LabelTop + VarLabel(I).Height + 120
+                LabelTop = LabelTop + VarLabel(I).Height
                 'LabelTop = VarLabel(0).Top
                 LabelLeft = OriginalLeft
                 'BoxTop = TextBox(0).Top
@@ -1369,10 +1380,10 @@ For I = 1 To nButtonVars(Index)
     
     ElseIf LCase(VarList(ButtonVars(Index, I, 1))) = "prism" Then
         Gotit = False
-        For J = 0 To txtPrism.ListCount - 1
-            If LCase(txtPrism.List(J)) = LCase(ButtonVars(Index, I, 2)) Then
+        For J = 0 To txtprism.ListCount - 1
+            If LCase(txtprism.List(J)) = LCase(ButtonVars(Index, I, 2)) Then
                 Loading = True
-                txtPrism.ListIndex = J
+                txtprism.ListIndex = J
                 Loading = False
                 Gotit = True
                 Exit For
@@ -1381,8 +1392,8 @@ For I = 1 To nButtonVars(Index)
         If Not Gotit Then
             MsgBox ("Prism name not found in current prism list")
         Else
-            txtPoleHT = PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
-            txtXYZ(2) = Format(Val(txtXYZ(2)) + OriginalPoleHT - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex)), "#######0.000")
+            txtPoleHT = PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+            txtXYZ(2) = Format(Val(txtXYZ(2)) + OriginalPoleHT - PoleHeight(txtprism.ItemData(txtprism.ListIndex)), "#######0.000")
             'PointsADO.Refresh
             'PointsADO.Recordset.Bookmark = CurrentBookMark
             PointsADO.Recordset.Update "prism", txtPoleHT
@@ -1646,18 +1657,18 @@ Picture1.SetFocus
 
 On Error GoTo 0
 If XShotShowing Then
-    If frmXShot.txtPrism.ListIndex <> -1 Then
-        edmshot.poleh = PoleHeight(frmXShot.txtPrism.ItemData(frmXShot.txtPrism.ListIndex))
-        edmshot.poleo = PoleOffset(frmXShot.txtPrism.ItemData(frmXShot.txtPrism.ListIndex))
+    If frmXShot.txtprism.ListIndex <> -1 Then
+        edmshot.poleh = PoleHeight(frmXShot.txtprism.ItemData(frmXShot.txtprism.ListIndex))
+        edmshot.poleo = PoleOffset(frmXShot.txtprism.ItemData(frmXShot.txtprism.ListIndex))
     Else
         edmshot.poleh = 0
         edmshot.poleo = 0
     End If
 Else
     cmdCancel.Visible = True
-    If txtPrism.ListIndex <> -1 Then
-        edmshot.poleh = PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
-        edmshot.poleo = PoleOffset(txtPrism.ItemData(txtPrism.ListIndex))
+    If txtprism.ListIndex <> -1 Then
+        edmshot.poleh = PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+        edmshot.poleo = PoleOffset(txtprism.ItemData(txtprism.ListIndex))
     Else
         edmshot.poleh = 0
         edmshot.poleo = 0
@@ -1688,14 +1699,14 @@ frmXShot.lblvalue(7) = Format(edmshot.y - CurrentStation.y, "####0.000")
 frmXShot.lblvalue(8) = Format(edmshot.z - CurrentStation.z, "####0.000")
 frmXShot.FindUnit edmshot.X, edmshot.y
 If Not XShotShowing Then
-    frmXShot.txtPrism.Clear
-    For I = 0 To frmMain.txtPrism.ListCount - 1
-            frmXShot.txtPrism.AddItem frmMain.txtPrism.List(I)
-            frmXShot.txtPrism.ItemData(frmXShot.txtPrism.NewIndex) = frmMain.txtPrism.ItemData(I)
+    frmXShot.txtprism.Clear
+    For I = 0 To frmMain.txtprism.ListCount - 1
+            frmXShot.txtprism.AddItem frmMain.txtprism.List(I)
+            frmXShot.txtprism.ItemData(frmXShot.txtprism.NewIndex) = frmMain.txtprism.ItemData(I)
     Next I
     Loading = True
-    If frmXShot.txtPrism.ListCount > 0 Then
-        frmXShot.txtPrism.ListIndex = frmMain.txtPrism.ListIndex
+    If frmXShot.txtprism.ListCount > 0 Then
+        frmXShot.txtprism.ListIndex = frmMain.txtprism.ListIndex
     End If
     Loading = False
     XShotShowing = True
@@ -1845,15 +1856,15 @@ BannerWidth = 150
 
 Me.Left = 0
 Me.Top = 0
-Me.Height = 4470
-Me.Width = 8535
+Me.Height = 5760
+Me.Width = 10110
 Me.Show
 Loading = True
 inifile$ = fixpath(App.Path) + "edm.ini"
 txtXYZ(0).Clear
 txtXYZ(1).Clear
 txtXYZ(2).Clear
-txtPrism.Clear
+txtprism.Clear
 txtXYZ(0).AddItem "Offset East"
 txtXYZ(0).AddItem "Offset West"
 txtXYZ(1).AddItem "Offset North"
@@ -2650,8 +2661,8 @@ End Sub
 
 Private Sub txtprism_Click()
 
-If txtPrism.ListIndex > -1 Then
-    txtPoleHT = Format(PoleHeight(txtPrism.ItemData(txtPrism.ListIndex)), "####0.000")
+If txtprism.ListIndex > -1 Then
+    txtPoleHT = Format(PoleHeight(txtprism.ItemData(txtprism.ListIndex)), "####0.000")
 Else
     Exit Sub
 End If
@@ -2664,9 +2675,9 @@ End Sub
 Private Sub txtPrism_GotFocus()
 
 OriginalPoleHT = Val(txtPoleHT)
-OriginalPrismIndex = txtPrism.ListIndex
-txtPrism.SelStart = 0
-txtPrism.SelLength = Len(txtPrism)
+OriginalPrismIndex = txtprism.ListIndex
+txtprism.SelStart = 0
+txtprism.SelLength = Len(txtprism)
 Loading = False
 
 End Sub
@@ -2679,16 +2690,16 @@ ElseIf KeyAscii = 13 Then
     If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
     On Error GoTo ExitSub
     If Not Loading And CountRecords > 0 Then
-        If PoleHeight(txtPrism.ItemData(txtPrism.ListIndex)) <> OriginalPoleHT Then
-            txtPoleHT = Format(PoleHeight(txtPrism.ItemData(txtPrism.ListIndex)), "#####0.000")
-            txtXYZ(2) = Format(Val(txtXYZ(2)) + OriginalPoleHT - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex)), "#####0.000")
+        If PoleHeight(txtprism.ItemData(txtprism.ListIndex)) <> OriginalPoleHT Then
+            txtPoleHT = Format(PoleHeight(txtprism.ItemData(txtprism.ListIndex)), "#####0.000")
+            txtXYZ(2) = Format(Val(txtXYZ(2)) + OriginalPoleHT - PoleHeight(txtprism.ItemData(txtprism.ListIndex)), "#####0.000")
             UpdatePointsTable "prism", txtPoleHT, 0, 0
             UpdatePointsTable "z", txtXYZ(2), 1, 0
         End If
     End If
-    txtPoleHT = PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
+    txtPoleHT = PoleHeight(txtprism.ItemData(txtprism.ListIndex))
     OriginalPoleHT = txtPoleHT
-    OriginalPrismIndex = txtPrism.ListIndex
+    OriginalPrismIndex = txtprism.ListIndex
     For I = 1 To nUnitFields
         If UCase(Unitfield(I)) = "PRISM" Then
             UpdateUnitTable txtUnit, txtID, UnitFieldOnly
@@ -2706,7 +2717,7 @@ End Sub
 Private Sub txtPrism_LostFocus()
 
 If Loading Then Exit Sub
-txtPrism.SelLength = 0
+txtprism.SelLength = 0
 txtPoleHT = Format(OriginalPoleHT, "####0.000")
 'If txtprism.ListCount > 0 Then
 '    txtprism.ListIndex = OriginalPrismIndex
@@ -2757,7 +2768,7 @@ Else
     txtXYZ(2).Enabled = True
     frmMain.txtUnit.Enabled = True
     frmMain.txtID.Enabled = True
-    frmMain.txtPrism.Enabled = True
+    frmMain.txtprism.Enabled = True
 End If
 
 End Sub
@@ -2816,7 +2827,7 @@ If CountRecords > 0 Then
     txtVangle.Enabled = True
     txtHangle.Enabled = True
     txtSloped.Enabled = True
-    txtPrism.Enabled = True
+    txtprism.Enabled = True
     On Error Resume Next
     For I = 1 To Vars
         TextBox(I).Enabled = True
@@ -2863,16 +2874,16 @@ If CountRecords > 0 Then
         If Not IsNull(PointsADO.Recordset("Prism")) Then
             OriginalPoleHT = PointsADO.Recordset("prism")
             txtPoleHT = Format(PointsADO.Recordset("prism"), "#####0.000")
-            For I = 0 To txtPrism.ListCount - 1
-                If PoleHeight(txtPrism.ItemData(I)) = PointsADO.Recordset("prism") Then
-                    txtPrism.ListIndex = I
+            For I = 0 To txtprism.ListCount - 1
+                If PoleHeight(txtprism.ItemData(I)) = PointsADO.Recordset("prism") Then
+                    txtprism.ListIndex = I
                     Exit For
                 End If
             Next I
         Else
             OriginalPoleHT = 0
             txtPoleHT = 0
-            txtPrism = ""
+            txtprism = ""
             
         End If
     End If
@@ -2917,7 +2928,7 @@ Else
     txtVangle.Enabled = False
     txtHangle.Enabled = False
     txtSloped.Enabled = False
-    txtPrism.Enabled = False
+    txtprism.Enabled = False
     On Error Resume Next
     For I = 1 To Vars
         TextBox(I).Enabled = False
@@ -3206,10 +3217,11 @@ End Sub
 Public Sub Take_Shot(NewObj As Boolean)
 
 Dim edmpoffset As Single
+
 'This has to happen first so that VHDTONEZ can have these values
-If txtPrism.ListIndex <> -1 Then
-    edmshot.poleh = PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
-    edmshot.poleo = PoleOffset(txtPrism.ItemData(txtPrism.ListIndex))
+If txtprism.ListIndex <> -1 Then
+    edmshot.poleh = PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+    edmshot.poleo = PoleOffset(txtprism.ItemData(txtprism.ListIndex))
 Else
     edmshot.poleh = 0
     edmshot.poleo = 0
@@ -3225,6 +3237,7 @@ cmdCancel.Visible = True
 Picture1.SetFocus
 takeshot_core NoPrism
 cmdCancel.Visible = False
+
 If Cancelling Then
     mdiMain.StatusBar.Panels(6).Visible = False
     cmdShoot.Enabled = True
@@ -3245,7 +3258,7 @@ txtHangle = edmshot.hangle
 txtSloped = edmshot.sloped
 
 If mdiMain.mnuPrismPrompt.Checked Then
-    MsgBox ("Verify Prism.  Currently set to " + txtPrism.List(txtPrism.ListIndex))
+    MsgBox ("Verify Prism.  Currently set to " + txtprism.List(txtprism.ListIndex))
 End If
 
 GridLoading = True
@@ -3741,7 +3754,7 @@ If Not UnitTB.NoMatch Then
                 On Error GoTo 0
                 If Gotit Then
                     If IsNull(UnitTB("PRISM")) Then
-                        response = MsgBox("Invalid default prism.  Use " + txtPrism + "?", vbYesNo)
+                        response = MsgBox("Invalid default prism.  Use " + txtprism + "?", vbYesNo)
                         If response = vbNo Then
                             MsgBox ("Please select default prism for " + txtUnit)
                         Else
@@ -3752,11 +3765,11 @@ If Not UnitTB.NoMatch Then
                     Else
                         If txtPoleHT <> UnitTB("prism") Then
                             Gotit = False
-                            For J = 0 To txtPrism.ListCount - 1
-                                If PoleHeight(txtPrism.ItemData(J)) = UnitTB("prism") Then
+                            For J = 0 To txtprism.ListCount - 1
+                                If PoleHeight(txtprism.ItemData(J)) = UnitTB("prism") Then
                                     txtXYZ(2) = Format(Val(txtXYZ(2)) + txtPoleHT - UnitTB("prism"), "######0.000")
                                     txtPoleHT = UnitTB("prism")
-                                    txtPrism = txtPrism.List(J)
+                                    txtprism = txtprism.List(J)
                                     UpdatePointsTable "prism", txtPoleHT, 0, 0
                                     UpdatePointsTable "z", txtXYZ(2), 0, 0
                                     Gotit = True
@@ -3764,7 +3777,7 @@ If Not UnitTB.NoMatch Then
                                 End If
                             Next J
                             If Not Gotit Then
-                                response = MsgBox("Invalid default prism.  Use " + txtPrism + "?", vbYesNo)
+                                response = MsgBox("Invalid default prism.  Use " + txtprism + "?", vbYesNo)
                                 If response = vbNo Then
                                     MsgBox ("Please select default prism for " + txtUnit)
                                 Else
@@ -3842,7 +3855,7 @@ lblPointsWarning.Visible = True
 lblPoleWarning.Visible = True
 txtCurrentRecord = 0
 txtTotalRecords = 0
-txtPrism.Clear
+txtprism.Clear
 txtXYZ(0).Clear
 txtXYZ(1).Clear
 txtXYZ(2).Clear
@@ -3851,13 +3864,13 @@ txtID.Clear
 txtSuffix.Clear
 txtUnit.Enabled = False
 txtID.Enabled = False
-txtPrism.Enabled = False
+txtprism.Enabled = False
 txtXYZ(0).Enabled = False
 txtXYZ(1).Enabled = False
 txtXYZ(2).Enabled = False
 frmMain.txtUnit.Enabled = False
 frmMain.txtID.Enabled = False
-frmMain.txtPrism.Enabled = False
+frmMain.txtprism.Enabled = False
 
 End Sub
 
@@ -3918,7 +3931,7 @@ ElseIf Not StationInitialized Then
 ElseIf PoleTB.BOF And PoleTB.EOF Then
     MsgBox ("No prisms defined.  Define before taking a shot")
     CheckStatus = True
-ElseIf Not frmMain.theoport.PortOpen And EDMName <> "Simulate" And EDMName <> "Microscribe" Then
+ElseIf Not frmMain.theoport.PortOpen And EDMName <> "Simulate" And EDMName <> "Microscribe" And EDMName <> "None" Then
     MsgBox ("Total Station not cabled")
     CheckStatus = True
 End If

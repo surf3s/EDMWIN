@@ -3,7 +3,7 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStationSetup 
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Station Setup"
-   ClientHeight    =   7725
+   ClientHeight    =   7950
    ClientLeft      =   120
    ClientTop       =   360
    ClientWidth     =   9075
@@ -13,7 +13,7 @@ Begin VB.Form frmStationSetup
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7725
+   ScaleHeight     =   7950
    ScaleWidth      =   9075
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
@@ -177,19 +177,19 @@ Begin VB.Form frmStationSetup
       Caption         =   "Accept"
       Enabled         =   0   'False
       Height          =   500
-      Left            =   2880
+      Left            =   2760
       TabIndex        =   28
-      Top             =   7080
+      Top             =   7320
       Width           =   1695
    End
    Begin VB.CommandButton Command1 
       Cancel          =   -1  'True
       Caption         =   "Cancel"
       Height          =   500
-      Left            =   4800
+      Left            =   4680
       TabIndex        =   27
       TabStop         =   0   'False
-      Top             =   7080
+      Top             =   7320
       Width           =   1695
    End
    Begin VB.ComboBox txtPrism 
@@ -212,20 +212,20 @@ Begin VB.Form frmStationSetup
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1335
+      Height          =   1575
       Left            =   2880
       TabIndex        =   24
       Top             =   5640
       Visible         =   0   'False
       Width           =   5655
       Begin MSFlexGridLib.MSFlexGrid Grid 
-         Height          =   750
+         Height          =   975
          Left            =   150
          TabIndex        =   25
          Top             =   240
          Width           =   3255
          _ExtentX        =   5741
-         _ExtentY        =   1323
+         _ExtentY        =   1720
          _Version        =   393216
          Rows            =   3
          Cols            =   3
@@ -242,7 +242,7 @@ Begin VB.Form frmStationSetup
          Height          =   195
          Left            =   1410
          TabIndex        =   46
-         Top             =   1020
+         Top             =   1260
          Width           =   1125
       End
       Begin VB.Label Label6 
@@ -251,7 +251,7 @@ Begin VB.Form frmStationSetup
          Height          =   195
          Left            =   150
          TabIndex        =   45
-         Top             =   1020
+         Top             =   1260
          Visible         =   0   'False
          Width           =   1050
       End
@@ -765,7 +765,7 @@ Dim DefinedAngle As Double
 
 cmdRecord(Index).Enabled = False
 
-If Not SetUpTypes(0) And frmMain.txtprism.ListCount = 0 Then
+If Not SetUpTypes(0) And frmMain.txtPrism.ListCount = 0 Then
     MsgBox ("No prisms defined - cannot initialize station")
     cmdRecord(Index).Enabled = True
     Exit Sub
@@ -1031,9 +1031,11 @@ If mdiMain.StatusBar.Panels(7).Visible Then
     Cancelling = True
     Exit Sub
 End If
+
 If Shooting Then
     Exit Sub
 End If
+
 Unload Me
 
 End Sub
@@ -1043,6 +1045,7 @@ Private Sub Form_KeyPress(KeyAscii As Integer)
 If mdiMain.StatusBar.Panels(7).Visible And KeyAscii = 27 Then
     Cancelling = True
 End If
+
 'If KeyAscii = 27 Then
 '    Cancelling = True
 'End If
@@ -1154,7 +1157,7 @@ Select Case Index
         txtstationheight.BackColor = &H80000005
         txtReferenceAngle.BackColor = &H80000005
         lblPrism.Visible = False
-        txtprism.Visible = False
+        txtPrism.Visible = False
     Case 1
         Station(0) = "Unknown"
         Station(0).Locked = True
@@ -1310,9 +1313,9 @@ End Sub
 Private Sub txtprism_Click()
 
 If SetUpTypes(1) Then
-    txtstationheight = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+    txtstationheight = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
 Else
-    txtZ(0) = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
+    txtZ(0) = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
     txtstationheight = 0
 End If
 
@@ -1320,10 +1323,10 @@ End Sub
 
 Private Sub txtPrism_DropDown()
 
-txtprism.Clear
-For I = 0 To frmMain.txtprism.ListCount - 1
-        txtprism.AddItem frmMain.txtprism.List(I)
-        txtprism.ItemData(txtprism.NewIndex) = frmMain.txtprism.ItemData(I)
+txtPrism.Clear
+For I = 0 To frmMain.txtPrism.ListCount - 1
+        txtPrism.AddItem frmMain.txtPrism.List(I)
+        txtPrism.ItemData(txtPrism.NewIndex) = frmMain.txtPrism.ItemData(I)
 Next I
 
 End Sub

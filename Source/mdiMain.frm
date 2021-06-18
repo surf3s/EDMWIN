@@ -362,6 +362,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Sub createdefault_Click()
 
 frmDefault.Show 1
@@ -428,6 +429,8 @@ End Sub
 
 Private Sub MDIForm_Load()
 
+mdiMain.StatusBar.Panels(6).Visible = False
+mdiMain.StatusBar.Panels(7).Visible = False
 Me.Show
 frmMain.Show
 
@@ -438,6 +441,12 @@ Private Sub MDIForm_Resize()
 For A = 1 To 7
     mdiMain.StatusBar.Panels(A).Width = mdiMain.Width / 7
 Next A
+
+End Sub
+
+Private Sub MDIForm_Unload(Cancel As Integer)
+
+mnuExit_Click
 
 End Sub
 
@@ -663,10 +672,10 @@ If SiteDBname = "" Then
     Exit Sub
 End If
 
-TempPrism = frmMain.txtPrism
+TempPrism = frmMain.txtprism
 
 frmPolesheet.Show 1
-frmMain.txtPrism.Clear
+frmMain.txtprism.Clear
 If PoleTB.RecordCount = 0 Then
     frmMain.lblPoleWarning.Visible = True
 Else
@@ -677,8 +686,8 @@ Else
         PoleTB.MoveFirst
         While Not PoleTB.EOF
             nPoleHeights = nPoleHeights + 1
-            frmMain.txtPrism.AddItem PoleTB("Name")
-            frmMain.txtPrism.ItemData(frmMain.txtPrism.NewIndex) = nPoleHeights
+            frmMain.txtprism.AddItem PoleTB("Name")
+            frmMain.txtprism.ItemData(frmMain.txtprism.NewIndex) = nPoleHeights
             If IsNull(PoleTB("height")) Then
                 PoleTB.Edit
                 PoleTB("Height") = 0
@@ -701,16 +710,16 @@ Else
         End If
         Gotit = False
         Loading = True
-        For I = 0 To frmMain.txtPrism.ListCount - 1
-            If UCase(TempPrism) = UCase(frmMain.txtPrism.List(I)) Then
-                frmMain.txtPrism.ListIndex = I
+        For I = 0 To frmMain.txtprism.ListCount - 1
+            If UCase(TempPrism) = UCase(frmMain.txtprism.List(I)) Then
+                frmMain.txtprism.ListIndex = I
                 Gotit = True
                 Exit For
             End If
         Next I
         If Not Gotit Then
-            If frmMain.txtPrism.ListCount > 0 Then
-                frmMain.txtPrism.ListIndex = 0
+            If frmMain.txtprism.ListCount > 0 Then
+                frmMain.txtprism.ListIndex = 0
             End If
         End If
         Loading = False
@@ -739,12 +748,14 @@ Private Sub mnuExit_Click()
 If GridShowing Then
     Unload frmDataGrid
 End If
+
 If PlotShowing Then
     Unload frmPlot
 End If
 
 Unload frmMain
 Unload Me
+
 End
 
 End Sub

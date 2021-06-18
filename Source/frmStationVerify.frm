@@ -3,54 +3,54 @@ Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
 Begin VB.Form frmStationVerify 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Station Verify"
-   ClientHeight    =   4755
+   ClientHeight    =   5730
    ClientLeft      =   30
    ClientTop       =   375
-   ClientWidth     =   6540
+   ClientWidth     =   7305
    ControlBox      =   0   'False
    Icon            =   "frmStationVerify.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4755
-   ScaleWidth      =   6540
+   ScaleHeight     =   5730
+   ScaleWidth      =   7305
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
    Begin VB.CommandButton Command2 
       Cancel          =   -1  'True
-      Caption         =   "Cancel"
+      Caption         =   "Cancel Shot"
       Height          =   444
-      Left            =   5160
+      Left            =   5040
       TabIndex        =   23
-      Top             =   720
-      Width           =   1065
+      Top             =   2070
+      Width           =   1305
    End
    Begin VB.CommandButton Command1 
       Caption         =   "OK"
       Height          =   444
-      Left            =   5145
+      Left            =   3120
       TabIndex        =   22
-      Top             =   150
+      Top             =   5040
       Width           =   1065
    End
    Begin VB.TextBox txtStationName 
       Alignment       =   1  'Right Justify
-      Height          =   288
-      Left            =   1536
+      Height          =   315
+      Left            =   1200
       Locked          =   -1  'True
       TabIndex        =   21
-      Top             =   1005
-      Width           =   1308
+      Top             =   600
+      Width           =   1665
    End
    Begin VB.CommandButton cmdRecord 
       Caption         =   "Record Datum"
       Default         =   -1  'True
+      Enabled         =   0   'False
       Height          =   495
-      Left            =   3585
+      Left            =   3360
       TabIndex        =   19
-      Top             =   2340
-      Visible         =   0   'False
-      Width           =   1815
+      Top             =   2040
+      Width           =   1575
    End
    Begin VB.Frame frmCoordinates 
       Caption         =   "Station Check"
@@ -63,20 +63,20 @@ Begin VB.Form frmStationVerify
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1452
-      Left            =   2928
+      Height          =   1815
+      Left            =   2640
       TabIndex        =   17
-      Top             =   2985
+      Top             =   3000
       Visible         =   0   'False
-      Width           =   3396
+      Width           =   4470
       Begin MSFlexGridLib.MSFlexGrid Grid 
-         Height          =   996
-         Left            =   144
+         Height          =   1350
+         Left            =   150
          TabIndex        =   18
-         Top             =   336
-         Width           =   3132
-         _ExtentX        =   5503
-         _ExtentY        =   1773
+         Top             =   330
+         Width           =   4215
+         _ExtentX        =   7435
+         _ExtentY        =   2381
          _Version        =   393216
          Rows            =   4
          Cols            =   3
@@ -92,45 +92,45 @@ Begin VB.Form frmStationVerify
    End
    Begin VB.TextBox txtReferenceAngle 
       Alignment       =   1  'Right Justify
-      Height          =   288
-      Left            =   2040
+      Height          =   315
+      Left            =   1440
       TabIndex        =   15
       TabStop         =   0   'False
-      Top             =   2235
-      Width           =   816
+      Top             =   2160
+      Width           =   1410
    End
    Begin VB.TextBox txtX 
       Alignment       =   1  'Right Justify
-      Height          =   288
+      Height          =   315
       Index           =   0
-      Left            =   2040
+      Left            =   1440
       Locked          =   -1  'True
       TabIndex        =   10
       TabStop         =   0   'False
-      Top             =   1335
-      Width           =   816
+      Top             =   1080
+      Width           =   1410
    End
    Begin VB.TextBox txtY 
       Alignment       =   1  'Right Justify
-      Height          =   288
+      Height          =   315
       Index           =   0
-      Left            =   2040
+      Left            =   1440
       Locked          =   -1  'True
       TabIndex        =   9
       TabStop         =   0   'False
-      Top             =   1650
-      Width           =   816
+      Top             =   1440
+      Width           =   1410
    End
    Begin VB.TextBox txtZ 
       Alignment       =   1  'Right Justify
-      Height          =   288
+      Height          =   315
       Index           =   0
-      Left            =   2040
+      Left            =   1440
       Locked          =   -1  'True
       TabIndex        =   8
       TabStop         =   0   'False
-      Top             =   1965
-      Width           =   816
+      Top             =   1800
+      Width           =   1410
    End
    Begin VB.Frame Frame1 
       Caption         =   "Reference Datum"
@@ -143,44 +143,44 @@ Begin VB.Form frmStationVerify
          Italic          =   0   'False
          Strikethrough   =   0   'False
       EndProperty
-      Height          =   1680
+      Height          =   1920
       Index           =   0
-      Left            =   432
+      Left            =   240
       TabIndex        =   0
-      Top             =   2760
-      Width           =   2316
+      Top             =   2880
+      Width           =   2295
       Begin VB.TextBox txtZ 
          Alignment       =   1  'Right Justify
-         Height          =   228
+         Height          =   315
          Index           =   1
          Left            =   696
          Locked          =   -1  'True
          TabIndex        =   4
          TabStop         =   0   'False
-         Top             =   1272
-         Width           =   816
+         Top             =   1440
+         Width           =   1410
       End
       Begin VB.TextBox txtY 
          Alignment       =   1  'Right Justify
-         Height          =   228
+         Height          =   315
          Index           =   1
          Left            =   696
          Locked          =   -1  'True
          TabIndex        =   3
          TabStop         =   0   'False
-         Top             =   984
-         Width           =   816
+         Top             =   1080
+         Width           =   1410
       End
       Begin VB.TextBox txtX 
          Alignment       =   1  'Right Justify
-         Height          =   240
+         Height          =   315
          Index           =   1
          Left            =   696
          Locked          =   -1  'True
          TabIndex        =   2
          TabStop         =   0   'False
-         Top             =   696
-         Width           =   800
+         Top             =   720
+         Width           =   1410
       End
       Begin VB.ComboBox Station 
          Height          =   315
@@ -188,40 +188,40 @@ Begin VB.Form frmStationVerify
          Left            =   168
          TabIndex        =   1
          Top             =   336
-         Width           =   1344
+         Width           =   1950
       End
       Begin VB.Label Label2 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Z"
-         Height          =   192
+         Height          =   195
          Index           =   1
-         Left            =   528
+         Left            =   525
          TabIndex        =   7
-         Top             =   1320
-         Width           =   96
+         Top             =   1440
+         Width           =   90
       End
       Begin VB.Label label1 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "Y"
-         Height          =   192
+         Height          =   195
          Index           =   1
-         Left            =   516
+         Left            =   510
          TabIndex        =   6
-         Top             =   1020
-         Width           =   108
+         Top             =   1080
+         Width           =   105
       End
       Begin VB.Label lblX 
          Alignment       =   1  'Right Justify
          AutoSize        =   -1  'True
          Caption         =   "X"
-         Height          =   192
+         Height          =   195
          Index           =   1
-         Left            =   528
+         Left            =   525
          TabIndex        =   5
          Top             =   720
-         Width           =   96
+         Width           =   90
       End
       Begin VB.Image Image2 
          Height          =   276
@@ -247,27 +247,28 @@ Begin VB.Form frmStationVerify
       EndProperty
       Height          =   465
       Index           =   3
-      Left            =   3135
+      Left            =   3240
       TabIndex        =   20
-      Top             =   1470
+      Top             =   1560
       Width           =   3240
    End
    Begin VB.Label Label4 
       Alignment       =   1  'Right Justify
       AutoSize        =   -1  'True
       Caption         =   "Angle to Reference Datum:"
-      Height          =   195
-      Left            =   90
+      Height          =   855
+      Left            =   360
       TabIndex        =   16
-      Top             =   2295
-      Width           =   1920
+      Top             =   2040
+      Width           =   960
+      WordWrap        =   -1  'True
    End
    Begin VB.Image Image1 
       Height          =   1275
-      Left            =   390
+      Left            =   120
       Picture         =   "frmStationVerify.frx":3C1E
       Stretch         =   -1  'True
-      Top             =   990
+      Top             =   600
       Width           =   915
    End
    Begin VB.Label lblX 
@@ -276,9 +277,9 @@ Begin VB.Form frmStationVerify
       Caption         =   "X"
       Height          =   195
       Index           =   0
-      Left            =   1905
+      Left            =   1200
       TabIndex        =   14
-      Top             =   1365
+      Top             =   1080
       Width           =   90
    End
    Begin VB.Label label1 
@@ -287,9 +288,9 @@ Begin VB.Form frmStationVerify
       Caption         =   "Y"
       Height          =   195
       Index           =   0
-      Left            =   1905
+      Left            =   1200
       TabIndex        =   13
-      Top             =   1680
+      Top             =   1440
       Width           =   105
    End
    Begin VB.Label Label2 
@@ -298,9 +299,9 @@ Begin VB.Form frmStationVerify
       Caption         =   "Z"
       Height          =   165
       Index           =   0
-      Left            =   1905
+      Left            =   1200
       TabIndex        =   12
-      Top             =   1980
+      Top             =   1800
       Width           =   90
    End
    Begin VB.Label Label6 
@@ -316,9 +317,9 @@ Begin VB.Form frmStationVerify
          Strikethrough   =   0   'False
       EndProperty
       Height          =   285
-      Left            =   480
+      Left            =   360
       TabIndex        =   11
-      Top             =   600
+      Top             =   120
       Width           =   2010
    End
 End
@@ -412,10 +413,10 @@ If DatumTB.RecordCount < 2 Then
     MsgBox ("Verification requires that at least two datums be defined.")
     Exit Sub
 End If
-txtStationName = CurrentStation.Name
-txtX(0) = CurrentStation.X
-txtY(0) = CurrentStation.y
-txtZ(0) = CurrentStation.z
+txtstationname = CurrentStation.Name
+txtX(0) = Format(CurrentStation.X, "#####0.000")
+txtY(0) = Format(CurrentStation.y, "#####0.000")
+txtZ(0) = Format(CurrentStation.z, "#####0.000")
 CenterForm Me
 
 End Sub
@@ -440,7 +441,7 @@ End If
 computeangle txtX(1), txtY(1), txtX(0), txtY(0), angle, minutes, seconds
 txtReferenceAngle = Trim(Str(angle)) + "." + Right("00" + Trim(Str(minutes)), 2) + Right("00" + Trim(Str(seconds)), 2)
 cmdRecord.Caption = "Record Datum"
-cmdRecord.Visible = True
+cmdRecord.Enabled = True
 
 End Sub
 
@@ -458,3 +459,4 @@ While Not DatumTB.EOF
 Wend
 
 End Sub
+

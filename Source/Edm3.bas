@@ -2423,6 +2423,16 @@ Case "SIMULATE"
     Case Else
     End Select
     
+Case "NONE"
+    edmshot.vangle = 0
+    edmshot.hangle = 0
+    edmshot.sloped = 0
+    edmshot.edmpoffset = 0
+    edmshot.poleh = 0
+    If prismstatus = AskForPrism Then
+        frmSelectPrism.Show 1
+    End If
+
 Case Else
     Call recordpoint(returndata$)
     If Cancelling Then

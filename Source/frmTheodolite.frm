@@ -16,6 +16,14 @@ Begin VB.Form frmTheodolite
    ScaleWidth      =   11280
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.CommandButton btnFindPorts 
+      Caption         =   "Look for Ports"
+      Height          =   615
+      Left            =   360
+      TabIndex        =   40
+      Top             =   2880
+      Width           =   1575
+   End
    Begin VB.Frame Frame2 
       Height          =   1095
       Left            =   2400
@@ -275,8 +283,8 @@ Begin VB.Form frmTheodolite
       TabCaption(0)   =   "Topcon"
       TabPicture(0)   =   "frmTheodolite.frx":01E4
       Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Label1"
-      Tab(0).Control(1)=   "Label2(1)"
+      Tab(0).Control(0)=   "Label2(1)"
+      Tab(0).Control(1)=   "Label1"
       Tab(0).ControlCount=   2
       TabCaption(1)   =   "Leica/Wild"
       TabPicture(1)   =   "frmTheodolite.frx":0200
@@ -296,9 +304,9 @@ Begin VB.Form frmTheodolite
       TabCaption(3)   =   "None"
       TabPicture(3)   =   "frmTheodolite.frx":0238
       Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Label5"
+      Tab(3).Control(0)=   "Option1(1)"
       Tab(3).Control(1)=   "Option1(0)"
-      Tab(3).Control(2)=   "Option1(1)"
+      Tab(3).Control(2)=   "Label5"
       Tab(3).ControlCount=   3
       TabCaption(4)   =   "Simulate"
       TabPicture(4)   =   "frmTheodolite.frx":0254
@@ -445,20 +453,20 @@ Begin VB.Form frmTheodolite
    Begin VB.CommandButton Command1 
       Cancel          =   -1  'True
       Caption         =   "&Cancel"
-      Height          =   735
+      Height          =   615
       Index           =   1
       Left            =   360
       TabIndex        =   2
-      Top             =   3840
+      Top             =   4320
       Width           =   1575
    End
    Begin VB.CommandButton Command1 
       Caption         =   "&Accept"
-      Height          =   735
+      Height          =   615
       Index           =   0
       Left            =   360
       TabIndex        =   1
-      Top             =   2880
+      Top             =   3600
       Width           =   1575
    End
 End
@@ -467,6 +475,7 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Function get_settings()
 
 Select Case UCase$(Parity.Text)
@@ -480,6 +489,34 @@ Case Else
 End Select
     
 End Function
+
+Private Sub btnFindPorts_Click()
+
+answer = MsgBox("EDMWIN will look for COM ports that appear to be available.  It will check ports 1-12 and report back here.  This can take a minute.  It will also change your current settings.  Are you sure you want to check for ports?", vbOKCancel)
+If answer = 1 Then
+    Screen.MousePointer = 11
+    ports$ = ""
+    If frmMain.theoport.PortOpen Then frmMain.theoport.PortOpen = False
+    For A = 1 To 12
+        frmMain.theoport.Settings = "1200,E,7,1"
+        frmMain.theoport.CommPort = A
+        On Error Resume Next
+        frmMain.theoport.PortOpen = True
+        If frmMain.theoport.PortOpen Then
+            If ports$ = "" Then
+                ports$ = "COM" + Trim(Str(A))
+            Else
+                ports$ = ports$ + ", COM" + Trim(Str(A))
+            End If
+        End If
+        frmMain.theoport.PortOpen = False
+        On Error GoTo 0
+    Next A
+    Screen.MousePointer = 1
+    answer = MsgBox("The following ports are available for EDMWIN: " + ports$, vbInformation + vbOKOnly)
+End If
+
+End Sub
 
 Private Sub Command1_Click(Index As Integer)
 
