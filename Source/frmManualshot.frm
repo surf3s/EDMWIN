@@ -162,38 +162,43 @@ Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
+
 Private Sub Command1_Click(Index As Integer)
 
 Dim edmpoffset As Single
 
 Select Case Index
 Case 0
-    edmshot.vangle = vangle.Text
-    edmshot.hangle = hangle.Text
-    edmshot.sloped = sloped.Text
-    
-    'convert VHD to XYZ
-    Call vhdtonez(edmshot)
-    
-    'offset shot from current station
-    edmshot.X = edmshot.X + CurrentStation.X
-    edmshot.Y = edmshot.Y + CurrentStation.Y
-    edmshot.z = edmshot.z + CurrentStation.z
-    
-    With frmPointdata
-        .X = Format(edmshot.X, "#########0.000")
-        .Y = Format(edmshot.Y, "#########0.000")
-        .z = Format(edmshot.z, "#########0.000")
-        .vangle = Format(edmshot.vangle, "##0.0000")
-        .hangle = Format(edmshot.hangle, "##0.0000")
-        .sloped = Format(edmshot.sloped, "#########0.000")
-        .poleh = Format(edmshot.poleh, "#########0.000")
-        .Show 1
-     End With
-    Call insertpointintotb(edmshot)
-    Me.Hide
-    Me.Refresh
-    frmEditrecord.Show 1
+    If vangle.Text = "" Or hangle.Text = "" Or sloped.Text = "" Then
+        answer = MsgBox("Enter a vertical angle, horizontal angle, and slope distance.", vbInformation)
+    Else
+        edmshot.vangle = vangle.Text
+        edmshot.hangle = hangle.Text
+        edmshot.sloped = sloped.Text
+        edmshot.poleh = poleh.Text
+        'convert VHD to XYZ
+        Call vhdtonez(edmshot)
+        
+        'offset shot from current station
+        'edmshot.X = edmshot.X + CurrentStation.X
+        'edmshot.y = edmshot.y + CurrentStation.y
+        'edmshot.z = edmshot.z + CurrentStation.z
+        
+        With frmPointdata
+            .X = Format(edmshot.X, "#########0.000")
+            .y = Format(edmshot.y, "#########0.000")
+            .z = Format(edmshot.z, "#########0.000")
+            .vangle = Format(edmshot.vangle, "##0.0000")
+            .hangle = Format(edmshot.hangle, "##0.0000")
+            .sloped = Format(edmshot.sloped, "#########0.000")
+            .poleh = Format(edmshot.poleh, "#########0.000")
+            .Show 1
+         End With
+        'Call insertpointintotb(edmshot)
+        Me.Hide
+        Me.Refresh
+        'frmEditrecord.Show 1
+    End If
 Case 1
 Case Else
 End Select

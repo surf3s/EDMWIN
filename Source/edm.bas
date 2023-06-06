@@ -183,8 +183,8 @@ Global TSLogFile As String
 'option 22 - output table name
 Type xyz
     Name As String
-    X As Double
-    Y As Double
+    x As Double
+    y As Double
     z As Double
 End Type
 
@@ -486,12 +486,16 @@ Sub insertpointintotb(edmshot As shotdata)
 
 frmMain.PointsADO.Recordset.AddNew
 On Error Resume Next
-frmMain.PointsADO.Recordset("x") = Format(edmshot.X, "#########0.000")
-frmMain.PointsADO.Recordset("y") = Format(edmshot.Y, "#########0.000")
+frmMain.PointsADO.Recordset("x") = Format(edmshot.x, "#########0.000")
+frmMain.PointsADO.Recordset("y") = Format(edmshot.y, "#########0.000")
 frmMain.PointsADO.Recordset("z") = Format(edmshot.z, "#########0.000")
 frmMain.PointsADO.Recordset("vangle") = Format(edmshot.vangle, "##0.0000")
 frmMain.PointsADO.Recordset("hangle") = Format(edmshot.hangle, "##0.0000")
 frmMain.PointsADO.Recordset("sloped") = Format(edmshot.sloped, "#########0.000")
+frmMain.PointsADO.Recordset("prism") = Format(edmshot.poleh, "#########0.000")
+frmMain.PointsADO.Recordset("datumx") = Format(CurrentStation.x, "#########0.000")
+frmMain.PointsADO.Recordset("datumy") = Format(CurrentStation.y, "#########0.000")
+frmMain.PointsADO.Recordset("datumz") = Format(CurrentStation.z, "#########0.000")
 On Error GoTo 0
 frmMain.PointsADO.Recordset.Update
 
@@ -713,8 +717,8 @@ If A = "" Then
     Print #1, "COMport="; comport
     Print #1, "EDMDelayTime="; EDMDelayTime
     Print #1, "StationName="; CurrentStation.Name
-    Print #1, "StationX="; CurrentStation.X
-    Print #1, "stationY="; CurrentStation.Y
+    Print #1, "StationX="; CurrentStation.x
+    Print #1, "stationY="; CurrentStation.y
     Print #1, "stationZ="; CurrentStation.z
     Print #1, ""
     For I = 1 To 6
@@ -1118,7 +1122,6 @@ End With
 
 End Sub
 
-
 Public Sub ClearButtonIni()
 
 Dim Gotit As Boolean
@@ -1217,5 +1220,4 @@ Set DefaultsTB = SiteDB.OpenRecordset("EDM_Defaults", dbOpenTable)
 DefaultsTB.Index = "MasterVar"
 
 End Sub
-
 

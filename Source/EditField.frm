@@ -709,7 +709,7 @@ Print #1, "COMport="; comport
 If Trim(CurrentStation.Name) <> "" Then
     Print #1, "StationName="; CurrentStation.Name
     Print #1, "StationX="; CurrentStation.X
-    Print #1, "stationY="; CurrentStation.y
+    Print #1, "stationY="; CurrentStation.Y
     Print #1, "stationZ="; CurrentStation.z
 End If
 Print #1, ""
@@ -868,8 +868,8 @@ For I = 1 To Vars
     VarType(I) = VType(I)
     VarCarry(I) = VCarry(I)
     VarMenuList(I) = VMenu(I)
-    
 Next I
+
 If Not GotUnit Then
     lstFields.AddItem "UNIT"
     I = lstFields.NewIndex
@@ -880,6 +880,7 @@ If Not GotUnit Then
     VarType(I) = "UNIT"
     VarCarry(I) = False
 End If
+
 If Not GotID Then
     lstFields.AddItem "ID"
     I = lstFields.NewIndex
@@ -890,6 +891,7 @@ If Not GotID Then
     VarType(I) = "TEXT"
     VarCarry(I) = False
 End If
+
 If Not GotSuffix Then
     lstFields.AddItem "SUFFIX"
     I = lstFields.NewIndex
@@ -900,6 +902,7 @@ If Not GotSuffix Then
     VarType(I) = "NUMERIC"
     VarCarry(I) = False
 End If
+
 If Not GotPrism Then
     lstFields.AddItem "PRISM"
     I = lstFields.NewIndex
@@ -910,6 +913,7 @@ If Not GotPrism Then
     VarType(I) = "NUMERIC"
     VarCarry(I) = False
 End If
+
 If Not GotX Then
     lstFields.AddItem "X"
     I = lstFields.NewIndex
@@ -920,6 +924,7 @@ If Not GotX Then
     VarType(I) = "NUMERIC"
     VarCarry(I) = False
 End If
+
 If Not GotY Then
     lstFields.AddItem "Y"
     I = lstFields.NewIndex
@@ -930,6 +935,7 @@ If Not GotY Then
     VarType(I) = "NUMERIC"
     VarCarry(I) = False
 End If
+
 If Not GotZ Then
     lstFields.AddItem "Z"
     I = lstFields.NewIndex
@@ -992,7 +998,6 @@ Select Case UCase(lstFields.List(lstFields.ListIndex))
         optType(2).Enabled = False
         chkCarry.Enabled = False
         txtLength.Enabled = False
-    
     Case Else
         cmdDelete(1).Enabled = True
         optType(0).Enabled = True
@@ -1033,6 +1038,7 @@ Select Case UCase(VarType(Index))
                 cmdUpDown(0).Enabled = True
                 cmdUpDown(0).Enabled = True
             End If
+    
     Case "TEXT", "UNIT", "DATE", "TIME"
         optType(1) = True
         

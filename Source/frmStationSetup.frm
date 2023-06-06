@@ -765,7 +765,7 @@ Dim DefinedAngle As Double
 
 cmdRecord(Index).Enabled = False
 
-If Not SetUpTypes(0) And frmMain.txtPrism.ListCount = 0 Then
+If Not SetUpTypes(0) And frmMain.txtprism.ListCount = 0 Then
     MsgBox ("No prisms defined - cannot initialize station")
     cmdRecord(Index).Enabled = True
     Exit Sub
@@ -792,7 +792,7 @@ If SetUpTypes(1) Then 'over unknown - shooting to known
     End If
     
     Call takeshot_nostation(AskForPrism)
-    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Then
+    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
         If edmshot.edmpoffset = 0.004 Then
             response = MsgBox("Warning: Instrument in Reflectorless mode.", vbOKCancel)
             If response = vbCancel Then Cancelling = True
@@ -855,7 +855,7 @@ ElseIf SetUpTypes(2) Then  'over known and shooting to known
     End If
     Cancelling = False
     Call takeshot_nostation(AskForPrism)
-    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Then
+    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
         If edmshot.edmpoffset = 0.004 Then
             response = MsgBox("Warning: Instrument in Reflectorless mode.", vbOKCancel)
             If response = vbCancel Then Cancelling = True
@@ -894,7 +894,7 @@ ElseIf SetUpTypes(3) Then
     
         Call sethortangle("", 0, 0, 0)
         Call takeshot_nostation(AskForPrism)
-        If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Then
+        If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
             If edmshot.edmpoffset = 0.004 Then
                 response = MsgBox("Warning: Instrument in Reflectorless mode.", vbOKCancel)
                 If response = vbCancel Then Cancelling = True
@@ -929,7 +929,7 @@ ElseIf SetUpTypes(3) Then
         End If
            
         Call takeshot_nostation(AskForPrism)
-        If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Then
+        If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
             If edmshot.edmpoffset = 0.004 Then
                 response = MsgBox("Warning: Instrument in Reflectorless mode.", vbOKCancel)
                 If response = vbCancel Then Cancelling = True
@@ -1157,7 +1157,7 @@ Select Case Index
         txtstationheight.BackColor = &H80000005
         txtReferenceAngle.BackColor = &H80000005
         lblPrism.Visible = False
-        txtPrism.Visible = False
+        txtprism.Visible = False
     Case 1
         Station(0) = "Unknown"
         Station(0).Locked = True
@@ -1313,9 +1313,9 @@ End Sub
 Private Sub txtprism_Click()
 
 If SetUpTypes(1) Then
-    txtstationheight = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
+    txtstationheight = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
 Else
-    txtZ(0) = edmshot.z - PoleHeight(txtPrism.ItemData(txtPrism.ListIndex))
+    txtZ(0) = edmshot.z - PoleHeight(txtprism.ItemData(txtprism.ListIndex))
     txtstationheight = 0
 End If
 
@@ -1323,10 +1323,10 @@ End Sub
 
 Private Sub txtPrism_DropDown()
 
-txtPrism.Clear
-For I = 0 To frmMain.txtPrism.ListCount - 1
-        txtPrism.AddItem frmMain.txtPrism.List(I)
-        txtPrism.ItemData(txtPrism.NewIndex) = frmMain.txtPrism.ItemData(I)
+txtprism.Clear
+For I = 0 To frmMain.txtprism.ListCount - 1
+        txtprism.AddItem frmMain.txtprism.List(I)
+        txtprism.ItemData(txtprism.NewIndex) = frmMain.txtprism.ItemData(I)
 Next I
 
 End Sub

@@ -4,10 +4,10 @@ Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "MSCOMM32.OCX"
 Object = "{67397AA1-7FB1-11D0-B148-00A0C922E820}#6.0#0"; "MSADODC.OCX"
 Begin VB.Form frmMain 
    BorderStyle     =   4  'Fixed ToolWindow
-   ClientHeight    =   5730
+   ClientHeight    =   8445
    ClientLeft      =   135
    ClientTop       =   -165
-   ClientWidth     =   10080
+   ClientWidth     =   11490
    ControlBox      =   0   'False
    Icon            =   "frmMain.frx":0000
    KeyPreview      =   -1  'True
@@ -16,12 +16,30 @@ Begin VB.Form frmMain
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    NegotiateMenus  =   0   'False
-   ScaleHeight     =   5730
-   ScaleWidth      =   10080
+   ScaleHeight     =   8445
+   ScaleWidth      =   11490
    ShowInTaskbar   =   0   'False
+   Begin VB.CommandButton btn_fontsize 
+      Caption         =   "+"
+      Height          =   375
+      Index           =   1
+      Left            =   1560
+      TabIndex        =   67
+      Top             =   8040
+      Width           =   735
+   End
+   Begin VB.CommandButton btn_fontsize 
+      Caption         =   "---"
+      Height          =   375
+      Index           =   0
+      Left            =   840
+      TabIndex        =   66
+      Top             =   8040
+      Width           =   735
+   End
    Begin VB.CommandButton cmdScroll 
       BackColor       =   &H00FFFFFF&
-      Height          =   380
+      Height          =   495
       Index           =   0
       Left            =   8040
       Picture         =   "frmMain.frx":000C
@@ -29,7 +47,7 @@ Begin VB.Form frmMain
       TabIndex        =   62
       TabStop         =   0   'False
       Top             =   528
-      Width           =   375
+      Width           =   735
    End
    Begin VB.CommandButton cmdScroll 
       BackColor       =   &H00FFFFFF&
@@ -40,8 +58,8 @@ Begin VB.Form frmMain
       Style           =   1  'Graphical
       TabIndex        =   61
       TabStop         =   0   'False
-      Top             =   972
-      Width           =   375
+      Top             =   1080
+      Width           =   735
    End
    Begin VB.CommandButton cmdScroll 
       BackColor       =   &H00FFFFFF&
@@ -52,56 +70,56 @@ Begin VB.Form frmMain
       Style           =   1  'Graphical
       TabIndex        =   60
       TabStop         =   0   'False
-      Top             =   1608
-      Width           =   375
+      Top             =   1560
+      Width           =   735
    End
    Begin VB.CommandButton cmdScroll 
       BackColor       =   &H00FFFFFF&
-      Height          =   380
+      Height          =   495
       Index           =   3
       Left            =   8040
       Picture         =   "frmMain.frx":0C32
       Style           =   1  'Graphical
       TabIndex        =   59
       TabStop         =   0   'False
-      Top             =   2064
-      Width           =   375
+      Top             =   2040
+      Width           =   735
    End
    Begin VB.CommandButton Command1 
       Caption         =   "&X-Shot"
-      Height          =   375
-      Left            =   8520
+      Height          =   735
+      Left            =   9105
       TabIndex        =   58
       TabStop         =   0   'False
-      Top             =   1200
-      Width           =   1425
+      Top             =   1800
+      Width           =   2145
    End
    Begin VB.CommandButton cmdPlusShot 
       Caption         =   "&Continue"
-      Height          =   375
-      Left            =   8505
+      Height          =   735
+      Left            =   9105
       TabIndex        =   57
       TabStop         =   0   'False
-      Top             =   768
-      Width           =   1425
+      Top             =   1000
+      Width           =   2145
    End
    Begin VB.CommandButton cmdShoot 
       Caption         =   "&New Object"
-      Height          =   375
-      Left            =   8505
+      Height          =   735
+      Left            =   9105
       TabIndex        =   56
       TabStop         =   0   'False
-      Top             =   336
-      Width           =   1425
+      Top             =   200
+      Width           =   2145
    End
    Begin VB.CommandButton cmdCancel 
       Caption         =   "Cancel Shot"
-      Height          =   1215
-      Left            =   8520
+      Height          =   1575
+      Left            =   9105
       TabIndex        =   55
-      Top             =   360
+      Top             =   1000
       Visible         =   0   'False
-      Width           =   1335
+      Width           =   2145
    End
    Begin MSAdodcLib.Adodc UnitsADO 
       Height          =   345
@@ -199,12 +217,12 @@ Begin VB.Form frmMain
    End
    Begin VB.CommandButton Command2 
       Caption         =   "Delete Obj"
-      Height          =   345
-      Left            =   8520
+      Height          =   735
+      Left            =   9120
       TabIndex        =   52
       TabStop         =   0   'False
-      Top             =   4014
-      Width           =   1425
+      Top             =   7400
+      Width           =   2145
    End
    Begin VB.TextBox txtPoleHT 
       Alignment       =   1  'Right Justify
@@ -245,69 +263,69 @@ Begin VB.Form frmMain
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button6"
-      Height          =   345
+      Height          =   735
       Index           =   6
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   38
       TabStop         =   0   'False
-      Top             =   3618
+      Top             =   6600
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button5"
-      Height          =   345
+      Height          =   735
       Index           =   5
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   37
       TabStop         =   0   'False
-      Top             =   3222
+      Top             =   5800
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button4"
-      Height          =   345
+      Height          =   735
       Index           =   4
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   36
       TabStop         =   0   'False
-      Top             =   2826
+      Top             =   5000
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button3"
-      Height          =   345
+      Height          =   735
       Index           =   3
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   35
       TabStop         =   0   'False
-      Top             =   2430
+      Top             =   4200
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button2"
-      Height          =   345
+      Height          =   735
       Index           =   2
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   34
       TabStop         =   0   'False
-      Top             =   2034
+      Top             =   3400
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.CommandButton Button 
       Caption         =   "Button1"
-      Height          =   345
+      Height          =   735
       Index           =   1
-      Left            =   8505
+      Left            =   9105
       TabIndex        =   33
       TabStop         =   0   'False
-      Top             =   1638
+      Top             =   2600
       Visible         =   0   'False
-      Width           =   1425
+      Width           =   2145
    End
    Begin VB.ComboBox txtXYZ 
       BeginProperty Font 
@@ -665,23 +683,35 @@ Begin VB.Form frmMain
          Width           =   930
       End
    End
+   Begin VB.Label lbl_fontsize 
+      AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
+      Caption         =   "Fontsize"
+      Height          =   195
+      Left            =   120
+      TabIndex        =   65
+      Top             =   8160
+      Width           =   585
+   End
    Begin VB.Label Label6 
+      Alignment       =   2  'Center
       AutoSize        =   -1  'True
       Caption         =   "Last"
       Height          =   195
-      Left            =   8070
+      Left            =   8040
       TabIndex        =   64
-      Top             =   2490
-      Width           =   300
+      Top             =   2640
+      Width           =   735
    End
    Begin VB.Label Label3 
+      Alignment       =   2  'Center
       AutoSize        =   -1  'True
       Caption         =   "First"
       Height          =   195
-      Left            =   8070
+      Left            =   8040
       TabIndex        =   63
       Top             =   285
-      Width           =   300
+      Width           =   735
    End
    Begin VB.Label lblDefaults 
       AutoSize        =   -1  'True
@@ -733,6 +763,7 @@ Begin VB.Form frmMain
    Begin VB.Label Label8 
       Alignment       =   2  'Center
       AutoSize        =   -1  'True
+      BackStyle       =   0  'Transparent
       Caption         =   "With keyboard, to move from one record to another, use the Page-Up Page-Down keys.  To move between fields, use the TAB key."
       Height          =   390
       Left            =   120
@@ -1325,14 +1356,179 @@ For I = 1 To Vars
             End If
     End Select
 Next I
+
+bottom_speed_button = Command1.Top + Command1.Height + 100
+For I = 1 To 6
+    If Button(I).Visible Then
+        If Button(I).Top + Button(I).Height + 100 > bottom_speed_button Then
+            bottom_speed_button = Button(I).Top + Button(I).Height + 100
+        End If
+    End If
+Next I
+
 LabelTop = LabelTop + VarLabel(LastOptional).Height + 200
+If bottom_speed_button > LabelTop Then
+    LabelTop = bottom_speed_button
+End If
+
 If Label8.Top < LabelTop Then
     Label8.Top = LabelTop
     Command2.Top = LabelTop
 End If
-Me.Height = Label8.Top + Label8.Height + 100
+Command2.Left = Command1.Left
+
+Me.Height = Command2.Top + Command2.Height + 200
 
 Loading = False
+
+Screen.MousePointer = 1
+
+End Sub
+
+Private Sub reformat_screen()
+
+VarLabel(0).Left = 90
+LabelLeft = VarLabel(0).Left
+OriginalLeft = LabelLeft
+LabelTop = VarLabel(0).Top
+'BoxLeft = TextBox(0).Left
+BoxLeft = VarLabel(0).Left + VarLabel(0).Width + 50
+BoxTop = TextBox(0).Top
+
+For I = 1 To Vars
+    Select Case UCase(VarList(I))
+        Case "UNIT"
+        Case "ID"
+        Case "SUFFIX"
+        Case "PRISM"
+        Case "X"
+        Case "Y"
+        Case "Z"
+        Case "VANGLE"
+        Case "HANGLE"
+        Case "SLOPED"
+        Case "DATUMX"
+        Case "DATUMY"
+        Case "DATUMZ"
+        Case Else
+            VarLabel(I).Top = LabelTop
+            VarLabel(I).Left = LabelLeft
+            VarLabel(I).Width = VarLabel(0).Width
+            VarLabel(I).Height = VarLabel(0).Height
+            BoxTop = LabelTop
+            Select Case VType(I)
+                Case "TEXT"
+                    TextBox(I).Left = BoxLeft
+                    TextBox(I).Top = BoxTop
+                    TextBox(I).Height = TextBox(0).Height
+                    TextBox(I).Width = TextBox(0).Width
+                Case "NUMERIC"
+                    NumberBox(I).Left = BoxLeft
+                    NumberBox(I).Top = BoxTop
+                    NumberBox(I).Height = TextBox(0).Height
+                    NumberBox(I).Width = TextBox(0).Width
+                Case "MENU"
+                    MenuBox(I).Left = BoxLeft
+                    MenuBox(I).Top = BoxTop
+                    'MenuBox(I).Height = TextBox(0).Height
+                    MenuBox(I).Width = TextBox(0).Width
+            End Select
+            
+            Noptionals = Noptionals + 1
+            LastOptional = I
+            LabelLeft = LabelLeft + VarLabel(0).Width + TextBox(0).Width + 100
+            BoxLeft = LabelLeft + VarLabel(0).Width + 50
+            If Noptionals Mod 2 = 0 Then
+                LabelTop = LabelTop + VarLabel(0).Height + 50
+                'LabelTop = VarLabel(0).Top
+                LabelLeft = OriginalLeft
+                'BoxTop = TextBox(0).Top
+                BoxTop = LabelTop
+                BoxLeft = LabelLeft + VarLabel(0).Width + 50
+            End If
+    End Select
+Next I
+
+bottom_speed_button = Command1.Top + Command1.Height + 100
+For I = 1 To 6
+    If Button(I).Visible Then
+        If Button(I).Top + Button(I).Height + 100 > bottom_speed_button Then
+            bottom_speed_button = Button(I).Top + Button(I).Height + 100
+        End If
+    End If
+Next I
+
+LabelTop = LabelTop + VarLabel(LastOptional).Height + 200
+If bottom_speed_button > LabelTop Then
+    LabelTop = bottom_speed_button
+End If
+
+If Label8.Top < LabelTop Then
+    Label8.Top = LabelTop
+    Command2.Top = LabelTop
+End If
+Command2.Left = Command1.Left
+
+Me.Height = Command2.Top + Command2.Height + 200
+
+titlebar_height = (Me.Height - Me.ScaleHeight) - (Me.Width - Me.ScaleWidth) / 2
+btn_fontsize(0).Top = Me.Height - titlebar_height - btn_fontsize(0).Height - 50
+btn_fontsize(1).Top = Me.Height - titlebar_height - btn_fontsize(1).Height - 50
+lbl_fontsize.Top = btn_fontsize(0).Top + btn_fontsize(0).Height / 2 - lbl_fontsize.Height / 2
+
+End Sub
+
+Private Function min(A, B) As Integer
+    If A < B Then
+        min = A
+    Else
+        min = B
+    End If
+    
+End Function
+
+Private Function max(A, B) As Integer
+    If A > B Then
+        max = A
+    Else
+        max = B
+    End If
+    
+End Function
+
+Private Sub btn_fontsize_Click(Index As Integer)
+
+Select Case Index
+Case 0
+    For I = 0 To Vars
+        On Error Resume Next
+        TextBox(I).FontSize = max(TextBox(I).FontSize - 2, 8)
+        MenuBox(I).FontSize = max(MenuBox(I).FontSize - 2, 8)
+        NumberBox(I).FontSize = max(NumberBox(I).FontSize - 2, 8)
+        VarLabel(I).FontSize = max(VarLabel(I).FontSize - 2, 8)
+    Next I
+    TextBox(0).Height = max(TextBox(0).Height - 40, 315)
+    TextBox(0).Width = max(TextBox(0).Width - 200, 2055)
+    VarLabel(0).Height = max(VarLabel(0).Height - 40, 315)
+    VarLabel(0).Width = max(VarLabel(0).Width - 100, 1200)
+    reformat_screen
+Case 1
+    For I = 0 To Vars
+        On Error Resume Next
+        TextBox(I).FontSize = min(TextBox(I).FontSize + 2, 20)
+        MenuBox(I).FontSize = min(MenuBox(I).FontSize + 2, 20)
+        NumberBox(I).FontSize = min(NumberBox(I).FontSize + 2, 20)
+        VarLabel(I).FontSize = min(VarLabel(I).FontSize + 2, 20)
+    Next I
+    TextBox(0).Height = min(TextBox(0).Height + 40, 515)
+    TextBox(0).Width = min(TextBox(0).Width + 200, 3055)
+    VarLabel(0).Height = min(VarLabel(0).Height + 40, 515)
+    VarLabel(0).Width = min(VarLabel(0).Width + 100, 2200)
+    reformat_screen
+Case Else
+End Select
+
+On Error GoTo 0
 
 End Sub
 
@@ -1578,8 +1774,8 @@ Private Sub cmdShoot_Click()
 If CheckStatus() = True Then Exit Sub
 
 Picture1.SetFocus
-
 Screen.MousePointer = 11
+
 txtSuffix = 0
 If Not (PointsADO.Recordset.BOF Or PointsADO.Recordset.EOF) Then
     PrevBookMark = PointsADO.Recordset.Bookmark
@@ -1604,7 +1800,6 @@ End If
 
 If PlotShowing Then
     frmPlot.shpX.Visible = False
-
     If mdiMain.mnuViewPoints.Checked Then
         frmPlot.SetScale
         frmPlot.PlotPoints
@@ -1614,12 +1809,14 @@ End If
 If Speaking Then
     SpeakID txtUnit, txtID
 End If
+
 cmdShoot.Enabled = True
 cmdPlusShot.Enabled = True
 Command1.Enabled = True
 For I = 1 To 6
     Button(I).Enabled = True
 Next I
+
 Screen.MousePointer = 1
 Picture1.SetFocus
 FindBlankField
@@ -1648,7 +1845,7 @@ ElseIf PoleTB.BOF And PoleTB.EOF Then
     MsgBox ("No prisms defined.  Define before taking a shot")
     Exit Sub
 End If
-If Not frmMain.theoport.PortOpen And EDMName <> "Simulate" And EDMName <> "Microscribe" Then
+If Not frmMain.theoport.PortOpen And EDMName <> "Simulate" And EDMName <> "Microscribe" And EDMName <> "None" Then
     MsgBox ("Total Station not cabled")
     Exit Sub
 End If
@@ -1829,10 +2026,10 @@ If Gotit Then
     KeyCode = 0
     Exit Sub
 End If
+
 Gotit = False
 If Shift = 2 And KeyCode <> 17 Then
     For I = 1 To 6
-        
         If Button(I).Visible And ButtonShortCut(I) = Chr(KeyCode) Then
             Gotit = True
             Exit For
@@ -1856,8 +2053,12 @@ BannerWidth = 150
 
 Me.Left = 0
 Me.Top = 0
-Me.Height = 5760
-Me.Width = 10110
+Me.Height = 9000
+Me.Width = cmdShoot.Left + cmdShoot.Width + 400
+
+titlebar_height = (Me.Height - Me.ScaleHeight) - (Me.Width - Me.ScaleWidth) / 2
+'titlebar_height = (Me.Height - Me.ScaleHeight)
+
 Me.Show
 Loading = True
 inifile$ = fixpath(App.Path) + "edm.ini"
@@ -1891,7 +2092,15 @@ If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then
     lblPointsWarning.Visible = True
     Gotit = False
 End If
+
+reformat_screen
+
+'btn_fontsize(0).Top = Me.Height - titlebar_height - btn_fontsize(0).Height - 50
+'btn_fontsize(1).Top = Me.Height - titlebar_height - btn_fontsize(1).Height - 50
+'lbl_fontsize.Top = btn_fontsize(0).Top + btn_fontsize(0).Height / 2 - lbl_fontsize.Height / 2
+
 Me.Show
+
 Picture1.SetFocus
 If Not Gotit Then
     If Dir(inifile) = "" Then
@@ -1917,8 +2126,8 @@ If EDMName$ <> "" And comport <> "" And comsettings <> "" Then
             End If
             Screen.MousePointer = 1
         End If
-    Case "WILD", "LEICA", "BUILDER", "WILD2"
-        If UCase(EDMName$) = "WILD2" Then
+    Case "WILD", "LEICA", "BUILDER", "WILD2", "LEICA_AUTOTILT"
+        If UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
             answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " (Leica type station with GeoCOM format) on comport " + comport + ":" + comsettings + ".", vbOKCancel)
         Else
             answer = MsgBox("Cable the total station to the computer and communications will be initialized using station type " + EDMName$ + " on comport " + comport + ":" + comsettings + ".", vbOKCancel)
@@ -1988,7 +2197,7 @@ Exit Sub
 
 End Sub
 
-Private Sub Form_Unload(Cancel As Integer)
+Private Sub Form_Unload(cancel As Integer)
 
 inifile$ = fixpath(App.Path) + "edm.ini"
 Call WriteEDMIni(inifile$)
@@ -3295,6 +3504,12 @@ On Error GoTo 0
 For I = 1 To Vars
     Select Case UCase(VarList(I))
         Case "UNIT", "ID", "SUFFIX", "PRISM", "X", "Y", "Z", "VANGLE", "HANGLE", "SLOPED"
+        Case "DATUMX"
+            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.X, "######0.000")
+        Case "DATUMY"
+            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.y, "######0.000")
+        Case "DATUMZ"
+            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.z, "######0.000")
         Case "DATE"
             PointsADO.Recordset.Update VarList(I), Date
         Case "TIME"
@@ -3678,11 +3893,11 @@ Else
         End If
     End If
 End If
+
 If SelectedUnit <> "" Then
     txtUnit = SelectedUnit
     txtUnit_KeyPress 13
     Exit Function
-
 Else
     SqlString = "Select unit from [EDM_units] where minx=-99999"
     Set rsTemp = SiteDB.OpenRecordset(SqlString, dbOpenDynaset)
@@ -3715,10 +3930,11 @@ Else
         End If
     Else
         response = MsgBox("Object in undefined unit.  Define now?", vbYesNoCancel)
-    
     End If
 End If
+
 Set rsTemp = Nothing
+
 If response = vbCancel Then
     Cancelling = True
     Exit Function
@@ -4196,7 +4412,9 @@ Dim currentrecord As Variant
 UnitsADO.RecordSource = "edm_units"
 UnitsADO.Refresh
 UnitsADO.Recordset.Requery
-UnitsADO.Recordset.MoveLast
+If Not UnitTB.BOF Or Not UnitTB.EOF Then
+    UnitsADO.Recordset.MoveLast
+End If
 
 Dim updated As Boolean
 updated = False
@@ -4225,7 +4443,7 @@ If Action = GetNextID Then
     If updated Then
         IDvalue = PadID(UnitTB("id"))
     Else
-        MsgBox ("Error updating units table.  ID could not be udpated.  Tell Shannon, update ID by hand, and watch for ID sequence errors.")
+        MsgBox ("Error updating units table.  ID could not be udpated.  You may need to add a matching Unit.  Otherwise tell Shannon, update ID by hand, and watch for ID sequence errors.")
         Exit Sub
     End If
     
@@ -4253,7 +4471,7 @@ ElseIf Action = DecID Then
     If updated Then
         IDvalue = PadID(UnitTB("id"))
     Else
-        MsgBox ("Error updating units table.  ID could not be udpated.  Tell Shannon, update ID by hand, and watch for ID sequence errors.")
+        MsgBox ("Error updating units table.  ID could not be udpated.  You may need to add a matching Unit.  Otherwise tell Shannon, update ID by hand, and watch for ID sequence errors.")
         Exit Sub
     End If
     
@@ -4261,11 +4479,15 @@ ElseIf Action = SetID Then
         Dim TempIDValue As String
         Do
             UnitsADO.Refresh
-            
             UnitsADO.Recordset.Filter = "[unit]='" + UnitValue + "'"
             On Error Resume Next
             TempIDValue = UnitsADO.Recordset("ID")
-            If Err = 0 Then Exit Do
+            If Err = 0 Then
+                Exit Do
+            Else
+                MsgBox ("Error updating units table.  ID could not be udpated.  You may need to add a matching Unit.  Otherwise tell Shannon, update ID by hand, and watch for ID sequence errors.")
+                Exit Sub
+            End If
         Loop
         On Error GoTo 0
         UnitsADO.Recordset.Filter = adFilterNone

@@ -2,45 +2,60 @@ VERSION 5.00
 Begin VB.Form frmDebug 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Debug Total Station"
-   ClientHeight    =   7935
+   ClientHeight    =   8295
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   9855
+   ClientWidth     =   9900
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   7935
-   ScaleWidth      =   9855
+   ScaleHeight     =   8295
+   ScaleWidth      =   9900
    ShowInTaskbar   =   0   'False
    StartUpPosition =   3  'Windows Default
+   Begin VB.ComboBox ts_commands 
+      Height          =   315
+      Left            =   120
+      TabIndex        =   20
+      Top             =   3000
+      Width           =   2175
+   End
    Begin VB.CommandButton Command1 
       Caption         =   "Copy to Clipboard"
       Height          =   495
-      Left            =   4920
-      TabIndex        =   21
-      Top             =   7320
+      Left            =   6120
+      TabIndex        =   19
+      Top             =   7560
       Width           =   2415
    End
    Begin VB.CommandButton cmdClear 
       Caption         =   "Clear"
       Height          =   495
       Left            =   3600
-      TabIndex        =   20
-      Top             =   7320
-      Width           =   1215
+      TabIndex        =   18
+      Top             =   7560
+      Width           =   2415
    End
    Begin VB.Frame Frame 
       Caption         =   "Results"
-      Height          =   3495
+      Height          =   3855
       Left            =   120
       TabIndex        =   7
-      Top             =   4320
+      Top             =   4200
       Width           =   3255
+      Begin VB.TextBox txtPoleHeight 
+         Enabled         =   0   'False
+         Height          =   375
+         Left            =   960
+         TabIndex        =   23
+         Top             =   3240
+         Width           =   1935
+      End
       Begin VB.TextBox txtZ 
          Enabled         =   0   'False
          Height          =   375
          Left            =   960
-         TabIndex        =   18
+         TabIndex        =   21
          Top             =   2760
          Width           =   1935
       End
@@ -84,11 +99,19 @@ Begin VB.Form frmDebug
          Top             =   360
          Width           =   1935
       End
+      Begin VB.Label Label9 
+         Caption         =   "Pole H."
+         Height          =   255
+         Left            =   240
+         TabIndex        =   24
+         Top             =   3240
+         Width           =   1335
+      End
       Begin VB.Label Label8 
          Caption         =   "Z"
          Height          =   255
          Left            =   240
-         TabIndex        =   19
+         TabIndex        =   22
          Top             =   2760
          Width           =   1335
       End
@@ -139,23 +162,23 @@ Begin VB.Form frmDebug
       Left            =   1200
       TabIndex        =   6
       Top             =   1680
-      Width           =   1575
+      Width           =   2175
    End
-   Begin VB.CommandButton btnSetAngle 
-      Caption         =   "Set Angle to 0"
-      Height          =   495
-      Left            =   120
+   Begin VB.CommandButton execute_command 
+      Caption         =   "Send"
+      Height          =   315
+      Left            =   2400
       TabIndex        =   4
       Top             =   3000
-      Width           =   2655
+      Width           =   975
    End
    Begin VB.CommandButton btnXShot 
       Caption         =   "X-Shot"
       Height          =   495
       Left            =   120
       TabIndex        =   3
-      Top             =   3720
-      Width           =   2655
+      Top             =   3480
+      Width           =   3255
    End
    Begin VB.CommandButton btnInitialize 
       Caption         =   "Initialize"
@@ -163,10 +186,10 @@ Begin VB.Form frmDebug
       Left            =   120
       TabIndex        =   2
       Top             =   2280
-      Width           =   2655
+      Width           =   3255
    End
    Begin VB.TextBox txtOutput 
-      Height          =   7095
+      Height          =   7335
       Left            =   3600
       MultiLine       =   -1  'True
       ScrollBars      =   2  'Vertical
@@ -202,10 +225,48 @@ Call initcomport(comport, errorcode)
 
 End Sub
 
-Private Sub btnSetAngle_Click()
+Private Sub execute_command_Click()
 
-angle$ = ""
-Call sethortangle(angle$, 0, 0, 0)
+cmd$ = ts_commands.Text
+If cmd$ = "" Then
+    response = MsgBox("Select a command from the dropdown next to this button.", vbInformation + vbOKOnly)
+    Exit Sub
+End If
+
+If Not frmMain.theoport.PortOpen Then
+    MsgBox ("The COM port is not open.  Try initialize first.")
+    Exit Sub
+End If
+
+Select Case cmd$
+Case "0 Horizontal Angle"
+    angle$ = ""
+    Call sethortangle(angle$, 0, 0, 0)
+Case "Get date/time"
+    Call get_date_time
+Case "Get Instr. Name"
+    Call get_station_name
+Case "Launch measurement"
+    Call launch_measurement
+Case "Get meas. with tilt"
+    measurement$ = get_measure_with_tilt()
+    If measurement$ <> "" Then
+        Call parse_tilt_measure(measurement$, edmshot, errorcode)
+        If errorcode = 0 Then
+            Call convert_edmshot_to_dms(edmshot)
+            Call vhdtonez(edmshot)
+            txtHangle = Format(edmshot.hangle, "####0.0000")
+            txtVangle = Format(edmshot.vangle, "####0.0000")
+            txtSloped = Format(edmshot.sloped, "####0.000")
+            txtX = Format(edmshot.X, "####0.000")
+            txtY = Format(edmshot.y, "####0.000")
+            txtZ = Format(edmshot.z, "####0.000")
+            txtPoleHeight = Format(edmshot.poleh, "####0.000")
+        End If
+    End If
+Case Else
+    response = MsgBox("Error: Unrecognize command selected.", vbCritical + vbOKOnly)
+End Select
 
 End Sub
 
@@ -242,4 +303,11 @@ Private Sub Form_Load()
 
 txtComSettings = comport + ":" + comsettings
 
+ts_commands.AddItem ("0 Horizontal Angle")
+ts_commands.AddItem ("Get date/time")
+ts_commands.AddItem ("Get Instr. Name")
+ts_commands.AddItem ("Launch measurement")
+ts_commands.AddItem ("Get meas. with tilt")
+
 End Sub
+

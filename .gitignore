@@ -333,14 +333,11 @@ ASALocalRun/
 # Local History for Visual Studio
 .localhistory/
 
-*.dll
 *.mdb
 *.xlsx
 *.xls
-*.exe
 *.zip
 *.cab
-*.ocx
 *.ddf
 *.bat
 *.ldb
@@ -348,15 +345,22 @@ ASALocalRun/
 *.oca
 desktop.ini
 
-EDM Windows Setup/
+bACKUP 11-9-2017/
 debug program/
+EDM Windows Setup/
 LabView/
+Leica/
+MUS 6/
 OSA Stuff/
+Other/
 Package/
-Visa/
-USB Serial Drivers/
-Windows 10/
-TriLat/
-USB2SerialDrivers/
 Reference Docs/
+Test/
+test data/
+Topcon/
+TriLat/
+USB Serial Drivers/
+USB2SerialDrivers/
+Visa/
+Windows 10/
 

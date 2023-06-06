@@ -1,6 +1,6 @@
 Attribute VB_Name = "EDMWindows"
 Type shotdata
-    X As Single
+    x As Single
     y As Single
     z As Single
     sloped As Single
@@ -123,7 +123,6 @@ For I = 1 To Vars
             xyztabledef.Fields.Append xyzfield
     End Select
 Next I
-    
 
 SiteDB.TableDefs.Append xyztabledef
 Set xyzindex = SiteDB.TableDefs(XYZTableName).CreateIndex("SqidIndex")
@@ -234,6 +233,12 @@ Do
     DoEvents
 Loop Until Right$(response, 2) = Chr$(13) + Chr$(10) Or Timer - timeone > 30 Or Cancelling
 
+'If Len(response) = 2 Then
+'    MsgBox (Str(Asc(Left(response, 1))) + "," + Str(Asc(Right(response, 1))))
+'End If
+
+'MsgBox ("Length of response is " + Str(Len(response)) + " and the response is '" + response + "'")
+
 If Not Cancelling And Not Right$(response, 2) = Chr$(13) + Chr$(10) Then
     Cancelling = True
     response = "CANCEL"
@@ -280,7 +285,7 @@ Case "topcon"
     transmit = d$ + bcc$ + Chr$(3) + term$
 Case "wild", "leica", "builder"
     transmit = d$ + term$
-Case "wild2"
+Case "wild2", "leica_autotilt"
     transmit = Chr$(10) + d$ + term$
 Case "sokkia"
     transmit = d$
@@ -289,7 +294,7 @@ Case Else
 End Select
 
 Select Case LCase(EDMName$)
-Case "topcon", "wild", "wild2", "sokkia", "leica", "nikon", "builder"
+Case "topcon", "wild", "wild2", "leica_autotilt", "sokkia", "leica", "nikon", "builder"
     If frmMain.theoport.PortOpen Then
         frmMain.theoport.Output = transmit
     End If
@@ -315,7 +320,7 @@ End If
     
 End Sub
 
-Sub getpresetdata(hangle As Single, X As Single, y As Single, z As Single, angleunit$, mesunits$, errormessage$)
+Sub getpresetdata(hangle As Single, x As Single, y As Single, z As Single, angleunit$, mesunits$, errormessage$)
 
 errormessage$ = ""
 If display.edmtype <> 1 Then Exit Sub
@@ -333,7 +338,7 @@ If A$ <> "CANCEL" Then
     Call delay(0.05)
     Call directoutput(ack$)
     returndata$ = A$
-    Call parsepreset(returndata$, hangle, X, y, z, angleunit$, mesunits$, errormessage$)
+    Call parsepreset(returndata$, hangle, x, y, z, angleunit$, mesunits$, errormessage$)
 Else
     Call horizontal(errorcode)
 End If
@@ -419,6 +424,22 @@ Case "COM11"
     frmMain.theoport.CommPort = 11
 Case "COM12"
     frmMain.theoport.CommPort = 12
+Case "COM13"
+    frmMain.theoport.CommPort = 13
+Case "COM14"
+    frmMain.theoport.CommPort = 14
+Case "COM15"
+    frmMain.theoport.CommPort = 15
+Case "COM16"
+    frmMain.theoport.CommPort = 16
+Case "COM17"
+    frmMain.theoport.CommPort = 17
+Case "COM18"
+    frmMain.theoport.CommPort = 18
+Case "COM19"
+    frmMain.theoport.CommPort = 19
+Case "COM20"
+    frmMain.theoport.CommPort = 20
 Case Else
 End Select
 
@@ -465,7 +486,7 @@ Case "wild", "leica", "builder"
     Call delay(0.5)
     Call clearcom
 
-Case "wild2"
+Case "wild2", "leica_autotilt"
     Call edmoutput("%R1Q,0:", errorcode)    'Checks that communications is working
     If errorcode = 0 Then
         Call edminput(A$)
@@ -526,7 +547,7 @@ radtodeg = radians_angle / (2 * pi) * 360
 
 End Function
 
-Sub convert_edmshot_to_dms()
+Sub convert_edmshot_to_dms(edmshot As shotdata)
 
 ' This is for GeoCOM stations.  These return the V and H angles in decimal radians
 ' To keep compatibility with the rest of the program, these are then converted to
@@ -540,7 +561,6 @@ edmshot.hangle = decimaldegrees_to_dms(edmshot.hangle)
 
 End Sub
 
-
 Function decimaldegrees_to_dms(angle) As Double
 
 degrees = Int(angle)
@@ -550,7 +570,6 @@ seconds = Int(seconds - (60 * minutes))
 decimaldegrees_to_dms = Val(Str(degrees) + "." + Format(minutes, "00") + Format(seconds, "00"))
 
 End Function
-
 
 Sub parsenez(nezdata$, edmshot As shotdata, edmpoffset As Single, mesunits$, angleunit$, errorcode)
 
@@ -655,12 +674,16 @@ Case "wild2"
             errorcode = 1003
             Exit Sub
         End If
-        Call convert_edmshot_to_dms
+        Call convert_edmshot_to_dms(edmshot)
     Else
         errorcode = 1002
         Exit Sub
     End If
         
+Case "leica_autotilt"
+    Call parse_tilt_measure(nezdata$, edmshot, errorcode)
+    Call convert_edmshot_to_dms(edmshot)
+
 Case "wild"
     
     ' This code is for Lieca as well.  Modified May, 2021, to accept either GSI 8 or 16
@@ -777,7 +800,7 @@ End Select
 
 End Sub
 
-Sub parsepreset(preset$, hangle As Single, X As Single, y As Single, z As Single, angleunit$, mesunits$, errormessage$)
+Sub parsepreset(preset$, hangle As Single, x As Single, y As Single, z As Single, angleunit$, mesunits$, errormessage$)
 
 A = InStr(preset$, "+")
 B = InStr(preset$, "-")
@@ -795,7 +818,7 @@ Else
     hangle = Val(Mid$(preset$, 3, 8)) / 10000
     angleunit$ = Mid$(preset$, 11, 1)
     y = Val(Mid$(preset$, 12, 9)) / 1000
-    X = Val(Mid$(preset$, 21, 9)) / 1000
+    x = Val(Mid$(preset$, 21, 9)) / 1000
     mesunits$ = Mid$(preset$, 30, 1)
     z = Val(Mid$(preset$, 31, 9)) / 1000
 End If
@@ -946,6 +969,13 @@ Case "WILD2"
     Call clearcom
     Shooting = False
     mdiMain.StatusBar.Panels(6).Picture = mdiMain.Picture2(2).Picture
+
+Case "LEICA_AUTOTILT"
+    Call clearcom
+    returndata$ = get_measure_with_tilt()
+    Call clearcom
+    Shooting = False
+    mdiMain.StatusBar.Panels(6).Picture = mdiMain.Picture2(2).Picture
     
 Case "SOKKIA"
     returndata$ = ""
@@ -991,6 +1021,226 @@ ExitSub:
 
 End Sub
 
+Sub get_date_time()
+
+Select Case UCase(EDMName)
+Case "WILD2", "LEICA_AUTOTILT"
+    d$ = "%R1Q,5008:"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+Case Else
+End Select
+
+End Sub
+
+Sub launch_measurement()
+
+Select Case UCase(EDMName)
+Case "WILD2"
+    d$ = "%R1Q,2008:1,1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+Case "LEICA_AUTOTILT"
+    A$ = get_measure_with_tilt()
+Case Else
+End Select
+
+End Sub
+
+Sub get_station_name()
+
+Select Case UCase(EDMName)
+Case "WILD2", "LEICA_AUTOTILT"
+    d$ = "%R1Q,5004,6,21341:"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+Case Else
+End Select
+
+End Sub
+
+Function geocom_errorcode(result$) As Integer
+
+    temp$ = result$
+    geocom_errorcode = -1
+    A = InStr(temp$, ":")
+    If A <> 0 Then
+        temp$ = Mid$(temp$, A + 1)
+        A = InStr(temp$, ",")
+        If A <> 0 Then
+            temp$ = Left$(temp$, A - 1)
+        End If
+    End If
+    If temp$ <> "" Then
+        geocom_errorcode = CInt(temp$)
+    End If
+
+End Function
+
+Function get_measure_with_tilt() As String
+
+get_measure_with_tilt$ = ""
+
+Select Case UCase(EDMName)
+Case "LEICA_AUTOTILT"
+    ' Tilt compensation on
+    d$ = "%R1Q,2183:1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred setting tilt compensation on.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+    
+    ' target type prism with reflector
+    d$ = "%R1Q,17021:0"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred setting station to use prism.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+
+    ' 360 prism
+    d$ = "%R1Q,17008:3"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred setting prism type to 360.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+
+    ' Turn lock mode on
+    d$ = "%R1Q,18007:1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred setting lock on.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+    
+    ' Turn continuous EDM on
+    d$ = "%R1Q,17019:10"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred setting continuous EDM on.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+    
+    ' Search for a prism
+    d$ = "%R1Q,9037:0.1,0.1,0"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred searching for the prism.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+
+    ' Lock the target
+    d$ = "%R1Q,9013"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred locking onto the target.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+
+    ' Do measurement
+    d$ = "%R1Q,2008:1,1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred starting the measurment mode.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+
+    ' Get measurement with tilt data
+    d$ = "%R1Q,2187:10000,1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(result$)
+    If geocom_errorcode(result$) <> 0 Then
+        MsgBox ("An error occurred getting the measurement with tilt data.  The error code is " + Str(geocom_errorcode(result$)))
+        Exit Function
+    End If
+    
+    ' Stop the measurements
+    d$ = "%R1Q,2008:3,1"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred stopping the measurement.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+    
+    ' Lock out from target
+    d$ = "%R1Q,9014"
+    Call edmoutput(d$, errorcode)
+    Call edminput(A$)
+    If geocom_errorcode(A$) <> 0 Then
+        MsgBox ("An error occurred turn target lock off.  The error code is " + Str(geocom_errorcode(A$)))
+        Exit Function
+    End If
+    
+    get_measure_with_tilt = result$
+Case Else
+End Select
+
+End Function
+
+Sub parse_tilt_measure(measurement$, edmshot As shotdata, errorcode)
+
+Dim values(30) As Single
+
+A = InStr(measurement$, ":")
+If A <> 0 Then
+    measurement$ = Mid$(measurement$, A + 1)
+End If
+
+itemno = 0
+Do Until measurement$ = ""
+    comma = InStr(measurement$, ",")
+    If comma > 1 Then
+        itemno = itemno + 1
+        ts_value = CDbl(Left(measurement$, comma - 1))
+        If ts_value > 3.4028235E+38 Or ts_value < 1.401298E-45 Then
+            values(itemno) = 0
+        Else
+            values(itemno) = CSng(ts_value)
+        End If
+        measurement$ = Mid$(measurement$, comma + 1)
+    ElseIf comma = 1 Then
+        itemno = itemno + 1
+        values(itemno) = 0
+        measurement$ = Mid$(measurement$, comma + 1)
+    Else
+        itemno = itemno + 1
+        ts_value = CDbl(measurement$)
+        If ts_value > 3.4028235E+38 Or ts_value < 1.401298E-45 Then
+            values(itemno) = 0
+        Else
+            values(itemno) = CSng(ts_value)
+        End If
+        
+        Exit Do
+    End If
+Loop
+
+errorcode = values(1)
+If errorcode = 0 Then
+    edmshot.hangle = values(14)
+    edmshot.vangle = values(15)
+    edmshot.sloped = values(16)
+    edmshot.poleh = values(12)
+Else
+    edmshot.hangle = 0
+    edmshot.vangle = 0
+    edmshot.sloped = 0
+    edmshot.poleh = 0
+End If
+
+End Sub
+
 Sub sethortangle(angle$, deg, min, sec)
 
 Dim A As String
@@ -1019,7 +1269,7 @@ Else
         angle$ = Right("000" + angle$, 8)
         A = InStr(angle$, ".")
         angle$ = Left$(angle$, A - 1) + Mid$(angle$, A + 1)
-    ElseIf UCase(EDMName) = "WILD2" Then
+    ElseIf UCase(EDMName) = "WILD2" Or UCase(EDMName) = "LEICA_AUTOTILT" Then
         angle$ = Right("000" + angle$, 8)
         A = InStr(angle$, ".")
         angle$ = Left$(angle$, A - 1) + Mid$(angle$, A + 1)
@@ -1045,7 +1295,7 @@ Case "WILD", "LEICA", "BUILDER"
     d$ = "PUT/21...4+" + Right$("000" + LTrim$(angle$) + "0 ", 9)
     Call edmoutput(d$, errorcode)
     Call edminput(A$)
-Case "WILD2"
+Case "WILD2", "LEICA_AUTOTILT"
     angledecdeg = Val(Left(angle$, 3)) + Val(Mid$(angle$, 4, 2)) / 60 + Val(Mid$(angle$, 6, 2)) / 3600
     anglerad = angledecdeg / 360 * (2 * 3.14159265359)
     ' %R1Q,2113:HzOrientation[double]
@@ -1069,18 +1319,18 @@ Public Sub takeshot_core(prismstatus)
 Cancelling = False
 Call takeshot_nostation(prismstatus)
 If Cancelling Then Exit Sub
-edmshot.X = CurrentStation.X + edmshot.X
+edmshot.x = CurrentStation.x + edmshot.x
 edmshot.y = CurrentStation.y + edmshot.y
 edmshot.z = CurrentStation.z + edmshot.z - edmshot.poleh
 
 End Sub
 
-Sub setpresetdata(X As Single, y As Single, z As Single, errormessage$)
+Sub setpresetdata(x As Single, y As Single, z As Single, errormessage$)
 
 If displayinfo.edmtype <> 1 Then Exit Sub
 
-px$ = LTrim$(Str$(X))
-If X >= 0 Then px$ = "+" + px$
+px$ = LTrim$(Str$(x))
+If x >= 0 Then px$ = "+" + px$
 A = InStr(px$, ".")
 If A <> 0 Then
     px$ = Left$(px$, A - 1) + Left$(Mid$(px$, A + 1), 3)
@@ -1089,7 +1339,7 @@ Else
 End If
 
 py$ = LTrim$(Str$(y))
-If X >= 0 Then py$ = "+" + py$
+If x >= 0 Then py$ = "+" + py$
 A = InStr(py$, ".")
 If A <> 0 Then
     py$ = Left$(py$, A - 1) + Left$(Mid$(py$, A + 1), 3)
@@ -1147,7 +1397,7 @@ Call parseangle(edmshot.hangle, angle, minutes, seconds)
 tangle = angle + ((minutes * 60 + seconds) / 3600)
 tangle = 450 - tangle
 
-edmshot.X = Cos(degtorad(tangle)) * actuald
+edmshot.x = Cos(degtorad(tangle)) * actuald
 edmshot.y = Sin(degtorad(tangle)) * actuald
 
 End Sub
@@ -1350,6 +1600,8 @@ If Not edmce Then
                                             options(4) = "WILD2" + " " + comport
                                     Case "SOKKIA"
                                             options(4) = "SOKKIA" + " " + comport
+                                    Case "LEICA_AUTOTILT"
+                                            options(4) = "LEICA_AUTOTILT" + " " + comport
                                     Case Else
                                     End Select
     
@@ -1696,12 +1948,12 @@ Else
     EDMName = ""
     If Inidata(4, 2) <> "" Then
         Select Case UCase(Inidata(4, 2))
-        Case "TOPCON", "SOKKIA", "WILD", "WILD2", "NONE", "SIMULATE", "NIKON", "MICROSCRIBE"
+        Case "TOPCON", "SOKKIA", "WILD", "WILD2", "NONE", "SIMULATE", "NIKON", "MICROSCRIBE", "LEICA_AUTOTILT"
             options(4) = Inidata(4, 2)
             EDMName = Inidata(4, 2)
         Case Else
             errorcode = 21
-            errormessage = "Unrecognized EDM type.  Recognized types are Topcon, Wild, Wild2, Sokkia and None."
+            errormessage = "Unrecognized EDM type.  Recognized types are Topcon, Wild, Wild2, Leica_AutoTilt, Sokkia and None."
         End Select
     Else
         options(4) = "NONE"
@@ -1813,11 +2065,11 @@ Else
             MenuString = VMenu(C)
             Gotit = False
             Do Until Gotit
-                X = InStr(MenuString, ",")
-                If X > 0 Then
-                    TempString = Left(Trim(Left(MenuString, X - 1)), VLen(C))
+                x = InStr(MenuString, ",")
+                If x > 0 Then
+                    TempString = Left(Trim(Left(MenuString, x - 1)), VLen(C))
                     TempString1 = TempString1 + TempString + ","
-                    MenuString = Trim(Mid(MenuString, X + 1))
+                    MenuString = Trim(Mid(MenuString, x + 1))
                 Else
                     TempString = Left(Trim(MenuString), VLen(C))
                     TempString1 = TempString1 + TempString
@@ -1913,7 +2165,7 @@ If Not StationInitialized Then
         response = MsgBox(TempString, vbYesNo)
         If response = vbYes Then
             CurrentStation.Name = TempName
-            CurrentStation.X = Val(TempX)
+            CurrentStation.x = Val(TempX)
             CurrentStation.y = Val(TempY)
             CurrentStation.z = Val(TempZ)
             frmMain.lblStationWarning.Visible = False
@@ -2094,17 +2346,17 @@ End Sub
 
 Public Sub ParseUnitFields()
 
-Dim X As Integer
+Dim x As Integer
 
 nUnitFields = 0
 
 TempString = Trim(UnitFieldString)
-X = InStr(TempString, ",")
-Do While X > 0
+x = InStr(TempString, ",")
+Do While x > 0
     nUnitFields = nUnitFields + 1
-    Unitfield(nUnitFields) = Left(TempString, X - 1)
-    TempString = Trim(Mid(TempString, X + 1))
-    X = InStr(TempString, ",")
+    Unitfield(nUnitFields) = Left(TempString, x - 1)
+    TempString = Trim(Mid(TempString, x + 1))
+    x = InStr(TempString, ",")
 Loop
 If Trim(TempString) <> "" Then
     nUnitFields = nUnitFields + 1
@@ -2362,17 +2614,17 @@ Case "SIMULATE"
     
     Case 0
         Randomize
-        X = 2 * Rnd + 1018
+        x = 2 * Rnd + 1018
         y = 1 * Rnd + 1006
         ''X = 1017 + Rnd
         'y = 1017 + Rnd
         z = Rnd
-        edmshot.X = X
+        edmshot.x = x
         edmshot.y = y
         edmshot.z = z
         edmshot.hangle = 111.505
         edmshot.vangle = 98.2525
-        edmshot.sloped = Sqr(edmshot.X ^ 2 + edmshot.y ^ 2 + edmshot.z ^ 2)
+        edmshot.sloped = Sqr(edmshot.x ^ 2 + edmshot.y ^ 2 + edmshot.z ^ 2)
         If prismstatus = AskForPrism Then
             frmSelectPrism.Show 1
         End If
@@ -2424,22 +2676,26 @@ Case "SIMULATE"
     End Select
     
 Case "NONE"
-    edmshot.vangle = 0
-    edmshot.hangle = 0
-    edmshot.sloped = 0
-    edmshot.edmpoffset = 0
-    edmshot.poleh = 0
+    If vhd Then
+        frmManualshot.Show 1
+    End If
+    'edmshot.vangle = 0
+    'edmshot.hangle = 0
+    'edmshot.sloped = 0
+    'edmshot.edmpoffset = 0
+    'edmshot.poleh = 0
     If prismstatus = AskForPrism Then
         frmSelectPrism.Show 1
     End If
 
 Case Else
     Call recordpoint(returndata$)
-    If Cancelling Then
+    
+    If Cancelling Or returndata$ = "" Then
         If Speaking Then Voice.Speak "Shot cancelled", SVSFlagsAsync
         Exit Sub
     End If
-    
+        
     If prismstatus = AskForPrism Then
         frmSelectPrism.Show 1
     End If
@@ -2460,7 +2716,7 @@ Case Else
         Exit Sub
     End If
     
-    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Then
+    If UCase(EDMName$) = "LEICA" Or UCase(EDMName$) = "WILD" Or UCase(EDMName$) = "WILD2" Or UCase(EDMName$) = "LEICA_AUTOTILT" Then
         If edmshot.edmpoffset = 0.004 Then
             frmMain.LblReflectorless.Visible = True
         Else
@@ -2480,7 +2736,7 @@ Case Else
                     returndata$ = Mid$(returndata$, 5)
                     t = InStr(returndata$, ";")
                     If t <> 0 Then
-                        edmshot.X = Val(Left(returndata$, t - 1))
+                        edmshot.x = Val(Left(returndata$, t - 1))
                         returndata$ = Mid$(returndata$, t + 1)
                         If Left(returndata$, 4) = "POSY" Then
                             returndata$ = Mid$(returndata$, 5)

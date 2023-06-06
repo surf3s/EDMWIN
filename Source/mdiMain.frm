@@ -150,6 +150,9 @@ Begin VB.MDIForm mdiMain
          Caption         =   "Transfer files to/from Pocket PC"
          Visible         =   0   'False
       End
+      Begin VB.Menu export_cvs 
+         Caption         =   "Export CSVs"
+      End
       Begin VB.Menu Filespace4 
          Caption         =   "-"
       End
@@ -398,12 +401,17 @@ GoTo Start
 
 End Sub
 
+Private Sub export_cvs_Click()
+
+frmExport_CSVs.Show 1
+
+End Sub
+
 Private Sub FileList_Click(Index As Integer)
 
 CFGName = Filelist(Index).Caption
 Cancelling = False
 parsecfg A
-
 
 'put code in here to rewrite cfg if necessary
 If Cancelling Then
@@ -444,7 +452,7 @@ Next A
 
 End Sub
 
-Private Sub MDIForm_Unload(Cancel As Integer)
+Private Sub MDIForm_Unload(cancel As Integer)
 
 mnuExit_Click
 
@@ -492,8 +500,8 @@ Else
     Set TempDB = Workspaces(0).CreateDatabase(cd.filename, dbLangGeneral)
 End If
 Screen.MousePointer = 11
-X = InStr(cd.filename, cd.FileTitle)
-BackupFolder = Left(cd.filename, X - 1)
+x = InStr(cd.filename, cd.FileTitle)
+BackupFolder = Left(cd.filename, x - 1)
 
 For Each Tbl In SiteDB.TableDefs
     If Left(LCase(Tbl.Name), 4) <> "msys" Then
@@ -1190,7 +1198,7 @@ End Sub
 Private Sub mnuResetconnection_Click()
 
 Select Case UCase(EDMName$)
-Case "TOPCON", "WILD", "SOKKIA", "WILD2"
+Case "TOPCON", "WILD", "SOKKIA", "WILD2", "LEICA_AUTOTILT"
     If comport$ <> "" And comsettings <> "" Then
         Call initcomport(comport$, errorcode)
         MsgBox "The connection is reset.  Use this option when the computer powers off while the program is running.", vbOKOnly
@@ -1282,7 +1290,7 @@ If Not StationInitialized Then
     MsgBox ("Station Not Initialized")
 Else
     TempString = "Current station: " + Trim(CurrentStation.Name) + Chr(13)
-    TempString = TempString + "   X: " + Format(CurrentStation.X, "#####0.000") + Chr(13)
+    TempString = TempString + "   X: " + Format(CurrentStation.x, "#####0.000") + Chr(13)
     TempString = TempString + "   Y: " + Format(CurrentStation.y, "#####0.000") + Chr(13)
     TempString = TempString + "   Z: " + Format(CurrentStation.z, "#####0.000") + Chr(13)
     MsgBox (TempString)
@@ -1340,10 +1348,10 @@ If UpperCase Then
             frmMain.MenuBox(I).Clear
             Gotit = False
             Do Until Gotit
-                X = InStr(MenuString, ",")
-                If X > 0 Then
-                    frmMain.MenuBox(I).AddItem Left(MenuString, X - 1)
-                    MenuString = Mid(MenuString, X + 1)
+                x = InStr(MenuString, ",")
+                If x > 0 Then
+                    frmMain.MenuBox(I).AddItem Left(MenuString, x - 1)
+                    MenuString = Mid(MenuString, x + 1)
                 Else
                     frmMain.MenuBox(I).AddItem MenuString
                     Gotit = True
@@ -1532,7 +1540,7 @@ Print #1, "Instrument="; EDMName
 Print #1, "COMport="; comport
 Print #1, "EdmDelayTime="; EDMDelayTime
 Print #1, "StationName="; CurrentStation.Name
-Print #1, "StationX="; CurrentStation.X
+Print #1, "StationX="; CurrentStation.x
 Print #1, "stationY="; CurrentStation.y
 Print #1, "stationZ="; CurrentStation.z
 Print #1, ""

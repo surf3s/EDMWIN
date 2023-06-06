@@ -17,7 +17,7 @@ Begin VB.Form frmAbout
    Begin VB.Label Label1 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
-      Caption         =   "Copyright (c) 2021"
+      Caption         =   "Copyright (c) 2023"
       Height          =   255
       Index           =   5
       Left            =   240
@@ -72,7 +72,7 @@ Begin VB.Form frmAbout
    Begin VB.Label Label1 
       Alignment       =   2  'Center
       BackStyle       =   0  'Transparent
-      Caption         =   "EDM 3.2 (Development)"
+      Caption         =   "EDM 3.2"
       Height          =   255
       Index           =   0
       Left            =   240
@@ -88,13 +88,14 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
 
-Label1(0).Caption = "EDM Version " & App.Major & "." & App.Minor
-Me.Caption = "EDM Version " & App.Major & "." & App.Minor
+Label1(0).Caption = "EDM Version " & App.Major & "." & App.Minor & "." & App.Revision
+Me.Caption = "EDM Version " & App.Major & "." & App.Minor & "." & App.Revision
+
 Call CenterForm(Me)
 
 End Sub
 
-Private Sub Form_Unload(Cancel As Integer)
+Private Sub Form_Unload(cancel As Integer)
 
 Me.Hide
 frmMain.Picture1.SetFocus

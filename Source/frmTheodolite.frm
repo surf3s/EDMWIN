@@ -6,35 +6,35 @@ Begin VB.Form frmTheodolite
    ClientHeight    =   5115
    ClientLeft      =   30
    ClientTop       =   330
-   ClientWidth     =   11280
+   ClientWidth     =   15060
    ControlBox      =   0   'False
    Icon            =   "frmTheodolite.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   5115
-   ScaleWidth      =   11280
+   ScaleWidth      =   15060
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.CommandButton btnFindPorts 
       Caption         =   "Look for Ports"
       Height          =   615
-      Left            =   360
-      TabIndex        =   40
+      Left            =   120
+      TabIndex        =   25
       Top             =   2880
-      Width           =   1575
+      Width           =   2415
    End
    Begin VB.Frame Frame2 
       Height          =   1095
-      Left            =   2400
-      TabIndex        =   27
+      Left            =   2880
+      TabIndex        =   15
       Top             =   3840
-      Width           =   8700
+      Width           =   8940
       Begin VB.TextBox Text1 
          Height          =   288
          Index           =   2
          Left            =   5430
-         TabIndex        =   31
+         TabIndex        =   19
          Top             =   672
          Width           =   972
       End
@@ -42,7 +42,7 @@ Begin VB.Form frmTheodolite
          Height          =   288
          Index           =   1
          Left            =   3870
-         TabIndex        =   30
+         TabIndex        =   18
          Top             =   672
          Width           =   972
       End
@@ -50,7 +50,7 @@ Begin VB.Form frmTheodolite
          Height          =   288
          Index           =   0
          Left            =   2310
-         TabIndex        =   29
+         TabIndex        =   17
          Top             =   672
          Width           =   972
       End
@@ -69,7 +69,7 @@ Begin VB.Form frmTheodolite
          Height          =   195
          Index           =   3
          Left            =   5190
-         TabIndex        =   34
+         TabIndex        =   22
          Top             =   690
          Width           =   165
       End
@@ -88,7 +88,7 @@ Begin VB.Form frmTheodolite
          Height          =   195
          Index           =   2
          Left            =   3630
-         TabIndex        =   33
+         TabIndex        =   21
          Top             =   690
          Width           =   180
       End
@@ -107,7 +107,7 @@ Begin VB.Form frmTheodolite
          Height          =   195
          Index           =   0
          Left            =   2070
-         TabIndex        =   32
+         TabIndex        =   20
          Top             =   690
          Width           =   165
       End
@@ -115,24 +115,25 @@ Begin VB.Form frmTheodolite
          Alignment       =   2  'Center
          Caption         =   $"frmTheodolite.frx":000C
          Height          =   495
-         Left            =   1275
-         TabIndex        =   28
-         Top             =   150
+         Left            =   960
+         TabIndex        =   16
+         Top             =   120
          Width           =   6345
       End
    End
    Begin VB.Frame Frame1 
       Height          =   972
-      Left            =   2400
-      TabIndex        =   14
+      Left            =   2880
+      TabIndex        =   2
       Top             =   2760
-      Width           =   8700
+      Width           =   8940
       Begin VB.CheckBox chkGeocom 
          Caption         =   "GeoCOM"
          Height          =   255
          Left            =   6480
-         TabIndex        =   39
+         TabIndex        =   24
          Top             =   480
+         Value           =   1  'Checked
          Width           =   1095
       End
       Begin VB.CommandButton Command1 
@@ -141,16 +142,16 @@ Begin VB.Form frmTheodolite
          Height          =   495
          Index           =   2
          Left            =   7680
-         TabIndex        =   36
+         TabIndex        =   23
          Top             =   360
-         Width           =   735
+         Width           =   1095
       End
       Begin VB.ComboBox baudrate 
          Height          =   315
          ItemData        =   "frmTheodolite.frx":00B7
          Left            =   1320
          List            =   "frmTheodolite.frx":00CA
-         TabIndex        =   20
+         TabIndex        =   8
          Text            =   "1200"
          Top             =   480
          Width           =   855
@@ -160,7 +161,7 @@ Begin VB.Form frmTheodolite
          ItemData        =   "frmTheodolite.frx":00EB
          Left            =   2400
          List            =   "frmTheodolite.frx":00F5
-         TabIndex        =   19
+         TabIndex        =   7
          Text            =   "7"
          Top             =   480
          Width           =   735
@@ -170,7 +171,7 @@ Begin VB.Form frmTheodolite
          ItemData        =   "frmTheodolite.frx":00FF
          Left            =   3360
          List            =   "frmTheodolite.frx":0109
-         TabIndex        =   18
+         TabIndex        =   6
          Text            =   "1"
          Top             =   480
          Width           =   735
@@ -180,7 +181,7 @@ Begin VB.Form frmTheodolite
          ItemData        =   "frmTheodolite.frx":0113
          Left            =   4320
          List            =   "frmTheodolite.frx":0120
-         TabIndex        =   17
+         TabIndex        =   5
          Text            =   "Even"
          Top             =   480
          Width           =   855
@@ -189,18 +190,18 @@ Begin VB.Form frmTheodolite
          Height          =   315
          ItemData        =   "frmTheodolite.frx":0135
          Left            =   240
-         List            =   "frmTheodolite.frx":015D
-         TabIndex        =   16
+         List            =   "frmTheodolite.frx":0175
+         TabIndex        =   4
          Text            =   "COM1"
          Top             =   480
          Width           =   975
       End
       Begin VB.ComboBox DelayTime 
          Height          =   315
-         ItemData        =   "frmTheodolite.frx":01AC
+         ItemData        =   "frmTheodolite.frx":01FC
          Left            =   5355
-         List            =   "frmTheodolite.frx":01C5
-         TabIndex        =   15
+         List            =   "frmTheodolite.frx":0215
+         TabIndex        =   3
          Text            =   "3"
          Top             =   480
          Width           =   855
@@ -211,7 +212,7 @@ Begin VB.Form frmTheodolite
          Caption         =   "Baud rate :"
          Height          =   195
          Left            =   1320
-         TabIndex        =   26
+         TabIndex        =   14
          Top             =   240
          Width           =   780
       End
@@ -221,7 +222,7 @@ Begin VB.Form frmTheodolite
          Caption         =   "Data Bits :"
          Height          =   195
          Left            =   2400
-         TabIndex        =   25
+         TabIndex        =   13
          Top             =   240
          Width           =   735
       End
@@ -231,7 +232,7 @@ Begin VB.Form frmTheodolite
          Caption         =   "Stop Bits :"
          Height          =   195
          Left            =   3360
-         TabIndex        =   24
+         TabIndex        =   12
          Top             =   240
          Width           =   720
       End
@@ -241,7 +242,7 @@ Begin VB.Form frmTheodolite
          Caption         =   "Parity :"
          Height          =   195
          Left            =   4320
-         TabIndex        =   23
+         TabIndex        =   11
          Top             =   240
          Width           =   480
       End
@@ -251,7 +252,7 @@ Begin VB.Form frmTheodolite
          Caption         =   "COM Port :"
          Height          =   195
          Left            =   240
-         TabIndex        =   22
+         TabIndex        =   10
          Top             =   240
          Width           =   780
       End
@@ -261,193 +262,9 @@ Begin VB.Form frmTheodolite
          Caption         =   "Delay Time:"
          Height          =   195
          Left            =   5355
-         TabIndex        =   21
+         TabIndex        =   9
          Top             =   240
          Width           =   840
-      End
-   End
-   Begin TabDlg.SSTab whichedm 
-      Height          =   2415
-      Left            =   120
-      TabIndex        =   0
-      Top             =   240
-      Width           =   11025
-      _ExtentX        =   19447
-      _ExtentY        =   4260
-      _Version        =   393216
-      Tabs            =   9
-      Tab             =   1
-      TabsPerRow      =   9
-      TabHeight       =   520
-      WordWrap        =   0   'False
-      TabCaption(0)   =   "Topcon"
-      TabPicture(0)   =   "frmTheodolite.frx":01E4
-      Tab(0).ControlEnabled=   0   'False
-      Tab(0).Control(0)=   "Label2(1)"
-      Tab(0).Control(1)=   "Label1"
-      Tab(0).ControlCount=   2
-      TabCaption(1)   =   "Leica/Wild"
-      TabPicture(1)   =   "frmTheodolite.frx":0200
-      Tab(1).ControlEnabled=   -1  'True
-      Tab(1).Control(0)=   "Label3"
-      Tab(1).Control(0).Enabled=   0   'False
-      Tab(1).Control(1)=   "Label18"
-      Tab(1).Control(1).Enabled=   0   'False
-      Tab(1).Control(2)=   "Label19"
-      Tab(1).Control(2).Enabled=   0   'False
-      Tab(1).ControlCount=   3
-      TabCaption(2)   =   "Sokkia"
-      TabPicture(2)   =   "frmTheodolite.frx":021C
-      Tab(2).ControlEnabled=   0   'False
-      Tab(2).Control(0)=   "Label4"
-      Tab(2).ControlCount=   1
-      TabCaption(3)   =   "None"
-      TabPicture(3)   =   "frmTheodolite.frx":0238
-      Tab(3).ControlEnabled=   0   'False
-      Tab(3).Control(0)=   "Option1(1)"
-      Tab(3).Control(1)=   "Option1(0)"
-      Tab(3).Control(2)=   "Label5"
-      Tab(3).ControlCount=   3
-      TabCaption(4)   =   "Simulate"
-      TabPicture(4)   =   "frmTheodolite.frx":0254
-      Tab(4).ControlEnabled=   0   'False
-      Tab(4).Control(0)=   "Label11"
-      Tab(4).ControlCount=   1
-      TabCaption(5)   =   "Nikon"
-      TabPicture(5)   =   "frmTheodolite.frx":0270
-      Tab(5).ControlEnabled=   0   'False
-      Tab(5).Control(0)=   "Label13"
-      Tab(5).ControlCount=   1
-      TabCaption(6)   =   "Leica-Builder"
-      TabPicture(6)   =   "frmTheodolite.frx":028C
-      Tab(6).ControlEnabled=   0   'False
-      Tab(6).Control(0)=   "Label14"
-      Tab(6).ControlCount=   1
-      TabCaption(7)   =   "Microscribe"
-      TabPicture(7)   =   "frmTheodolite.frx":02A8
-      Tab(7).ControlEnabled=   0   'False
-      Tab(7).Control(0)=   "Label15"
-      Tab(7).ControlCount=   1
-      TabCaption(8)   =   "Pentograph"
-      TabPicture(8)   =   "frmTheodolite.frx":02C4
-      Tab(8).ControlEnabled=   0   'False
-      Tab(8).Control(0)=   "Label17"
-      Tab(8).ControlCount=   1
-      Begin VB.OptionButton Option1 
-         Caption         =   "X, Y and Z coordinates"
-         Height          =   255
-         Index           =   1
-         Left            =   -74760
-         TabIndex        =   8
-         Top             =   1440
-         Width           =   3495
-      End
-      Begin VB.OptionButton Option1 
-         Caption         =   "Vertical angle, Horizontal Angle and Distance"
-         Height          =   255
-         Index           =   0
-         Left            =   -74760
-         TabIndex        =   7
-         Top             =   1200
-         Value           =   -1  'True
-         Width           =   3615
-      End
-      Begin VB.Label Label19 
-         Caption         =   "Newer instruments (like FlexLines) use a system called GEOCOM.  Check the GEOCOM box below to use this protocol."
-         Height          =   375
-         Left            =   240
-         TabIndex        =   38
-         Top             =   1800
-         Width           =   10545
-      End
-      Begin VB.Label Label18 
-         Caption         =   $"frmTheodolite.frx":02E0
-         Height          =   495
-         Left            =   240
-         TabIndex        =   37
-         Top             =   1200
-         Width           =   10545
-      End
-      Begin VB.Label Label17 
-         Caption         =   $"frmTheodolite.frx":03DA
-         Height          =   615
-         Left            =   -74760
-         TabIndex        =   35
-         Top             =   480
-         Width           =   10425
-      End
-      Begin VB.Label Label15 
-         Caption         =   $"frmTheodolite.frx":0497
-         Height          =   495
-         Left            =   -74760
-         TabIndex        =   13
-         Top             =   480
-         Width           =   10425
-      End
-      Begin VB.Label Label14 
-         Caption         =   $"frmTheodolite.frx":0588
-         Height          =   615
-         Left            =   -74640
-         TabIndex        =   12
-         Top             =   600
-         Width           =   10305
-      End
-      Begin VB.Label Label13 
-         Caption         =   $"frmTheodolite.frx":0614
-         Height          =   615
-         Left            =   -74760
-         TabIndex        =   11
-         Top             =   480
-         Width           =   5385
-      End
-      Begin VB.Label Label11 
-         Caption         =   $"frmTheodolite.frx":06DE
-         Height          =   1215
-         Left            =   -74760
-         TabIndex        =   10
-         Top             =   480
-         Width           =   5505
-      End
-      Begin VB.Label Label4 
-         Caption         =   $"frmTheodolite.frx":0796
-         Height          =   1215
-         Left            =   -74760
-         TabIndex        =   9
-         Top             =   480
-         Width           =   5475
-      End
-      Begin VB.Label Label5 
-         Caption         =   $"frmTheodolite.frx":0899
-         Height          =   855
-         Left            =   -74760
-         TabIndex        =   6
-         Top             =   480
-         Width           =   5505
-      End
-      Begin VB.Label Label3 
-         Caption         =   $"frmTheodolite.frx":095F
-         Height          =   735
-         Left            =   240
-         TabIndex        =   5
-         Top             =   480
-         Width           =   10545
-      End
-      Begin VB.Label Label2 
-         Caption         =   $"frmTheodolite.frx":0A9D
-         Height          =   615
-         Index           =   1
-         Left            =   -74760
-         TabIndex        =   4
-         Top             =   960
-         Width           =   5475
-      End
-      Begin VB.Label Label1 
-         Caption         =   "EDM has been tested with Topcon GTS-3, GTS 210, GTS-220, and GTS-320 series total stations."
-         Height          =   495
-         Left            =   -74760
-         TabIndex        =   3
-         Top             =   480
-         Width           =   5505
       End
    End
    Begin VB.CommandButton Command1 
@@ -455,19 +272,287 @@ Begin VB.Form frmTheodolite
       Caption         =   "&Cancel"
       Height          =   615
       Index           =   1
-      Left            =   360
-      TabIndex        =   2
+      Left            =   120
+      TabIndex        =   1
       Top             =   4320
-      Width           =   1575
+      Width           =   2415
    End
    Begin VB.CommandButton Command1 
       Caption         =   "&Accept"
       Height          =   615
       Index           =   0
-      Left            =   360
-      TabIndex        =   1
+      Left            =   120
+      TabIndex        =   0
       Top             =   3600
-      Width           =   1575
+      Width           =   2415
+   End
+   Begin TabDlg.SSTab whichedm 
+      Height          =   2415
+      Left            =   120
+      TabIndex        =   26
+      Top             =   240
+      Width           =   11745
+      _ExtentX        =   20717
+      _ExtentY        =   4260
+      _Version        =   393216
+      Tabs            =   8
+      Tab             =   7
+      TabsPerRow      =   8
+      TabHeight       =   520
+      WordWrap        =   0   'False
+      TabCaption(0)   =   "Topcon"
+      TabPicture(0)   =   "frmTheodolite.frx":0234
+      Tab(0).ControlEnabled=   0   'False
+      Tab(0).Control(0)=   "Label1"
+      Tab(0).Control(1)=   "Label2(1)"
+      Tab(0).ControlCount=   2
+      TabCaption(1)   =   "Leica/Wild"
+      TabPicture(1)   =   "frmTheodolite.frx":0250
+      Tab(1).ControlEnabled=   0   'False
+      Tab(1).Control(0)=   "Label3"
+      Tab(1).Control(1)=   "Label18"
+      Tab(1).ControlCount=   2
+      TabCaption(2)   =   "Sokkia"
+      TabPicture(2)   =   "frmTheodolite.frx":026C
+      Tab(2).ControlEnabled=   0   'False
+      Tab(2).Control(0)=   "Label4"
+      Tab(2).ControlCount=   1
+      TabCaption(3)   =   "None"
+      TabPicture(3)   =   "frmTheodolite.frx":0288
+      Tab(3).ControlEnabled=   0   'False
+      Tab(3).Control(0)=   "Option1(0)"
+      Tab(3).Control(1)=   "Option1(1)"
+      Tab(3).Control(2)=   "Label5"
+      Tab(3).ControlCount=   3
+      TabCaption(4)   =   "Simulate"
+      TabPicture(4)   =   "frmTheodolite.frx":02A4
+      Tab(4).ControlEnabled=   0   'False
+      Tab(4).Control(0)=   "Label11"
+      Tab(4).ControlCount=   1
+      TabCaption(5)   =   "Nikon"
+      TabPicture(5)   =   "frmTheodolite.frx":02C0
+      Tab(5).ControlEnabled=   0   'False
+      Tab(5).Control(0)=   "Label13"
+      Tab(5).ControlCount=   1
+      TabCaption(6)   =   "Leica-Builder"
+      TabPicture(6)   =   "frmTheodolite.frx":02DC
+      Tab(6).ControlEnabled=   0   'False
+      Tab(6).Control(0)=   "Label14"
+      Tab(6).ControlCount=   1
+      TabCaption(7)   =   "Leica AutoTilt"
+      TabPicture(7)   =   "frmTheodolite.frx":02F8
+      Tab(7).ControlEnabled=   -1  'True
+      Tab(7).Control(0)=   "Label15"
+      Tab(7).Control(0).Enabled=   0   'False
+      Tab(7).ControlCount=   1
+      Begin VB.OptionButton Option1 
+         Caption         =   "Vertical angle, Horizontal Angle and Distance"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Index           =   0
+         Left            =   -74760
+         TabIndex        =   28
+         Top             =   1560
+         Value           =   -1  'True
+         Width           =   6015
+      End
+      Begin VB.OptionButton Option1 
+         Caption         =   "X, Y and Z coordinates"
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Index           =   1
+         Left            =   -68160
+         TabIndex        =   27
+         Top             =   1560
+         Width           =   3495
+      End
+      Begin VB.Label Label1 
+         Caption         =   "EDM has been tested with Topcon GTS-3, GTS 210, GTS-220, and GTS-320 series total stations."
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   375
+         Left            =   -74760
+         TabIndex        =   38
+         Top             =   480
+         Width           =   10785
+      End
+      Begin VB.Label Label2 
+         Caption         =   $"frmTheodolite.frx":0314
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1095
+         Index           =   1
+         Left            =   -74760
+         TabIndex        =   37
+         Top             =   1080
+         Width           =   10635
+      End
+      Begin VB.Label Label3 
+         Caption         =   $"frmTheodolite.frx":03F2
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   735
+         Left            =   -74760
+         TabIndex        =   36
+         Top             =   480
+         Width           =   10545
+      End
+      Begin VB.Label Label5 
+         Caption         =   $"frmTheodolite.frx":04AB
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   855
+         Left            =   -74760
+         TabIndex        =   35
+         Top             =   480
+         Width           =   9465
+      End
+      Begin VB.Label Label4 
+         Caption         =   $"frmTheodolite.frx":0571
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1215
+         Left            =   -74760
+         TabIndex        =   34
+         Top             =   480
+         Width           =   10875
+      End
+      Begin VB.Label Label11 
+         Caption         =   $"frmTheodolite.frx":0674
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1215
+         Left            =   -74760
+         TabIndex        =   33
+         Top             =   480
+         Width           =   11025
+      End
+      Begin VB.Label Label13 
+         Caption         =   $"frmTheodolite.frx":072C
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   -74760
+         TabIndex        =   32
+         Top             =   480
+         Width           =   10785
+      End
+      Begin VB.Label Label14 
+         Caption         =   $"frmTheodolite.frx":07F6
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   615
+         Left            =   -74640
+         TabIndex        =   31
+         Top             =   600
+         Width           =   10305
+      End
+      Begin VB.Label Label15 
+         Caption         =   $"frmTheodolite.frx":0882
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1095
+         Left            =   240
+         TabIndex        =   30
+         Top             =   480
+         Width           =   10425
+      End
+      Begin VB.Label Label18 
+         Caption         =   $"frmTheodolite.frx":0996
+         BeginProperty Font 
+            Name            =   "MS Sans Serif"
+            Size            =   12
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   1095
+         Left            =   -74760
+         TabIndex        =   29
+         Top             =   1200
+         Width           =   10545
+      End
    End
 End
 Attribute VB_Name = "frmTheodolite"
@@ -492,28 +577,36 @@ End Function
 
 Private Sub btnFindPorts_Click()
 
-answer = MsgBox("EDMWIN will look for COM ports that appear to be available.  It will check ports 1-12 and report back here.  This can take a minute.  It will also change your current settings.  Are you sure you want to check for ports?", vbOKCancel)
+answer = MsgBox("EDMWIN will look for COM ports that appear to be available.  It will check ports 1-20 and report back here.  This can take a minute.  It will also change your current settings.  Are you sure you want to check for ports?", vbOKCancel)
 If answer = 1 Then
     Screen.MousePointer = 11
     ports$ = ""
     If frmMain.theoport.PortOpen Then frmMain.theoport.PortOpen = False
-    For A = 1 To 12
+    For A = 17 To 20
         frmMain.theoport.Settings = "1200,E,7,1"
-        frmMain.theoport.CommPort = A
         On Error Resume Next
-        frmMain.theoport.PortOpen = True
-        If frmMain.theoport.PortOpen Then
-            If ports$ = "" Then
-                ports$ = "COM" + Trim(Str(A))
-            Else
-                ports$ = ports$ + ", COM" + Trim(Str(A))
+        frmMain.theoport.CommPort = A
+        If Err.Number = 0 Then
+            frmMain.theoport.PortOpen = True
+            If Err.Number = 0 Then
+                If frmMain.theoport.PortOpen Then
+                    If ports$ = "" Then
+                        ports$ = "COM" + Trim(Str(A))
+                    Else
+                        ports$ = ports$ + ", COM" + Trim(Str(A))
+                    End If
+                End If
+                frmMain.theoport.PortOpen = False
             End If
         End If
-        frmMain.theoport.PortOpen = False
         On Error GoTo 0
     Next A
     Screen.MousePointer = 1
-    answer = MsgBox("The following ports are available for EDMWIN: " + ports$, vbInformation + vbOKOnly)
+    If ports$ = "" Then
+        answer = MsgBox("No ports could be detected.", vbInformation + vbOKOnly)
+    Else
+        answer = MsgBox("The following ports are available for EDMWIN: " + ports$, vbInformation + vbOKOnly)
+    End If
 End If
 
 End Sub
@@ -616,16 +709,13 @@ Do
             End If
         
         Case 7
-            EDMName$ = "Microscribe"
-            
-        Case 8
-            EDMName$ = "Pentograph"
-            answer = MsgBox("Make sure the pentograph software is running and communications will be initialized.", vbOKCancel)
+            EDMName$ = "LEICA_AUTOTILT"
+            answer = MsgBox("Cable the total station to the computer and communications will be initialized.", vbOKCancel)
             If answer = 1 Then
                 Screen.MousePointer = 11
                 Call initcomport(comport, errorcode)
                 If Cancelling Then
-                    MsgBox ("Communications error with the pentograph.  Verify that the interface software is active and configured correctly.")
+                    MsgBox ("Communications error with total station.  Verify that it is turned on.")
                 End If
             End If
            
@@ -742,12 +832,10 @@ Select Case UCase(EDMName)
         whichedm.Tab = 5
     Case "BUILDER"
         whichedm.Tab = 6
-    Case "MICROSCRIBE"
+    Case "LEICA_AUTOTILT"
         whichedm.Tab = 7
-        Frame1.Visible = False
-        Frame2.Visible = True
-    Case "PENTOGRAPH"
-        whichedm.Tab = 8
+        chkGeocom.Value = 1
+    Case Else
 End Select
 
 End Sub

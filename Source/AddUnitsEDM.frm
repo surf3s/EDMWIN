@@ -633,7 +633,6 @@ If optType(0) And Val(XY(3)) <= Val(XY(1)) Then
 End If
 
 If cmdAddUpdate.Caption = "Add" Then
-
     txtUnit = UCase(txtUnit)
     If UnitTB.RecordCount > 0 Then
     
@@ -844,6 +843,7 @@ If txtUnit = "" Then
     MsgBox ("Select or Add Unit first")
     Exit Sub
 End If
+
 UnitTB.Index = "unitname"
 UnitTB.Seek "=", txtUnit
 If Not UnitTB.NoMatch Then
@@ -1052,8 +1052,8 @@ If Not UnitTB.NoMatch Then
     End If
     cmdAddUpdate.Caption = "Update"
     cmdAddUpdate.Enabled = True
-
 End If
+
 End Sub
 
 Private Sub txtUnit_DropDown()
