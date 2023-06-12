@@ -10,3 +10,6 @@ Finally, I would like to note that this source code was not previously published
 
 Note that many teams continue to use EDMWin and my advice is that if it works - don't change it.  Eventually though changes in Windows will make it harder and harder to use old programs such as these.
 
+Update June 12, 2023
+
+In working with someone to get ready for the field, we found an import bug.  If you put Unit in your speedbuttons, then the ID number would skip.  This is fixed.  Also, if you used DatumX, DatumY, or DatumZ in your CFG, these boxes did not format correctly on the screen, this is fixed.
