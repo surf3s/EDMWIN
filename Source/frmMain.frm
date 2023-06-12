@@ -1407,9 +1407,9 @@ For I = 1 To Vars
         Case "VANGLE"
         Case "HANGLE"
         Case "SLOPED"
-        Case "DATUMX"
-        Case "DATUMY"
-        Case "DATUMZ"
+        'Case "DATUMX"
+        'Case "DATUMY"
+        'Case "DATUMZ"
         Case Else
             VarLabel(I).Top = LabelTop
             VarLabel(I).Left = LabelLeft
@@ -1552,11 +1552,15 @@ If Cancelling Then
     Picture1.SetFocus
     Exit Sub
 End If
+
 For I = 1 To nButtonVars(Index)
     If LCase(VarList(ButtonVars(Index, I, 1))) = "unit" Then
-        txtUnit = ButtonVars(Index, I, 2)
-        txtUnit_KeyPress 13
-    
+        If txtUnit.Text <> ButtonVars(Index, I, 2) Then
+            txtUnit = ButtonVars(Index, I, 2)
+            'txtUnit_KeyPress 13
+            txtUnit_Click
+        End If
+        
     ElseIf LCase(VarList(ButtonVars(Index, I, 1))) = "id" Then
         If LCase(ButtonVars(Index, I, 2)) = "alpha" Then
             Dim NewID As String
