@@ -1573,8 +1573,8 @@ For I = 1 To nButtonVars(Index)
             End If
             'PointsADO.Refresh
             'PointsADO.Recordset.Bookmark = CurrentBookMark
-            PointsADO.Recordset.Update "id", txtID
-            PointsADO.Recordset.Update "suffix", 0
+            PointsADO.recordset.Update "id", txtID
+            PointsADO.recordset.Update "suffix", 0
             OriginalID = txtID
         End If
     
@@ -1596,8 +1596,8 @@ For I = 1 To nButtonVars(Index)
             txtXYZ(2) = Format(Val(txtXYZ(2)) + OriginalPoleHT - PoleHeight(txtprism.ItemData(txtprism.ListIndex)), "#######0.000")
             'PointsADO.Refresh
             'PointsADO.Recordset.Bookmark = CurrentBookMark
-            PointsADO.Recordset.Update "prism", txtPoleHT
-            PointsADO.Recordset.Update "z", txtXYZ(2)
+            PointsADO.recordset.Update "prism", txtPoleHT
+            PointsADO.recordset.Update "z", txtXYZ(2)
         End If
     Else
         Select Case VType(ButtonVars(Index, I, 1))
@@ -1618,8 +1618,8 @@ For I = 1 To nButtonVars(Index)
         'PointsADO.Recordset.Update
         'PointsADO.Refresh
         'PointsADO.Recordset.Bookmark = CurrentBookMark
-        PointsADO.Recordset.Update VarList(ButtonVars(Index, I, 1)), ButtonVars(Index, I, 2)
-        PointsADO.Recordset.Update
+        PointsADO.recordset.Update VarList(ButtonVars(Index, I, 1)), ButtonVars(Index, I, 2)
+        PointsADO.recordset.Update
     End If
 Next I
 mdiMain.StatusBar.Panels(6).Visible = False
@@ -1663,7 +1663,7 @@ Dim MaxSuffix As Integer
 
 If CheckStatus() = True Then Exit Sub
 
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then
     MsgBox ("No initial record in this series has been recorded.  Shoot as new object")
     Exit Sub
 End If
@@ -1675,17 +1675,17 @@ End If
 
 Picture1.SetFocus
 
-currentrecord = PointsADO.Recordset.Bookmark
+currentrecord = PointsADO.recordset.Bookmark
 
 GridLoading = True
-PointsADO.Recordset.MoveLast
-If Not PointsADO.Recordset.EOF Then
-    If PointsADO.Recordset("unit") <> txtUnit Or PointsADO.Recordset("id") <> txtID Then
+PointsADO.recordset.MoveLast
+If Not PointsADO.recordset.EOF Then
+    If PointsADO.recordset("unit") <> txtUnit Or PointsADO.recordset("id") <> txtID Then
     
-        response = MsgBox("Continue with object " + txtUnit + "-" + Trim(txtID) + "?" + Chr(13) + "(Press No to continue with " + PointsADO.Recordset("unit") + "-" + PointsADO.Recordset("id") + ")", vbYesNoCancel)
+        response = MsgBox("Continue with object " + txtUnit + "-" + Trim(txtID) + "?" + Chr(13) + "(Press No to continue with " + PointsADO.recordset("unit") + "-" + PointsADO.recordset("id") + ")", vbYesNoCancel)
     End If
     If response = vbCancel Then
-        PointsADO.Recordset.Bookmark = currentrecord
+        PointsADO.recordset.Bookmark = currentrecord
         GridLoading = False
         Exit Sub
     ElseIf response = vbNo Then
@@ -1694,15 +1694,15 @@ If Not PointsADO.Recordset.EOF Then
 End If
 
 MaxSuffix = -1
-PointsADO.Recordset.MoveFirst
+PointsADO.recordset.MoveFirst
 Do
-    If PointsADO.Recordset("unit") = txtUnit And PointsADO.Recordset("id") = txtID Then
-        If PointsADO.Recordset("suffix") > MaxSuffix Then
-            MaxSuffix = PointsADO.Recordset("suffix")
+    If PointsADO.recordset("unit") = txtUnit And PointsADO.recordset("id") = txtID Then
+        If PointsADO.recordset("suffix") > MaxSuffix Then
+            MaxSuffix = PointsADO.recordset("suffix")
         End If
     End If
-    PointsADO.Recordset.MoveNext
-Loop Until PointsADO.Recordset.EOF
+    PointsADO.recordset.MoveNext
+Loop Until PointsADO.recordset.EOF
 
 'PointsADO.Recordset.Filter = "unit='" + txtUnit + "' and id='" + txtID + "'"
 'PointsADO.Recordset.MoveFirst
@@ -1718,7 +1718,7 @@ Take_Shot XShot
 mdiMain.StatusBar.Panels(6).Picture = mdiMain.Picture2(3).Picture
 
 If Cancelling Then
-    PointsADO.Recordset.Bookmark = currentrecord
+    PointsADO.recordset.Bookmark = currentrecord
     cmdShoot.Enabled = True
     cmdPlusShot.Enabled = True
     Command1.Enabled = True
@@ -1730,9 +1730,9 @@ If Cancelling Then
 End If
 txtSuffix = MaxSuffix + 1
 'PointsADO.Recordset.Bookmark = CurrentBookMark
-PointsADO.Recordset.Update "unit", txtUnit
-PointsADO.Recordset.Update "id", txtID
-PointsADO.Recordset.Update "suffix", txtSuffix
+PointsADO.recordset.Update "unit", txtUnit
+PointsADO.recordset.Update "id", txtID
+PointsADO.recordset.Update "suffix", txtSuffix
 mdiMain.StatusBar.Panels(6).Visible = False
 
 ShowValues
@@ -1781,15 +1781,15 @@ Picture1.SetFocus
 Screen.MousePointer = 11
 
 txtSuffix = 0
-If Not (PointsADO.Recordset.BOF Or PointsADO.Recordset.EOF) Then
-    PrevBookMark = PointsADO.Recordset.Bookmark
+If Not (PointsADO.recordset.BOF Or PointsADO.recordset.EOF) Then
+    PrevBookMark = PointsADO.recordset.Bookmark
 End If
 
 Take_Shot NewShot
 
 If Cancelling Then
-    If Not (PointsADO.Recordset.BOF And PointsADO.Recordset.EOF) Then
-        PointsADO.Recordset.Bookmark = PrevBookMark
+    If Not (PointsADO.recordset.BOF And PointsADO.recordset.EOF) Then
+        PointsADO.recordset.Bookmark = PrevBookMark
         ShowValues
     End If
     Exit Sub
@@ -1945,7 +1945,7 @@ If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then
     Exit Sub
 End If
 
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then Exit Sub
 
 frmMain.DeleteRecord
 ShowValues
@@ -1966,13 +1966,13 @@ End Sub
 Public Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 
 If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then Exit Sub
 'Loading = True
 Gotit = False
 
 If KeyCode = vbKeyHome Then
-    PointsADO.Recordset.MoveFirst
-    CurrentBookMark = PointsADO.Recordset.Bookmark
+    PointsADO.recordset.MoveFirst
+    CurrentBookMark = PointsADO.recordset.Bookmark
     Gotit = True
 ElseIf KeyCode = vbKeyEscape Then
     If mdiMain.StatusBar.Panels(7).Visible Then
@@ -1983,26 +1983,26 @@ ElseIf KeyCode = vbKeyEscape Then
         Picture1.SetFocus
     End If
 ElseIf KeyCode = vbKeyEnd Then
-    PointsADO.Recordset.MoveLast
-    CurrentBookMark = PointsADO.Recordset.Bookmark
+    PointsADO.recordset.MoveLast
+    CurrentBookMark = PointsADO.recordset.Bookmark
     Gotit = True
 ElseIf KeyCode = vbKeyPageUp Then
     GridLoading = True
-    PointsADO.Recordset.MovePrevious
-    If PointsADO.Recordset.BOF Then
-        PointsADO.Recordset.MoveFirst
+    PointsADO.recordset.MovePrevious
+    If PointsADO.recordset.BOF Then
+        PointsADO.recordset.MoveFirst
     End If
     GridLoading = False
-    CurrentBookMark = PointsADO.Recordset.Bookmark
+    CurrentBookMark = PointsADO.recordset.Bookmark
     Gotit = True
 ElseIf KeyCode = vbKeyPageDown Then
     GridLoading = True
-    PointsADO.Recordset.MoveNext
-    If PointsADO.Recordset.EOF Then
-        PointsADO.Recordset.MoveLast
+    PointsADO.recordset.MoveNext
+    If PointsADO.recordset.EOF Then
+        PointsADO.recordset.MoveLast
     End If
     GridLoading = False
-    CurrentBookMark = PointsADO.Recordset.Bookmark
+    CurrentBookMark = PointsADO.recordset.Bookmark
     Gotit = True
 'ElseIf KeyCode = vbKeyDelete Then
 '    DeleteRecord
@@ -2282,7 +2282,7 @@ End Sub
 Private Sub MenuBox_Click(Index As Integer)
 
 If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then Exit Sub
 If Trim(MenuBox(Index)) = "" Then MenuBox(Index) = ""
 If UpperCase Then MenuBox(Index) = UCase(MenuBox(Index))
 UpdatePointsTable VarList(Index), MenuBox(Index), 1, 1
@@ -2701,8 +2701,8 @@ If Not Loading Then
         Else
             UpdatePointsTable "id", NewID, 1, 1
             ADOAccess SetID, txtUnit, NewID, "", ""
-            If Not PointsADO.Recordset.EOF Then
-                With PointsADO.Recordset
+            If Not PointsADO.recordset.EOF Then
+                With PointsADO.recordset
                     currentrecord = .Bookmark
                     .MoveFirst
                     TempSuffix = 0
@@ -2739,28 +2739,28 @@ If Not Loading Then
 '                End If
 '            End If
         End If
-        PointsADO.Recordset.Update "ID", PadID(NewID)
+        PointsADO.recordset.Update "ID", PadID(NewID)
         UpdatePointsTable "id", NewID, 1, 0
         'ADOAccess SetID, txtUnit, NewID, "", ""
         'PointsADO.Recordset.Filter = "unit='" + txtUnit + "' and id='" + OriginalID + "' and suffix>0"
-        If Not PointsADO.Recordset.EOF Then
-            CurrentPosition = PointsADO.Recordset.Bookmark
+        If Not PointsADO.recordset.EOF Then
+            CurrentPosition = PointsADO.recordset.Bookmark
             GridLoading = True
-            PointsADO.Recordset.MoveFirst
+            PointsADO.recordset.MoveFirst
             TempSuffix = 0
-            While Not PointsADO.Recordset.EOF
-                If PointsADO.Recordset("unit") = txtUnit And PointsADO.Recordset("id") = OriginalID Then
+            While Not PointsADO.recordset.EOF
+                If PointsADO.recordset("unit") = txtUnit And PointsADO.recordset("id") = OriginalID Then
                     TempSuffix = TempSuffix + 1
                     If TempSuffix = 1 Then
                         MsgBox ("Resequencing subsequent shot(s) from " + txtUnit + "-" + Trim(OriginalID) + " as continuation shots for " + txtUnit + "-" + Trim(txtID))
                     End If
-                    PointsADO.Recordset.Update "id", txtID
-                    PointsADO.Recordset.Update "suffix", TempSuffix
+                    PointsADO.recordset.Update "id", txtID
+                    PointsADO.recordset.Update "suffix", TempSuffix
                 End If
-                PointsADO.Recordset.MoveNext
+                PointsADO.recordset.MoveNext
             Wend
             MsgBox TempSuffix + 1 & " records changed", vbInformation
-            PointsADO.Recordset.Bookmark = CurrentPosition
+            PointsADO.recordset.Bookmark = CurrentPosition
         End If
         GridLoading = False
         'PointsADO.Recordset.Filter = adFilterNone
@@ -3009,7 +3009,7 @@ Public Sub ShowValues()
 
 If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
 
-If PointsADO.Recordset.BOF And PointsADO.Recordset.EOF Then
+If PointsADO.recordset.BOF And PointsADO.recordset.EOF Then
     txtCurrentRecord = 0
     txtTotalRecords = 0
     ClearFields
@@ -3027,7 +3027,7 @@ txtCurrentRecord = ""
 '    PointsADO.Recordset.Bookmark = CurrentBookMark
 'End If
 
-txtCurrentRecord = PointsADO.Recordset.AbsolutePosition
+txtCurrentRecord = PointsADO.recordset.AbsolutePosition
 txtTotalRecords = CountRecords
 Set rsTemp = Nothing
 'txtTotalRecords = countrecords
@@ -3050,45 +3050,45 @@ If CountRecords > 0 Then
     On Error GoTo 0
     
     lblBlankFields.Visible = False
-    If PointsADO.Recordset.BOF Then
-        PointsADO.Recordset.MoveFirst
-    ElseIf PointsADO.Recordset.EOF Then
-        PointsADO.Recordset.MoveLast
+    If PointsADO.recordset.BOF Then
+        PointsADO.recordset.MoveFirst
+    ElseIf PointsADO.recordset.EOF Then
+        PointsADO.recordset.MoveLast
     End If
-    If IsNull(PointsADO.Recordset("unit")) Then
+    If IsNull(PointsADO.recordset("unit")) Then
         txtUnit = ""
     Else
-        txtUnit = PointsADO.Recordset("Unit")
+        txtUnit = PointsADO.recordset("Unit")
     End If
-    If IsNull(PointsADO.Recordset("id")) Then
+    If IsNull(PointsADO.recordset("id")) Then
         txtID = ""
     Else
-        txtID = PointsADO.Recordset("id")
+        txtID = PointsADO.recordset("id")
     End If
-    If IsNull(PointsADO.Recordset("suffix")) Then
+    If IsNull(PointsADO.recordset("suffix")) Then
         txtSuffix = 0
     Else
-        txtSuffix = PointsADO.Recordset("suffix")
+        txtSuffix = PointsADO.recordset("suffix")
     End If
 
     OriginalID = txtID
     OriginalUnit = txtUnit
     OriginalSuffix = Val(txtSuffix)
     'doevents
-    If txtXYZ(0).Visible Then txtXYZ(0) = Format(PointsADO.Recordset("x"), "#########0.000")
-    If txtXYZ(1).Visible Then txtXYZ(1) = Format(PointsADO.Recordset("y"), "#########0.000")
-    If txtXYZ(2).Visible Then txtXYZ(2) = Format(PointsADO.Recordset("z"), "#########0.000")
-    If txtVangle.Visible Then txtVangle = Format(PointsADO.Recordset("vangle"), "#########0.0000")
-    If txtHangle.Visible Then txtHangle = Format(PointsADO.Recordset("hangle"), "#########0.0000")
-    If txtSloped.Visible Then txtSloped = Format(PointsADO.Recordset("sloped"), "#########0.0000")
+    If txtXYZ(0).Visible Then txtXYZ(0) = Format(PointsADO.recordset("x"), "#########0.000")
+    If txtXYZ(1).Visible Then txtXYZ(1) = Format(PointsADO.recordset("y"), "#########0.000")
+    If txtXYZ(2).Visible Then txtXYZ(2) = Format(PointsADO.recordset("z"), "#########0.000")
+    If txtVangle.Visible Then txtVangle = Format(PointsADO.recordset("vangle"), "#########0.0000")
+    If txtHangle.Visible Then txtHangle = Format(PointsADO.recordset("hangle"), "#########0.0000")
+    If txtSloped.Visible Then txtSloped = Format(PointsADO.recordset("sloped"), "#########0.0000")
     txtXYZ(0).Refresh
     
     If txtPoleHT.Visible Then
-        If Not IsNull(PointsADO.Recordset("Prism")) Then
-            OriginalPoleHT = PointsADO.Recordset("prism")
-            txtPoleHT = Format(PointsADO.Recordset("prism"), "#####0.000")
+        If field_in_recordset(PointsADO.recordset, "prism") Then
+            OriginalPoleHT = PointsADO.recordset("prism")
+            txtPoleHT = Format(PointsADO.recordset("prism"), "#####0.000")
             For I = 0 To txtprism.ListCount - 1
-                If PoleHeight(txtprism.ItemData(I)) = PointsADO.Recordset("prism") Then
+                If PoleHeight(txtprism.ItemData(I)) = PointsADO.recordset("prism") Then
                     txtprism.ListIndex = I
                     Exit For
                 End If
@@ -3105,29 +3105,29 @@ If CountRecords > 0 Then
         
         Select Case VType(I)
             Case "TEXT"
-                If IsNull(PointsADO.Recordset(VarList(I))) Then
+                If IsNull(PointsADO.recordset(VarList(I))) Then
                     TextBox(I) = ""
                 Else
-                    TextBox(I).Text = PointsADO.Recordset(VarList(I))
+                    TextBox(I).Text = PointsADO.recordset(VarList(I))
                 End If
             Case "MENU"
-                If IsNull(PointsADO.Recordset(VarList(I))) Then
+                If IsNull(PointsADO.recordset(VarList(I))) Then
                     MenuBox(I) = ""
                 Else
-                    MenuBox(I) = PointsADO.Recordset(VarList(I))
+                    MenuBox(I) = PointsADO.recordset(VarList(I))
                 End If
             Case "NUMERIC", "INSTRUMENT"
-                If IsNull(PointsADO.Recordset(VarList(I))) Then
+                If IsNull(PointsADO.recordset(VarList(I))) Then
                     NumberBox(I) = ""
                 Else
-                    NumberBox(I) = PointsADO.Recordset(VarList(I))
+                    NumberBox(I) = PointsADO.recordset(VarList(I))
                 End If
         End Select
     Next I
     On Error GoTo 0
     If mdiMain.mnuViewPoints.Checked Then
-        frmPlot.shpPoint.Left = PointsADO.Recordset(PlotX) - frmPlot.shpPoint.Width / 2
-        frmPlot.shpPoint.Top = PointsADO.Recordset(PlotY) + frmPlot.shpPoint.Height / 2
+        frmPlot.shpPoint.Left = PointsADO.recordset(PlotX) - frmPlot.shpPoint.Width / 2
+        frmPlot.shpPoint.Top = PointsADO.recordset(PlotY) + frmPlot.shpPoint.Height / 2
         frmPlot.Caption = txtUnit + "-" + Trim(txtID)
     End If
     Loading = False
@@ -3274,7 +3274,7 @@ End Sub
 Private Sub txtUnit_KeyPress(KeyAscii As Integer)
 
 Dim NextID As String
-Dim rsLock As Recordset
+Dim rsLock As recordset
 
 If Loading Then Exit Sub
 
@@ -3291,19 +3291,19 @@ ElseIf KeyAscii = 13 Or KeyAscii = 9 Then
     End If
     
     If Not Loading And CountRecords > 0 And PointTableName <> "" Then
-            If txtSuffix = 0 And Not PointsADO.Recordset.EOF And Not PointsADO.Recordset.BOF Then
+            If txtSuffix = 0 And Not PointsADO.recordset.EOF And Not PointsADO.recordset.BOF Then
                 If InStr(txtUnit, "-") > 0 Then
                     txtID = PadID(Mid(txtUnit, InStr(txtUnit, "-") + 1))
                     txtUnit = Left(txtUnit, InStr(txtUnit, "-") - 1)
-                    PointsADO.Recordset.Update "id", txtID
+                    PointsADO.recordset.Update "id", txtID
                     
                 Else
                     ADOAccess GetNextID, txtUnit, NextID, "", ""
                     txtID = NextID
-                    PointsADO.Recordset.Update "id", PadID(NextID)
+                    PointsADO.recordset.Update "id", PadID(NextID)
                     
                 End If
-                PointsADO.Recordset.Update "unit", txtUnit
+                PointsADO.recordset.Update "unit", txtUnit
                 OriginalUnit = txtUnit
                 OriginalID = txtID
                 OriginalSuffix = Val(txtSuffix)
@@ -3349,7 +3349,7 @@ Dim CurrentPosition
 Dim NRecords As Integer
 
 If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then Exit Sub
 
 'GridLoading = True
 'PointsADO.Recordset.Requery
@@ -3364,9 +3364,9 @@ If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
 If Scope = 0 Or OriginalID = "" Then
     '***PointsADO.Recordset.Bookmark = CurrentBookMark
     If UCase(Variable) = "ID" Then
-        PointsADO.Recordset.Update Variable, PadID(Value)
+        PointsADO.recordset.Update Variable, PadID(Value)
     Else
-        PointsADO.Recordset.Update Variable, Value
+        PointsADO.recordset.Update Variable, Value
     End If
     If UCase(Variable) = "ID" Then
         UpdateUnitTable txtUnit, PadID(Value), IDonly
@@ -3374,30 +3374,30 @@ If Scope = 0 Or OriginalID = "" Then
     NRecords = 1
 Else
     GridLoading = True
-    CurrentPosition = PointsADO.Recordset.Bookmark
-    PointsADO.Recordset.MoveFirst
+    CurrentPosition = PointsADO.recordset.Bookmark
+    PointsADO.recordset.MoveFirst
     'PointsADO.Recordset.Filter = "unit='" + txtUnit + "' and id='" + OriginalID + "'"
-    While Not PointsADO.Recordset.EOF
-        If PointsADO.Recordset("unit") = txtUnit And PointsADO.Recordset("id") = OriginalID Then
+    While Not PointsADO.recordset.EOF
+        If PointsADO.recordset("unit") = txtUnit And PointsADO.recordset("id") = OriginalID Then
             NRecords = NRecords + 1
             If UCase(Variable) = "ID" Then
-                PointsADO.Recordset.Update Variable, PadID(Value)
+                PointsADO.recordset.Update Variable, PadID(Value)
                 UpdateUnitTable txtUnit, PadID(Value), IDonly
             Else
                 On Error Resume Next
-                PointsADO.Recordset.Fields(Variable) = Value
-                PointsADO.Recordset.Update
+                PointsADO.recordset.Fields(Variable) = Value
+                PointsADO.recordset.Update
                 If Err.Number <> 0 Then
-                    PointsADO.Recordset.CancelUpdate
+                    PointsADO.recordset.CancelUpdate
                     MsgBox "could not update"
                 End If
                 'PointsADO.Recordset.Update Variable, Value
             End If
         End If
-        PointsADO.Recordset.MoveNext
+        PointsADO.recordset.MoveNext
     Wend
     '***PointsADO.Recordset.Filter = adFilterNone
-    PointsADO.Recordset.Bookmark = CurrentPosition
+    PointsADO.recordset.Bookmark = CurrentPosition
     GridLoading = False
     
     '***PointsADO.Recordset.Bookmark = CurrentBookMark
@@ -3476,31 +3476,31 @@ End If
 
 GridLoading = True
 'PointsADO.Recordset.Requery
-If PointsADO.Recordset.BOF And PointsADO.Recordset.EOF Then
+If PointsADO.recordset.BOF And PointsADO.recordset.EOF Then
 Else
-    PointsADO.Recordset.MoveLast
+    PointsADO.recordset.MoveLast
 End If
 'On Error Resume Next
 On Error GoTo 0
 Do
-    PointsADO.Recordset.AddNew
-    PointsADO.Recordset("unit") = " "
+    PointsADO.recordset.AddNew
+    PointsADO.recordset("unit") = " "
 Loop Until Err.Number = 0
 
 'On Error GoTo 0
-PointsADO.Recordset.Update
+PointsADO.recordset.Update
 'CurrentBookMark = PointsADO.Recordset.Bookmark
-PointsADO.Recordset.MoveLast
-PointsADO.Recordset.Update "prism", edmshot.poleh
-PointsADO.Recordset.Update "suffix", txtSuffix
-If txtXYZ(0).Visible Then PointsADO.Recordset.Update "x", txtXYZ(0)
-If txtXYZ(1).Visible Then PointsADO.Recordset.Update "y", txtXYZ(1)
-If txtXYZ(2).Visible Then PointsADO.Recordset.Update "z", txtXYZ(2)
-If txtVangle.Visible Then PointsADO.Recordset.Update "vangle", txtVangle
-If txtHangle.Visible Then PointsADO.Recordset.Update "hangle", txtHangle
-If txtSloped.Visible Then PointsADO.Recordset.Update "sloped", txtSloped
+PointsADO.recordset.MoveLast
+PointsADO.recordset.Update "prism", edmshot.poleh
+PointsADO.recordset.Update "suffix", txtSuffix
+If txtXYZ(0).Visible Then PointsADO.recordset.Update "x", txtXYZ(0)
+If txtXYZ(1).Visible Then PointsADO.recordset.Update "y", txtXYZ(1)
+If txtXYZ(2).Visible Then PointsADO.recordset.Update "z", txtXYZ(2)
+If txtVangle.Visible Then PointsADO.recordset.Update "vangle", txtVangle
+If txtHangle.Visible Then PointsADO.recordset.Update "hangle", txtHangle
+If txtSloped.Visible Then PointsADO.recordset.Update "sloped", txtSloped
 If DatumInfo Then
-    PointsADO.Recordset.Update "DatumName", CurrentStation.Name
+    PointsADO.recordset.Update "DatumName", CurrentStation.Name
 End If
 
 On Error GoTo 0
@@ -3509,40 +3509,40 @@ For I = 1 To Vars
     Select Case UCase(VarList(I))
         Case "UNIT", "ID", "SUFFIX", "PRISM", "X", "Y", "Z", "VANGLE", "HANGLE", "SLOPED"
         Case "DATUMX"
-            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.X, "######0.000")
+            PointsADO.recordset.Update VarList(I), Format(CurrentStation.X, "######0.000")
         Case "DATUMY"
-            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.y, "######0.000")
+            PointsADO.recordset.Update VarList(I), Format(CurrentStation.y, "######0.000")
         Case "DATUMZ"
-            PointsADO.Recordset.Update VarList(I), Format(CurrentStation.z, "######0.000")
+            PointsADO.recordset.Update VarList(I), Format(CurrentStation.z, "######0.000")
         Case "DATE"
-            PointsADO.Recordset.Update VarList(I), Date
+            PointsADO.recordset.Update VarList(I), Date
         Case "TIME"
-            PointsADO.Recordset.Update VarList(I), Time
+            PointsADO.recordset.Update VarList(I), Time
         Case Else
         Select Case VType(I)
             Case "TEXT"
                 If VCarry(I) Or Not NewObj Then
                     If IsNull(TextBox(I)) Or Len(TextBox(I)) = 0 Then
-                        PointsADO.Recordset.Update VarList(I), " "
+                        PointsADO.recordset.Update VarList(I), " "
                     Else
-                        PointsADO.Recordset.Update VarList(I), TextBox(I).Text
+                        PointsADO.recordset.Update VarList(I), TextBox(I).Text
                     End If
                 End If
             Case "MENU"
                 If VCarry(I) Or Not NewObj Then
-                    If Trim(MenuBox(I)) <> "" Then PointsADO.Recordset.Update VarList(I), MenuBox(I)
+                    If Trim(MenuBox(I)) <> "" Then PointsADO.recordset.Update VarList(I), MenuBox(I)
                 End If
             Case "NUMERIC", "INSTRUMENT"
                 If (VCarry(I) Or Not NewObj) And IsNumeric(NumberBox(I)) Then
-                    PointsADO.Recordset.Update VarList(I), NumberBox(I)
+                    PointsADO.recordset.Update VarList(I), NumberBox(I)
                 End If
         End Select
-        PointsADO.Recordset.Update
+        PointsADO.recordset.Update
     End Select
 Continue:
 Next I
 On Error GoTo 0
-PointsADO.Recordset.Update
+PointsADO.recordset.Update
 ReEnable:
 GridLoading = False
 Exit Sub
@@ -3601,25 +3601,25 @@ OldID = txtID
 ADOAccess DelRec, txtUnit, txtID, "", ""
 
 
-If Not PointsADO.Recordset.BOF Or Not PointsADO.Recordset.EOF Then
+If Not PointsADO.recordset.BOF Or Not PointsADO.recordset.EOF Then
     
     Do
         On Error Resume Next
-        t$ = PointsADO.Recordset("X")
+        t$ = PointsADO.recordset("X")
         If Err.Number = 0 Then Exit Do
-        PointsADO.Recordset.MoveNext
-    Loop Until PointsADO.Recordset.EOF
+        PointsADO.recordset.MoveNext
+    Loop Until PointsADO.recordset.EOF
     On Error GoTo 0
     
-    If PointsADO.Recordset.EOF Then
+    If PointsADO.recordset.EOF Then
             On Error Resume Next
-            PointsADO.Recordset.MoveLast
+            PointsADO.recordset.MoveLast
             Do
                 On Error Resume Next
-                t$ = PointsADO.Recordset("X")
+                t$ = PointsADO.recordset("X")
                 If Err.Number = 0 Then Exit Do
-                PointsADO.Recordset.MovePrevious
-            Loop Until PointsADO.Recordset.BOF
+                PointsADO.recordset.MovePrevious
+            Loop Until PointsADO.recordset.BOF
             On Error GoTo 0
     End If
             
@@ -3655,11 +3655,11 @@ If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then
     MsgBox "Open point table first.", vbInformation
     Select Case Index
     Case 0
-        txtXYZ(Index) = Format(PointsADO.Recordset("X"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("X"), "#####0.000")
     Case 1
-        txtXYZ(Index) = Format(PointsADO.Recordset("Y"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("Y"), "#####0.000")
     Case 2
-        txtXYZ(Index) = Format(PointsADO.Recordset("Z"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("Z"), "#####0.000")
     End Select
     Exit Sub
 End If
@@ -3670,11 +3670,11 @@ If LCase(Left(txtXYZ(Index), 6)) = "offset" Then
     frmOffSet.Caption = txtXYZ(Index)
     Select Case Index
     Case 0
-        frmOffSet.OriginalXYZ = Format(PointsADO.Recordset("x"), "####0.000")
+        frmOffSet.OriginalXYZ = Format(PointsADO.recordset("x"), "####0.000")
     Case 1
-        frmOffSet.OriginalXYZ = Format(PointsADO.Recordset("y"), "####0.000")
+        frmOffSet.OriginalXYZ = Format(PointsADO.recordset("y"), "####0.000")
     Case 2
-        frmOffSet.OriginalXYZ = Format(PointsADO.Recordset("z"), "####0.000")
+        frmOffSet.OriginalXYZ = Format(PointsADO.recordset("z"), "####0.000")
     End Select
     'txtXYZ(Index).Clear
     'txtXYZ(Index) = Format(OriginalXYZ(Index), "####0.000")
@@ -3708,9 +3708,9 @@ If LCase(Left(txtXYZ(Index), 6)) = "offset" Then
 End If
 
 If Val(txtSuffix) = 0 Then
-    Dim rsTemp As Recordset
+    Dim rsTemp As recordset
     OriginalUnit = txtUnit
-    SqlString = "select * from [EDM_units] where minx<= " & PointsADO.Recordset("x") & " and maxx>" & PointsADO.Recordset("x") & " and miny<=" & PointsADO.Recordset("y") & " and maxy>" & PointsADO.Recordset("y")
+    SqlString = "select * from [EDM_units] where minx<= " & PointsADO.recordset("x") & " and maxx>" & PointsADO.recordset("x") & " and miny<=" & PointsADO.recordset("y") & " and maxy>" & PointsADO.recordset("y")
     Set rsTemp = SiteDB.OpenRecordset(SqlString, dbOpenForwardOnly)
     If Not rsTemp.EOF Then
         If Not IsNull(rsTemp("unit")) Then
@@ -3719,10 +3719,10 @@ If Val(txtSuffix) = 0 Then
             End If
         End If
     Else
-        SqlString = "select * from [EDM_units] where abs(centerx-" & PointsADO.Recordset("x") & ")<=radius and abs(centery-" & PointsADO.Recordset("y") & ")<=radius"
+        SqlString = "select * from [EDM_units] where abs(centerx-" & PointsADO.recordset("x") & ")<=radius and abs(centery-" & PointsADO.recordset("y") & ")<=radius"
         Set rsTemp = SiteDB.OpenRecordset(SqlString, dbOpenForwardOnly)
         If Not rsTemp.EOF Then
-            If Sqr((rsTemp("centerx") - PointsADO.Recordset("x")) ^ 2 + (rsTemp("centery") - PointsADO.Recordset("y")) ^ 2) <= rsTemp("radius") Then
+            If Sqr((rsTemp("centerx") - PointsADO.recordset("x")) ^ 2 + (rsTemp("centery") - PointsADO.recordset("y")) ^ 2) <= rsTemp("radius") Then
                 If Not IsNull(rsTemp("unit")) Then
                     If OriginalUnit <> rsTemp("unit") Then
                         GoSub ChangeUnit
@@ -3745,25 +3745,25 @@ End Sub
 Private Sub txtXYZ_DropDown(Index As Integer)
 
 If PointTableName = "" Or frmMain.lblPointsWarning.Visible = True Then Exit Sub
-If PointsADO.Recordset.EOF And PointsADO.Recordset.BOF Then Exit Sub
+If PointsADO.recordset.EOF And PointsADO.recordset.BOF Then Exit Sub
 
 txtXYZ(Index).Clear
 Select Case Index
     Case 0
         txtXYZ(0).AddItem "Offset East"
         txtXYZ(0).AddItem "Offset West"
-        txtXYZ(0).AddItem Format(PointsADO.Recordset("x"), "####0.000")
-        txtXYZ(0) = Format(PointsADO.Recordset("x"), "####0.000")
+        txtXYZ(0).AddItem Format(PointsADO.recordset("x"), "####0.000")
+        txtXYZ(0) = Format(PointsADO.recordset("x"), "####0.000")
     Case 1
         txtXYZ(1).AddItem "Offset North"
         txtXYZ(1).AddItem "Offset South"
-        txtXYZ(1).AddItem Format(PointsADO.Recordset("y"), "####0.000")
-        txtXYZ(1) = Format(PointsADO.Recordset("y"), "####0.000")
+        txtXYZ(1).AddItem Format(PointsADO.recordset("y"), "####0.000")
+        txtXYZ(1) = Format(PointsADO.recordset("y"), "####0.000")
     Case 2
         txtXYZ(2).AddItem "Offset Up"
         txtXYZ(2).AddItem "Offset Down"
-        txtXYZ(2).AddItem Format(PointsADO.Recordset("z"), "####0.000")
-        txtXYZ(2) = Format(PointsADO.Recordset("z"), "####0.000")
+        txtXYZ(2).AddItem Format(PointsADO.recordset("z"), "####0.000")
+        txtXYZ(2) = Format(PointsADO.recordset("z"), "####0.000")
 End Select
 
 End Sub
@@ -3773,11 +3773,11 @@ Private Sub txtXYZ_KeyPress(Index As Integer, KeyAscii As Integer)
 If KeyAscii = 27 Then
     Select Case Index
     Case 0
-        txtXYZ(Index) = Format(PointsADO.Recordset("X"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("X"), "#####0.000")
     Case 1
-        txtXYZ(Index) = Format(PointsADO.Recordset("Y"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("Y"), "#####0.000")
     Case 2
-        txtXYZ(Index) = Format(PointsADO.Recordset("Z"), "#####0.000")
+        txtXYZ(Index) = Format(PointsADO.recordset("Z"), "#####0.000")
     End Select
     Picture1.SetFocus
 
@@ -3786,11 +3786,11 @@ ElseIf KeyAscii = 13 Then
         MsgBox "Open point table first.", vbInformation
         Select Case Index
         Case 0
-            txtXYZ(Index) = Format(PointsADO.Recordset("X"), "#####0.000")
+            txtXYZ(Index) = Format(PointsADO.recordset("X"), "#####0.000")
         Case 1
-            txtXYZ(Index) = Format(PointsADO.Recordset("Y"), "#####0.000")
+            txtXYZ(Index) = Format(PointsADO.recordset("Y"), "#####0.000")
         Case 2
-            txtXYZ(Index) = Format(PointsADO.Recordset("Z"), "#####0.000")
+            txtXYZ(Index) = Format(PointsADO.recordset("Z"), "#####0.000")
         End Select
     End If
     txtXYZ(Index) = Format(txtXYZ(Index), "####0.000")
@@ -3816,7 +3816,7 @@ End Sub
 
 Public Sub UpdateUnitTable(UnitName As String, ID As String, Scope)
 
-Dim rsTemp As ADODB.Recordset
+Dim rsTemp As ADODB.recordset
 
 Screen.MousePointer = 11
 If Scope <> UnitFieldOnly Then
@@ -3835,10 +3835,10 @@ If Scope <> IDonly Then
                 SqlString = "Update [edm_units] set [edm_units].prism=" + txtPoleHT + " where [edm_units].unit='" + txtUnit + " '"
                 SiteDB.Execute SqlString
             Case Else
-                If PointsADO.Recordset(Unitfield(I)) = "" Or IsNull(PointsADO.Recordset(Unitfield(I))) Then
+                If PointsADO.recordset(Unitfield(I)) = "" Or IsNull(PointsADO.recordset(Unitfield(I))) Then
                     TempString = " "
                 Else
-                    TempString = PointsADO.Recordset(Unitfield(I))
+                    TempString = PointsADO.recordset(Unitfield(I))
                 End If
                 SqlString = "Update [edm_units] set edm_units." + Unitfield(I) + "= '" + TempString + "' where edm_units.unit='" + txtUnit + "'"
                 SiteDB.Execute SqlString
@@ -3854,7 +3854,7 @@ Public Function FindUnit()
 
 Dim X As Single
 Dim y As Single
-Dim rsTemp As Recordset
+Dim rsTemp As recordset
 
 If Cancelling Then Exit Function
 
@@ -3862,7 +3862,7 @@ Start:
 Cancelling = False
 Loading = False
 'PointsADO.Recordset.Bookmark = CurrentBookMark
-SqlString = "select * from [EDM_units] where minx<= " & PointsADO.Recordset("x") & " and maxx>" & PointsADO.Recordset("x") & " and miny<=" & PointsADO.Recordset("y") & " and maxy>" & PointsADO.Recordset("y")
+SqlString = "select * from [EDM_units] where minx<= " & PointsADO.recordset("x") & " and maxx>" & PointsADO.recordset("x") & " and miny<=" & PointsADO.recordset("y") & " and maxy>" & PointsADO.recordset("y")
 Set rsTemp = SiteDB.OpenRecordset(SqlString, dbOpenForwardOnly)
 If Not rsTemp.EOF Then
     If Not IsNull(rsTemp("unit")) Then
@@ -3877,10 +3877,10 @@ If Not rsTemp.EOF Then
         Exit Function
     End If
 Else
-    SqlString = "select * from [EDM_units] where abs(centerx-" & PointsADO.Recordset("x") & ")<=radius and abs(centery-" & PointsADO.Recordset("y") & ")<=radius"
+    SqlString = "select * from [EDM_units] where abs(centerx-" & PointsADO.recordset("x") & ")<=radius and abs(centery-" & PointsADO.recordset("y") & ")<=radius"
     Set rsTemp = SiteDB.OpenRecordset(SqlString, dbOpenForwardOnly)
     If Not rsTemp.EOF Then
-        If Sqr((rsTemp("centerx") - PointsADO.Recordset("x")) ^ 2 + (rsTemp("centery") - PointsADO.Recordset("y")) ^ 2) <= rsTemp("radius") Then
+        If Sqr((rsTemp("centerx") - PointsADO.recordset("x")) ^ 2 + (rsTemp("centery") - PointsADO.recordset("y")) ^ 2) <= rsTemp("radius") Then
             If Not IsNull(rsTemp("unit")) Then
                 If OriginalUnit <> rsTemp("unit") Then
                     txtUnit.ForeColor = QBColor(12)
@@ -3943,10 +3943,10 @@ If response = vbCancel Then
     Cancelling = True
     Exit Function
 ElseIf response = vbYes Then
-    AddUnits.XY(0) = Int(PointsADO.Recordset("x"))
-    AddUnits.XY(1) = Int(PointsADO.Recordset("y"))
-    AddUnits.XY(2) = Int(PointsADO.Recordset("x")) + 1
-    AddUnits.XY(3) = Int(PointsADO.Recordset("y")) + 1
+    AddUnits.XY(0) = Int(PointsADO.recordset("x"))
+    AddUnits.XY(1) = Int(PointsADO.recordset("y"))
+    AddUnits.XY(2) = Int(PointsADO.recordset("x")) + 1
+    AddUnits.XY(3) = Int(PointsADO.recordset("y")) + 1
     AddUnits.optType(0) = True
     AddUnits.Editing = True
     Screen.MousePointer = 1
@@ -4415,9 +4415,9 @@ Dim currentrecord As Variant
 
 UnitsADO.RecordSource = "edm_units"
 UnitsADO.Refresh
-UnitsADO.Recordset.Requery
+UnitsADO.recordset.Requery
 If Not UnitTB.BOF Or Not UnitTB.EOF Then
-    UnitsADO.Recordset.MoveLast
+    UnitsADO.recordset.MoveLast
 End If
 
 Dim updated As Boolean
@@ -4483,9 +4483,9 @@ ElseIf Action = SetID Then
         Dim TempIDValue As String
         Do
             UnitsADO.Refresh
-            UnitsADO.Recordset.Filter = "[unit]='" + UnitValue + "'"
+            UnitsADO.recordset.Filter = "[unit]='" + UnitValue + "'"
             On Error Resume Next
-            TempIDValue = UnitsADO.Recordset("ID")
+            TempIDValue = UnitsADO.recordset("ID")
             If Err = 0 Then
                 Exit Do
             Else
@@ -4494,7 +4494,7 @@ ElseIf Action = SetID Then
             End If
         Loop
         On Error GoTo 0
-        UnitsADO.Recordset.Filter = adFilterNone
+        UnitsADO.recordset.Filter = adFilterNone
         If Val(TempIDValue) + 1 = Val(IDvalue) Then
             IDvalue = PadID(IDvalue)
         ElseIf Val(TempIDValue) < Val(IDvalue) Or Val(TempIDValue) > Val(IDvalue) + 1 Then
@@ -4511,31 +4511,31 @@ ElseIf Action = SetID Then
         End If
         Do
             UnitsADO.Refresh
-            UnitsADO.Recordset.Filter = "[unit]='" + UnitValue + "'"
+            UnitsADO.recordset.Filter = "[unit]='" + UnitValue + "'"
             On Error Resume Next
-            If IsNull(UnitsADO.Recordset("ID")) Then
-                UnitsADO.Recordset.Update "id", 0
+            If IsNull(UnitsADO.recordset("ID")) Then
+                UnitsADO.recordset.Update "id", 0
             Else
-                UnitsADO.Recordset.Update "id", IDvalue
+                UnitsADO.recordset.Update "id", IDvalue
             End If
             If Err = 0 Then Exit Do
         Loop
         On Error GoTo 0
-        UnitsADO.Recordset.Filter = adFilterNone
+        UnitsADO.recordset.Filter = adFilterNone
 
 ElseIf Action = DelRec Then
         'PointsADO.Recordset.Filter = "unit='" + UnitValue + "' and id='" + IDvalue + "'"
         'ndels = PointsADO.Recordset.RecordCount
         
         GridLoading = True
-        currentrecord = PointsADO.Recordset.Bookmark
+        currentrecord = PointsADO.recordset.Bookmark
         
         'first peel through to get number of records to delete
         ndels = 0
-        PointsADO.Recordset.MoveFirst
-        Do Until PointsADO.Recordset.EOF
-            If PointsADO.Recordset("unit") = UnitValue And PointsADO.Recordset("id") = IDvalue Then ndels = ndels + 1
-            PointsADO.Recordset.MoveNext
+        PointsADO.recordset.MoveFirst
+        Do Until PointsADO.recordset.EOF
+            If PointsADO.recordset("unit") = UnitValue And PointsADO.recordset("id") = IDvalue Then ndels = ndels + 1
+            PointsADO.recordset.MoveNext
         Loop
                 
         If ndels > 1 Then
@@ -4544,30 +4544,30 @@ ElseIf Action = DelRec Then
                 Exit Sub
             ElseIf response = vbYes Then
                 Need2Decrement = True
-                PointsADO.Recordset.MoveFirst
-                Do Until PointsADO.Recordset.EOF
-                    If PointsADO.Recordset("unit") = UnitValue And PointsADO.Recordset("id") = IDvalue Then PointsADO.Recordset.Delete
-                    PointsADO.Recordset.MoveNext
+                PointsADO.recordset.MoveFirst
+                Do Until PointsADO.recordset.EOF
+                    If PointsADO.recordset("unit") = UnitValue And PointsADO.recordset("id") = IDvalue Then PointsADO.recordset.Delete
+                    PointsADO.recordset.MoveNext
                 Loop
             Else
-                PointsADO.Recordset.Bookmark = currentrecord
-                PointsADO.Recordset.Delete
+                PointsADO.recordset.Bookmark = currentrecord
+                PointsADO.recordset.Delete
             End If
         ElseIf ndels > 0 Then
             Need2Decrement = True
-            PointsADO.Recordset.Bookmark = currentrecord
-            PointsADO.Recordset.Delete
+            PointsADO.recordset.Bookmark = currentrecord
+            PointsADO.recordset.Delete
         Else
             MsgBox ("Record not found")
         End If
         
         If Need2Decrement Then
-            UnitsADO.Recordset.Requery
-            UnitsADO.Recordset.Filter = "unit='" + UnitValue + "'"
-            If Val(UnitsADO.Recordset("id")) > Val(IDvalue) Then
+            UnitsADO.recordset.Requery
+            UnitsADO.recordset.Filter = "unit='" + UnitValue + "'"
+            If Val(UnitsADO.recordset("id")) > Val(IDvalue) Then
                 Need2Decrement = False
             End If
-            UnitsADO.Recordset.Filter = adFilterNone
+            UnitsADO.recordset.Filter = adFilterNone
         End If
         
         'PointsADO.Recordset.Filter = adFilterNone

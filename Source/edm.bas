@@ -91,7 +91,7 @@ Global OriginalUnit As String
 Global OriginalSuffix As Integer
 Global OriginalPoleHT As Single
 Global OriginalPrismIndex As Integer
-Global rsTemp As Recordset
+Global rsTemp As recordset
 Global edmshot As shotdata
 Global GridTopRow As Long
 Global GridCurrentRow As Long
@@ -101,10 +101,10 @@ Global Cancelling As Boolean
 Global BannerHeight As Integer
 Global BannerWidth As Integer
 Global SiteDB As Database
-Global DatumTB As Recordset
-Global UnitTB As Recordset
-Global PoleTB As Recordset
-Global cfgTB As Recordset
+Global DatumTB As recordset
+Global UnitTB As recordset
+Global PoleTB As recordset
+Global cfgTB As recordset
 Global limits(100, 4) As Double
 Global limitname(100) As String
 Global unitlimits As Integer
@@ -151,7 +151,7 @@ Global MasterVar As String
 Global MasterVal As Variant
 Global nDependentVars As Integer
 Global DependentVar(10) As String
-Global DefaultsTB As Recordset
+Global DefaultsTB As recordset
 Global PrinterOn As Boolean
 Global UsingMicroscribe As Boolean
 Global GeneralLog As Boolean
@@ -183,7 +183,7 @@ Global TSLogFile As String
 'option 22 - output table name
 Type xyz
     Name As String
-    x As Double
+    X As Double
     y As Double
     z As Double
 End Type
@@ -348,7 +348,7 @@ If tablematch(tablename) Then
 End If
 
 Dim tdf As TableDef
-Dim F As Field
+Dim F As field
 Screen.MousePointer = 11
 
 ' Create a new TableDef object.
@@ -484,20 +484,20 @@ End Function
 
 Sub insertpointintotb(edmshot As shotdata)
 
-frmMain.PointsADO.Recordset.AddNew
+frmMain.PointsADO.recordset.AddNew
 On Error Resume Next
-frmMain.PointsADO.Recordset("x") = Format(edmshot.x, "#########0.000")
-frmMain.PointsADO.Recordset("y") = Format(edmshot.y, "#########0.000")
-frmMain.PointsADO.Recordset("z") = Format(edmshot.z, "#########0.000")
-frmMain.PointsADO.Recordset("vangle") = Format(edmshot.vangle, "##0.0000")
-frmMain.PointsADO.Recordset("hangle") = Format(edmshot.hangle, "##0.0000")
-frmMain.PointsADO.Recordset("sloped") = Format(edmshot.sloped, "#########0.000")
-frmMain.PointsADO.Recordset("prism") = Format(edmshot.poleh, "#########0.000")
-frmMain.PointsADO.Recordset("datumx") = Format(CurrentStation.x, "#########0.000")
-frmMain.PointsADO.Recordset("datumy") = Format(CurrentStation.y, "#########0.000")
-frmMain.PointsADO.Recordset("datumz") = Format(CurrentStation.z, "#########0.000")
+frmMain.PointsADO.recordset("x") = Format(edmshot.X, "#########0.000")
+frmMain.PointsADO.recordset("y") = Format(edmshot.y, "#########0.000")
+frmMain.PointsADO.recordset("z") = Format(edmshot.z, "#########0.000")
+frmMain.PointsADO.recordset("vangle") = Format(edmshot.vangle, "##0.0000")
+frmMain.PointsADO.recordset("hangle") = Format(edmshot.hangle, "##0.0000")
+frmMain.PointsADO.recordset("sloped") = Format(edmshot.sloped, "#########0.000")
+frmMain.PointsADO.recordset("prism") = Format(edmshot.poleh, "#########0.000")
+frmMain.PointsADO.recordset("datumx") = Format(CurrentStation.X, "#########0.000")
+frmMain.PointsADO.recordset("datumy") = Format(CurrentStation.y, "#########0.000")
+frmMain.PointsADO.recordset("datumz") = Format(CurrentStation.z, "#########0.000")
 On Error GoTo 0
-frmMain.PointsADO.Recordset.Update
+frmMain.PointsADO.recordset.Update
 
 End Sub
 
@@ -717,7 +717,7 @@ If A = "" Then
     Print #1, "COMport="; comport
     Print #1, "EDMDelayTime="; EDMDelayTime
     Print #1, "StationName="; CurrentStation.Name
-    Print #1, "StationX="; CurrentStation.x
+    Print #1, "StationX="; CurrentStation.X
     Print #1, "stationY="; CurrentStation.y
     Print #1, "stationZ="; CurrentStation.z
     Print #1, ""
@@ -993,7 +993,7 @@ frmMain.txtXYZ(1) = ""
 frmMain.txtXYZ(2) = ""
 frmMain.txtHangle = ""
 frmMain.txtVangle = ""
-frmMain.txtSlopeD = ""
+frmMain.txtSloped = ""
 
 frmMain.lblDBWarning.Visible = False
 
@@ -1185,7 +1185,7 @@ End Sub
 Public Sub CreateDefaultstb()
 
 Dim tdf As TableDef
-Dim fdf As Field
+Dim fdf As field
 Screen.MousePointer = 11
 
 ' Create a new TableDef object.
@@ -1221,3 +1221,14 @@ DefaultsTB.Index = "MasterVar"
 
 End Sub
 
+Function field_in_recordset(recordset, fieldname) As Boolean
+
+field_in_recordset = False
+For Each field In recordset.Fields
+    If LCase(field.Name) = LCase(fieldname) Then
+        field_in_recordset = True
+        Exit For
+    End If
+Next
+
+End Function
